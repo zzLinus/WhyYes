@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/HealthBar.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Texture/UI/healthBar.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Texture/UI/healthBar1.png" type="Texture" id=3]
+
+[node name="TextureProgress" type="TextureProgress"]
+margin_left = 32.0
+margin_top = 16.0
+margin_right = 91.0
+margin_bottom = 21.0
+rect_scale = Vector2( 4.91713, 5.41368 )
+value = 100.0
+texture_progress = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -2.25383
+margin_top = -0.775375
+margin_right = 60.7462
+margin_bottom = 6.22463
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

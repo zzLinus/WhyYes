@@ -1,0 +1,387 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Dungeonlayer1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Portal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Trap1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Magictrap.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/SpawnPoint.gd" type="Script" id=6]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TiledMap editor example-" parent="." instance=ExtResource( 1 )]
+z_index = 2
+z_as_relative = false
+
+[node name="ground" parent="TiledMap editor example-" index="0"]
+z_as_relative = false
+
+[node name="ground-above" parent="TiledMap editor example-" index="1"]
+z_as_relative = false
+
+[node name="wall-3" parent="TiledMap editor example-" index="2"]
+visible = false
+
+[node name="above-wall-2" parent="TiledMap editor example-" index="6"]
+z_index = 1
+z_as_relative = false
+tile_data = PoolIntArray( 5, 2101, 0, 6, 2102, 0, 7, 2103, 0, 8, 2104, 0, 33, 2101, 0, 34, 2102, 0, 35, 2103, 0, 36, 2104, 0, 65541, 2151, 0, 65542, 2152, 0, 65543, 2153, 0, 65544, 2154, 0, 65569, 2151, 0, 65570, 2152, 0, 65571, 2153, 0, 65572, 2154, 0, 131077, 2201, 0, 131078, 2202, 0, 131079, 2203, 0, 131080, 2204, 0, 131105, 2201, 0, 131106, 2202, 0, 131107, 2203, 0, 131108, 2204, 0, 196613, 2251, 0, 196614, 2252, 0, 196615, 2253, 0, 196616, 2254, 0, 196641, 2251, 0, 196642, 2252, 0, 196643, 2253, 0, 196644, 2254, 0, 1769505, 126, 0, 1769506, 127, 0, 1769507, 127, 0, 1769508, 128, 0, 1835041, 225, 0, 1835042, 230, 0, 1835043, 330, 0, 1835044, 229, 0, 1900577, 225, 0, 1900578, 227, 0, 1900579, 280, 0, 1900580, 229, 0, 1966113, 225, 0, 1966114, 226, 0, 1966115, 227, 0, 1966116, 229, 0, 2031648, 1, 0, 2031649, 225, 0, 2031650, 1, 0, 2031651, 227, 0, 2031652, 229, 0, 2097178, 126, 0, 2097179, 128, 0, 2097185, 225, 0, 2097186, 331, 0, 2097187, 180, 0, 2097188, 229, 0, 2162695, 1353, 0, 2162714, 225, 0, 2162715, 229, 0, 2162721, 225, 0, 2162722, 131, 0, 2162723, 227, 0, 2162724, 229, 0, 2228228, 1353, 0, 2228250, 225, 0, 2228251, 178, 0, 2228252, 127, 0, 2228253, 127, 0, 2228254, 127, 0, 2228255, 127, 0, 2228256, 127, 0, 2228257, 176, 0, 2228258, 280, 0, 2228259, 227, 0, 2228260, 229, 0, 2293786, 225, 0, 2293787, 330, 0, 2293788, 230, 0, 2293789, 227, 0, 2293790, 230, 0, 2293791, 230, 0, 2293792, 226, 0, 2293793, 280, 0, 2293794, 227, 0, 2293795, 227, 0, 2293796, 229, 0, 2359301, 1610614990, 0, 2359302, 1610614989, 0, 2359303, 1610614988, 0, 2359304, 1610614987, 0, 2359322, 326, 0, 2359323, 327, 0, 2359324, 327, 0, 2359325, 327, 0, 2359326, 327, 0, 2359327, 327, 0, 2359328, 327, 0, 2359329, 327, 0, 2359330, 327, 0, 2359331, 327, 0, 2359332, 328, 0, 2424835, 1610613391, 0, 2424837, 1610614940, 0, 2424838, 1610614939, 0, 2424839, 1610614938, 0, 2424840, 1610614937, 0, 2424842, 1610613387, 0, 2490371, 1610613341, 0, 2490373, 1610614890, 0, 2490374, 1610614889, 0, 2490375, 1610614888, 0, 2490376, 1610614887, 0, 2490378, 1610613337, 0, 2555907, 1610613291, 0, 2555909, 1610614840, 0, 2555910, 1610614839, 0, 2555911, 1610614838, 0, 2555912, 1610614837, 0, 2555914, 555, 0 )
+
+[node name="Declorations2" parent="TiledMap editor example-" index="9"]
+z_index = 2
+z_as_relative = false
+
+[node name="AnimatedSprite" parent="TiledMap editor example-/Candles" index="0"]
+frame = 2
+
+[node name="AnimatedSprite2" parent="TiledMap editor example-/Candles" index="1"]
+frame = 4
+
+[node name="AnimatedSprite3" parent="TiledMap editor example-/Candles" index="2"]
+frame = 2
+
+[node name="AnimatedSprite4" parent="TiledMap editor example-/Candles" index="3"]
+frame = 3
+
+[node name="AnimatedSprite5" parent="TiledMap editor example-/Candles" index="4"]
+frame = 14
+
+[node name="AnimatedSprite6" parent="TiledMap editor example-/Candles" index="5"]
+frame = 6
+
+[node name="AnimatedSprite7" parent="TiledMap editor example-/Candles" index="6"]
+frame = 4
+
+[node name="AnimatedSprite8" parent="TiledMap editor example-/Candles" index="7"]
+frame = 6
+
+[node name="AnimatedSprite9" parent="TiledMap editor example-/Candles" index="8"]
+frame = 1
+
+[node name="AnimatedSprite15" parent="TiledMap editor example-/Candles" index="9"]
+frame = 4
+
+[node name="AnimatedSprite16" parent="TiledMap editor example-/Candles" index="10"]
+frame = 4
+
+[node name="AnimatedSprite10" parent="TiledMap editor example-/Candles" index="11"]
+frame = 13
+
+[node name="AnimatedSprite11" parent="TiledMap editor example-/Candles" index="12"]
+frame = 6
+
+[node name="AnimatedSprite14" parent="TiledMap editor example-/Candles" index="13"]
+frame = 16
+
+[node name="AnimatedSprite12" parent="TiledMap editor example-/Candles" index="14"]
+frame = 3
+
+[node name="AnimatedSprite13" parent="TiledMap editor example-/Candles" index="15"]
+frame = 10
+
+[node name="AnimatedSprite17" parent="TiledMap editor example-/Candles" index="16"]
+frame = 10
+
+[node name="Trap" type="Node2D" parent="TiledMap editor example-"]
+position = Vector2( -2, 0 )
+z_index = 1
+z_as_relative = false
+
+[node name="AnimatedSprite" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
+position = Vector2( 910, 700 )
+trapType = 1
+
+[node name="AnimatedSprite2" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
+position = Vector2( 910, 636 )
+frame = 3
+trapType = 1
+
+[node name="AnimatedSprite3" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
+position = Vector2( 942, 636 )
+trapType = 1
+
+[node name="AnimatedSprite4" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
+position = Vector2( 942, 700 )
+frame = 7
+trapType = 1
+
+[node name="AnimatedSprite5" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
+position = Vector2( 974, 700 )
+trapType = 1
+
+[node name="AnimatedSprite6" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
+position = Vector2( 974, 636 )
+trapType = 1
+
+[node name="AnimatedSprite7" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
+position = Vector2( 1136, 431 )
+rotation = -0.000807716
+animation = "trap2"
+trapType = 2
+
+[node name="AnimatedSprite8" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
+position = Vector2( 1104, 431 )
+animation = "trap2"
+trapType = 2
+
+[node name="AnimatedSprite9" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
+position = Vector2( 1072, 431 )
+animation = "trap2"
+trapType = 2
+
+[node name="AnimatedSprite10" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
+position = Vector2( 1040, 431 )
+animation = "trap2"
+trapType = 2
+
+[node name="AnimatedSprite11" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
+position = Vector2( 1169, 431 )
+animation = "trap2"
+trapType = 2
+
+[node name="AnimatedSprite12" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
+position = Vector2( 1202, 431 )
+animation = "trap2"
+trapType = 2
+
+[node name="AnimatedSprite13" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
+position = Vector2( 156, 781 )
+animation = "trap3"
+trapType = 3
+
+[node name="AnimatedSprite14" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
+position = Vector2( 219, 781 )
+animation = "trap3"
+trapType = 3
+
+[node name="AnimatedSprite15" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
+position = Vector2( 282, 781 )
+animation = "trap3"
+trapType = 3
+
+[node name="AnimatedSprite16" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
+position = Vector2( 291, 848 )
+animation = "trap4"
+trapType = 4
+
+[node name="AnimatedSprite17" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
+position = Vector2( 323, 847 )
+animation = "trap4"
+trapType = 4
+
+[node name="AnimatedSprite18" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
+position = Vector2( 291, 896 )
+animation = "trap4"
+trapType = 4
+
+[node name="AnimatedSprite19" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
+position = Vector2( 323, 896 )
+animation = "trap4"
+trapType = 4
+
+[node name="AnimatedSprite20" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
+position = Vector2( 316, 458 )
+animation = "trap5"
+trapType = 5
+
+[node name="AnimatedSprite21" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
+position = Vector2( 281, 458 )
+animation = "trap5"
+trapType = 5
+
+[node name="AnimatedSprite22" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
+position = Vector2( 281, 495 )
+animation = "trap5"
+trapType = 5
+
+[node name="AnimatedSprite23" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
+position = Vector2( 316, 495 )
+animation = "trap5"
+trapType = 5
+
+[node name="AnimatedSprite24" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
+position = Vector2( 246, 458 )
+animation = "trap5"
+trapType = 5
+
+[node name="AnimatedSprite25" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
+position = Vector2( 246, 495 )
+animation = "trap5"
+trapType = 5
+
+[node name="AnimatedSprite26" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
+position = Vector2( 175, 336 )
+trapType = 1
+
+[node name="AnimatedSprite27" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
+position = Vector2( 207, 336 )
+trapType = 1
+
+[node name="AnimatedSprite28" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
+position = Vector2( 143, 336 )
+trapType = 1
+
+[node name="MagicTrap" type="Node2D" parent="TiledMap editor example-/Trap"]
+z_index = 2
+z_as_relative = false
+
+[node name="AnimatedSprite" parent="TiledMap editor example-/Trap/MagicTrap" instance=ExtResource( 5 )]
+position = Vector2( 625, 541 )
+frame = 0
+playing = false
+magicType = 0
+magicTrapType = 4
+lifetime = 0.7
+
+[node name="AnimatedSprite2" parent="TiledMap editor example-/Trap/MagicTrap" instance=ExtResource( 5 )]
+position = Vector2( 944, 540 )
+frame = 0
+playing = false
+magicTrapType = 3
+lifetime = 0.7
+
+[node name="AnimatedSprite3" parent="TiledMap editor example-/Trap/MagicTrap" instance=ExtResource( 5 )]
+position = Vector2( 752, 531 )
+frame = 0
+playing = false
+magicType = 0
+lifetime = 0.7
+
+[node name="AnimatedSprite4" parent="TiledMap editor example-/Trap/MagicTrap" instance=ExtResource( 5 )]
+position = Vector2( 484, 528 )
+frame = 0
+playing = false
+magicTrapType = 2
+lifetime = 0.7
+
+[node name="AnimatedSprite5" parent="TiledMap editor example-/Trap/MagicTrap" instance=ExtResource( 5 )]
+position = Vector2( 974, 1016 )
+frame = 0
+playing = false
+magicType = 1
+lifetime = 0.7
+
+[node name="ChangeZ" type="Node2D" parent="TiledMap editor example-"]
+visible = false
+
+[node name="Ztransform" type="Area2D" parent="TiledMap editor example-/ChangeZ"]
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TiledMap editor example-/ChangeZ/Ztransform"]
+polygon = PoolVector2Array( 992, 962, 991, 1023, 1248, 1024, 1248, 961 )
+
+[node name="Ztransform2" type="Area2D" parent="TiledMap editor example-/ChangeZ"]
+position = Vector2( -330, -94 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TiledMap editor example-/ChangeZ/Ztransform2"]
+position = Vector2( -325, -141 )
+polygon = PoolVector2Array( 992, 987, 991, 1023, 1597, 1022, 1597, 989 )
+
+[node name="Ztransform3" type="Area2D" parent="TiledMap editor example-/ChangeZ"]
+position = Vector2( 40, -217 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TiledMap editor example-/ChangeZ/Ztransform3"]
+position = Vector2( 145, -186 )
+polygon = PoolVector2Array( 984, 993, 985, 1014, 991, 1025, 1007, 1025, 1018, 1023, 1018, 992 )
+
+[node name="Ztransform4" type="Area2D" parent="TiledMap editor example-/ChangeZ"]
+position = Vector2( 66, -308 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TiledMap editor example-/ChangeZ/Ztransform4"]
+position = Vector2( 151, -184 )
+polygon = PoolVector2Array( 991, 1025, 1007, 1025, 1009, 1012, 991, 1012 )
+
+[node name="Ztransform5" type="Area2D" parent="TiledMap editor example-/ChangeZ"]
+position = Vector2( 66, -120 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TiledMap editor example-/ChangeZ/Ztransform5"]
+position = Vector2( 151, -184 )
+polygon = PoolVector2Array( 991, 1025, 1007, 1025, 1009, 1012, 991, 1012 )
+
+[node name="Collision" type="Node2D" parent="TiledMap editor example-"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TiledMap editor example-/Collision"]
+collision_mask = 260
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TiledMap editor example-/Collision/StaticBody2D"]
+polygon = PoolVector2Array( 627, 1017, 816, 1015, 815, 1168, 1280, 1171, 1280, 1044, 1179, 1045, 1174, 1024, 1249, 1024, 1249, 855, 1163, 855, 1165, 824, 1171, 799, 1178, 780, 1188, 788, 1259, 788, 1258, 961, 1280, 961, 1281, 673, 1241, 673, 1232, 52, 1165, 53, 1173, -32, 1071, -33, 1077, 53, 1009, 53, 1008, 570, 337, 566, 335, 53, 268, 53, 275, -32, 176, -32, 180, 53, 111, 53, 113, 1228, 179, 1226, 178, 1268, 164, 1307, 289, 1310, 272, 1280, 266, 1225, 337, 1225, 337, 789, 944, 787, 943, 959, 979, 960, 981, 790, 1054, 788, 1061, 778, 1067, 788, 1074, 811, 1079, 854, 991, 853, 991, 1023, 1067, 1024, 1064, 1049, 929, 1044, 928, 1013, 626, 1017, 622, 1568, -344, 1574, -272, -324, 1701, -276, 1728, 1585, 622, 1569 )
+
+[node name="TileMap2" type="TileMap" parent="TiledMap editor example-"]
+format = 1
+
+[node name="SpawnPoint1" type="Area2D" parent="." groups=["Portals"]]
+position = Vector2( 868, 1027 )
+script = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnPoint1"]
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="Portal1-1" parent="." instance=ExtResource( 3 )]
+position = Vector2( 212, -20 )
+scale = Vector2( 2.59065, 1.08342 )
+z_index = 5
+z_as_relative = false
+nextScenePath = "res://Scenes/mainScene3.tscn"
+
+[node name="Portal1-2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1121, -19 )
+scale = Vector2( 2.59065, 1.08342 )
+z_index = 5
+z_as_relative = false
+nextScenePath = "res://Scenes/mainScene3.tscn"
+
+[node name="Portal1-3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 217, 1296 )
+scale = Vector2( 2.59065, 1.08342 )
+z_index = 5
+z_as_relative = false
+nextScenePath = "res://Scenes/mainScene3.tscn"
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 869, 989 )
+
+[connection signal="body_entered" from="TiledMap editor example-/ChangeZ/Ztransform" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="TiledMap editor example-/ChangeZ/Ztransform" to="Player" method="_on_Ztransform_body_exited"]
+[connection signal="body_entered" from="TiledMap editor example-/ChangeZ/Ztransform2" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="TiledMap editor example-/ChangeZ/Ztransform2" to="Player" method="_on_Ztransform_body_exited"]
+[connection signal="body_entered" from="TiledMap editor example-/ChangeZ/Ztransform3" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="TiledMap editor example-/ChangeZ/Ztransform3" to="Player" method="_on_Ztransform_body_exited"]
+[connection signal="body_entered" from="TiledMap editor example-/ChangeZ/Ztransform4" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="TiledMap editor example-/ChangeZ/Ztransform4" to="Player" method="_on_Ztransform_body_exited"]
+[connection signal="body_entered" from="TiledMap editor example-/ChangeZ/Ztransform5" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="TiledMap editor example-/ChangeZ/Ztransform5" to="Player" method="_on_Ztransform_body_exited"]
+
+[editable path="TiledMap editor example-"]
+[editable path="TiledMap editor example-/Candles/AnimatedSprite"]
+[editable path="TiledMap editor example-/Candles/AnimatedSprite2"]
+[editable path="TiledMap editor example-/Candles/AnimatedSprite3"]
+[editable path="TiledMap editor example-/Candles/AnimatedSprite4"]
+[editable path="TiledMap editor example-/Candles/AnimatedSprite5"]
+[editable path="TiledMap editor example-/Candles/AnimatedSprite6"]
+[editable path="TiledMap editor example-/Candles/AnimatedSprite7"]
+[editable path="TiledMap editor example-/Candles/AnimatedSprite8"]
+[editable path="TiledMap editor example-/Candles/AnimatedSprite9"]
+[editable path="TiledMap editor example-/Candles/AnimatedSprite15"]
+[editable path="TiledMap editor example-/Candles/AnimatedSprite16"]
+[editable path="TiledMap editor example-/Candles/AnimatedSprite10"]
+[editable path="TiledMap editor example-/Candles/AnimatedSprite11"]
+[editable path="TiledMap editor example-/Candles/AnimatedSprite14"]
+[editable path="TiledMap editor example-/Candles/AnimatedSprite12"]
+[editable path="TiledMap editor example-/Candles/AnimatedSprite13"]
+[editable path="TiledMap editor example-/Candles/AnimatedSprite17"]
+[editable path="TiledMap editor example-/Trap/AnimatedSprite"]
+[editable path="Player"]
+[editable path="Player/UI"]
+[editable path="Player/UI/PlayerUI"]

@@ -1,0 +1,52 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://Assets/Texture/charactor/Shield_Idle_07.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Texture/charactor/Shield_Idle_06.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Texture/charactor/Shield_Idle_03.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Texture/charactor/Shield_Idle_08.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Texture/charactor/Shield_Idle_01.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Texture/charactor/Shield_Idle_04.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Texture/charactor/Shield_Idle_02.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Texture/charactor/Shield_Idle_05.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Texture/charactor/Shield_Create_03.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Texture/charactor/Shield_Create_07.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Texture/charactor/Shield_Break_09.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Texture/charactor/Shield_Break_10.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Texture/charactor/Shield_Break_03.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Texture/charactor/Shield_Create_06.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Texture/charactor/Shield_Break_08.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Texture/charactor/Shield_Break_04.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Texture/charactor/Shield_Create_05.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Texture/charactor/Shield_Break_01.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Texture/charactor/Shield_Break_07.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Texture/charactor/Shield_Break_05.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Texture/charactor/Shield_Break_02.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Texture/charactor/Shield_Create_04.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Texture/charactor/Shield_Break_06.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Texture/charactor/Shield_Create_01.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Texture/charactor/Shield_Create_02.png" type="Texture" id=25]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 9 ), ExtResource( 22 ), ExtResource( 17 ), ExtResource( 14 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "Create",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 21 ), ExtResource( 13 ), ExtResource( 16 ), ExtResource( 20 ), ExtResource( 23 ), ExtResource( 19 ), ExtResource( 15 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "Break",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 10.0
+} ]
+
+[node name="AnimatedSprite" type="AnimatedSprite"]
+position = Vector2( 350, 266 )
+frames = SubResource( 1 )
+animation = "Create"
+frame = 2
+playing = true

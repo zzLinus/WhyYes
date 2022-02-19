@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SPLAT Crush 01.ogg-5540e74f901727f4d49aed9f05f8727b.oggstr"
+
+[deps]
+
+source_file="res://Assets/SoundEffects/SPLAT Crush 01.ogg"
+dest_files=[ "res://.import/SPLAT Crush 01.ogg-5540e74f901727f4d49aed9f05f8727b.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

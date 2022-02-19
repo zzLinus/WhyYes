@@ -1,0 +1,20 @@
+[remap]
+
+importer="vnen.tiled_tileset_importer"
+type="TileSet"
+path="res://.import/Declorations.tsx-900703f6c9f80ec551ece0c513ef09f2.res"
+
+[deps]
+
+source_file="res://Assets/Texture/DungeonMap/Declorations.tsx"
+dest_files=[ "res://.import/Declorations.tsx-900703f6c9f80ec551ece0c513ef09f2.res" ]
+
+[params]
+
+custom_properties=true
+tile_metadata=false
+image_flags=7
+embed_internal_images=false
+save_tiled_properties=false
+apply_offset=false
+post_import_script=""

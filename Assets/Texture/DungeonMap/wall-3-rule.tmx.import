@@ -1,0 +1,22 @@
+[remap]
+
+importer="vnen.tiled_importer"
+type="PackedScene"
+path="res://.import/wall-3-rule.tmx-344f737f4c627453cdc11b53d7e76851.scn"
+
+[deps]
+
+source_file="res://Assets/Texture/DungeonMap/wall-3-rule.tmx"
+dest_files=[ "res://.import/wall-3-rule.tmx-344f737f4c627453cdc11b53d7e76851.scn" ]
+
+[params]
+
+custom_properties=true
+tile_metadata=false
+uv_clip=true
+image_flags=7
+collision_layer=1
+embed_internal_images=false
+save_tiled_properties=false
+add_background=true
+post_import_script=""
