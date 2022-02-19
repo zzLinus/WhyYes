@@ -1,4 +1,4 @@
-[gd_scene load_steps=255 format=2]
+[gd_scene load_steps=283 format=2]
 
 [ext_resource path="res://Scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Texture/charactor/Player_Idle_04.png" type="Texture" id=2]
@@ -204,11 +204,38 @@
 [ext_resource path="res://Assets/SoundEffects/SWIPE Whoosh Double 01.wav" type="AudioStream" id=202]
 [ext_resource path="res://Scenes/DarkmagicEffect.tscn" type="PackedScene" id=203]
 [ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=204]
+[ext_resource path="res://Assets/Texture/charactor/Player_Roll_03.png" type="Texture" id=205]
+[ext_resource path="res://Assets/Texture/charactor/Player_Roll_01.png" type="Texture" id=206]
+[ext_resource path="res://Assets/Texture/charactor/Player_Roll_02.png" type="Texture" id=207]
+[ext_resource path="res://Assets/Texture/charactor/Player_Roll_05.png" type="Texture" id=208]
+[ext_resource path="res://Assets/Texture/charactor/Player_Roll_07.png" type="Texture" id=209]
+[ext_resource path="res://Assets/Texture/charactor/Player_Roll_09.png" type="Texture" id=210]
+[ext_resource path="res://Assets/Texture/charactor/Player_Roll_11.png" type="Texture" id=211]
+[ext_resource path="res://Assets/Texture/charactor/Player_Roll_10.png" type="Texture" id=212]
+[ext_resource path="res://Assets/Texture/charactor/Player_Roll_08.png" type="Texture" id=213]
+[ext_resource path="res://Assets/Texture/charactor/Player_Roll_04.png" type="Texture" id=214]
+[ext_resource path="res://Assets/Texture/charactor/Player_Roll_06.png" type="Texture" id=215]
+[ext_resource path="res://Assets/Texture/charactor/Player_RollSword_05.png" type="Texture" id=216]
+[ext_resource path="res://Assets/Texture/charactor/Player_RollSword_06.png" type="Texture" id=217]
+[ext_resource path="res://Assets/Texture/charactor/Player_RollSword_07.png" type="Texture" id=218]
+[ext_resource path="res://Assets/Texture/charactor/Player_RollSword_10.png" type="Texture" id=219]
+[ext_resource path="res://Assets/Texture/charactor/Player_RollSword_08.png" type="Texture" id=220]
+[ext_resource path="res://Assets/Texture/charactor/Player_RollSword_09.png" type="Texture" id=221]
+[ext_resource path="res://Assets/Texture/charactor/Player_RollSword_02.png" type="Texture" id=222]
+[ext_resource path="res://Assets/Texture/charactor/Player_RollSword_01.png" type="Texture" id=223]
+[ext_resource path="res://Assets/Texture/charactor/Player_RollSword_11.png" type="Texture" id=224]
+[ext_resource path="res://Assets/Texture/charactor/Player_RollSword_03.png" type="Texture" id=225]
+[ext_resource path="res://Assets/Texture/charactor/Player_RollSword_04.png" type="Texture" id=226]
 
 [sub_resource type="CapsuleShape2D" id=41]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 206 ), ExtResource( 207 ), ExtResource( 205 ), ExtResource( 214 ), ExtResource( 208 ), ExtResource( 215 ), ExtResource( 209 ), ExtResource( 213 ), ExtResource( 210 ), ExtResource( 212 ), ExtResource( 211 ) ],
+"loop": true,
+"name": "PlayerRoll",
+"speed": 15.0
+}, {
 "frames": [ ExtResource( 187 ), ExtResource( 174 ), ExtResource( 151 ), ExtResource( 183 ), ExtResource( 181 ), ExtResource( 162 ), ExtResource( 178 ), ExtResource( 175 ), ExtResource( 172 ), ExtResource( 171 ), ExtResource( 185 ), ExtResource( 169 ), ExtResource( 168 ) ],
 "loop": true,
 "name": "WSPlayerAttack3",
@@ -287,6 +314,11 @@ animations = [ {
 "frames": [ ExtResource( 68 ), ExtResource( 72 ), ExtResource( 67 ), ExtResource( 66 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 69 ), ExtResource( 73 ) ],
 "loop": true,
 "name": "WSPlayerParryWithoutHit",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 223 ), ExtResource( 222 ), ExtResource( 225 ), ExtResource( 226 ), ExtResource( 216 ), ExtResource( 217 ), ExtResource( 218 ), ExtResource( 220 ), ExtResource( 221 ), ExtResource( 219 ), ExtResource( 224 ) ],
+"loop": true,
+"name": "WSPlayerRoll",
 "speed": 15.0
 } ]
 
@@ -469,6 +501,47 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
 
+[sub_resource type="Animation" id=53]
+resource_name = "PlayerRoll"
+length = 0.733333
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "PlayerRoll" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533333, 0.6, 0.666667 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("..:doingDash")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.666667 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
 [sub_resource type="Animation" id=7]
 resource_name = "PlayerRun"
 length = 0.4
@@ -532,6 +605,66 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id=3]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "PlayerRoll" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("..:doingAction")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("..:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 399, 298 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("..:doingDash")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=8]
 resource_name = "TSPlayerPutAwaySword"
@@ -1135,6 +1268,47 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 }
 
+[sub_resource type="Animation" id=52]
+resource_name = "WSPlayerRoll"
+length = 0.733333
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "WSPlayerRoll" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533333, 0.6, 0.666667 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("..:doingDash")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.666667 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
 [sub_resource type="Animation" id=13]
 resource_name = "WSPlayerRun"
 length = 0.35
@@ -1300,8 +1474,14 @@ animation = "WSPlayerStopAttack"
 [sub_resource type="AnimationNodeAnimation" id=49]
 animation = "PlayerDash"
 
+[sub_resource type="AnimationNodeAnimation" id=54]
+animation = "WSPlayerRoll"
+
 [sub_resource type="AnimationNodeAnimation" id=21]
 animation = "PlayerGetHit"
+
+[sub_resource type="AnimationNodeAnimation" id=55]
+animation = "PlayerRoll"
 
 [sub_resource type="AnimationNodeAnimation" id=22]
 animation = "PlayerRun"
@@ -1328,7 +1508,7 @@ animation = "WSPlayerAttack1"
 animation = "PlayerIdle"
 
 [sub_resource type="AnimationNodeTransition" id=20]
-input_count = 6
+input_count = 7
 input_0/name = "PlayerIdle"
 input_0/auto_advance = false
 input_1/name = "PlayerRun"
@@ -1341,6 +1521,8 @@ input_4/name = "PutAwaySword"
 input_4/auto_advance = false
 input_5/name = "PlayerDash"
 input_5/auto_advance = false
+input_6/name = "PlayerRoll"
+input_6/auto_advance = false
 
 [sub_resource type="AnimationNodeTransition" id=24]
 input_count = 2
@@ -1361,10 +1543,14 @@ input_1/auto_advance = false
 
 [sub_resource type="AnimationNodeTimeScale" id=50]
 
+[sub_resource type="AnimationNodeTimeScale" id=56]
+
+[sub_resource type="AnimationNodeTimeScale" id=57]
+
 [sub_resource type="AnimationNodeTimeScale" id=40]
 
 [sub_resource type="AnimationNodeTransition" id=28]
-input_count = 10
+input_count = 11
 input_0/name = "WSPlayerParry"
 input_0/auto_advance = false
 input_1/name = "WSPlayerIdle"
@@ -1385,9 +1571,11 @@ input_8/name = "WSPlayerAttack3"
 input_8/auto_advance = false
 input_9/name = "TakeSword"
 input_9/auto_advance = false
+input_10/name = "WSPlayerRoll"
+input_10/auto_advance = false
 
 [sub_resource type="AnimationNodeBlendTree" id=19]
-graph_offset = Vector2( -228.609, -426.942 )
+graph_offset = Vector2( 1066.63, -407.872 )
 nodes/Animation/node = SubResource( 18 )
 nodes/Animation/position = Vector2( 360, 140 )
 "nodes/Animation 10/node" = SubResource( 29 )
@@ -1408,8 +1596,12 @@ nodes/Animation/position = Vector2( 360, 140 )
 "nodes/Animation 17/position" = Vector2( -60, 40 )
 "nodes/Animation 18/node" = SubResource( 49 )
 "nodes/Animation 18/position" = Vector2( 320, 760 )
+"nodes/Animation 19/node" = SubResource( 54 )
+"nodes/Animation 19/position" = Vector2( 900, -180 )
 "nodes/Animation 2/node" = SubResource( 21 )
 "nodes/Animation 2/position" = Vector2( 360, 500 )
+"nodes/Animation 20/node" = SubResource( 55 )
+"nodes/Animation 20/position" = Vector2( 1060, 360 )
 "nodes/Animation 3/node" = SubResource( 22 )
 "nodes/Animation 3/position" = Vector2( 360, 260 )
 "nodes/Animation 4/node" = SubResource( 23 )
@@ -1417,7 +1609,7 @@ nodes/Animation/position = Vector2( 360, 140 )
 "nodes/Animation 5/node" = SubResource( 25 )
 "nodes/Animation 5/position" = Vector2( 300, 620 )
 "nodes/Animation 6/node" = SubResource( 26 )
-"nodes/Animation 6/position" = Vector2( 740, -100 )
+"nodes/Animation 6/position" = Vector2( 580, -120 )
 "nodes/Animation 7/node" = SubResource( 35 )
 "nodes/Animation 7/position" = Vector2( -40, -420 )
 "nodes/Animation 8/node" = SubResource( 36 )
@@ -1425,7 +1617,7 @@ nodes/Animation/position = Vector2( 360, 140 )
 "nodes/Animation 9/node" = SubResource( 37 )
 "nodes/Animation 9/position" = Vector2( -20, -520 )
 nodes/NMTransition/node = SubResource( 20 )
-nodes/NMTransition/position = Vector2( 1080, 0 )
+nodes/NMTransition/position = Vector2( 1100, -20 )
 nodes/PlayerState/node = SubResource( 24 )
 nodes/PlayerState/position = Vector2( 1600, -100 )
 nodes/StopAttack/node = SubResource( 42 )
@@ -1442,10 +1634,14 @@ nodes/TimeScale/position = Vector2( 220, -500 )
 "nodes/TimeScale 3/position" = Vector2( 220, -140 )
 "nodes/TimeScale 4/node" = SubResource( 50 )
 "nodes/TimeScale 4/position" = Vector2( 540, 760 )
+"nodes/TimeScale 5/node" = SubResource( 56 )
+"nodes/TimeScale 5/position" = Vector2( 1240, 360 )
+"nodes/TimeScale 6/node" = SubResource( 57 )
+"nodes/TimeScale 6/position" = Vector2( 1100, -200 )
 nodes/WSTransition/node = SubResource( 28 )
 nodes/WSTransition/position = Vector2( 960, -620 )
 nodes/output/position = Vector2( 1880, -60 )
-node_connections = [ "output", 0, "PlayerState", "NMTransition", 0, "Animation", "NMTransition", 1, "Animation 3", "NMTransition", 2, "Animation 4", "NMTransition", 3, "Animation 2", "NMTransition", 4, "Animation 5", "NMTransition", 5, "TimeScale 4", "PlayerState", 0, "WSTransition", "PlayerState", 1, "NMTransition", "StopAttack", 0, "TimeScale", "StopAttack", 1, "Animation 7", "StopAttack2", 0, "TimeScale 2", "StopAttack2", 1, "Animation 16", "StopAttack3", 0, "TimeScale 3", "StopAttack3", 1, "Animation 17", "TimeScale", 0, "Animation 9", "TimeScale 2", 0, "Animation 15", "TimeScale 3", 0, "Animation 11", "TimeScale 4", 0, "Animation 18", "WSTransition", 0, "Animation 14", "WSTransition", 1, "Animation 13", "WSTransition", 2, "Animation 12", "WSTransition", 3, "Animation 10", "WSTransition", 5, "Animation 8", "WSTransition", 6, "StopAttack", "WSTransition", 7, "StopAttack2", "WSTransition", 8, "StopAttack3", "WSTransition", 9, "Animation 6" ]
+node_connections = [ "output", 0, "PlayerState", "TimeScale 6", 0, "Animation 19", "TimeScale 5", 0, "Animation 20", "NMTransition", 0, "Animation", "NMTransition", 1, "Animation 3", "NMTransition", 2, "Animation 4", "NMTransition", 3, "Animation 2", "NMTransition", 4, "Animation 5", "NMTransition", 5, "TimeScale 4", "NMTransition", 6, "TimeScale 5", "PlayerState", 0, "WSTransition", "PlayerState", 1, "NMTransition", "StopAttack", 0, "TimeScale", "StopAttack", 1, "Animation 7", "StopAttack2", 0, "TimeScale 2", "StopAttack2", 1, "Animation 16", "StopAttack3", 0, "TimeScale 3", "StopAttack3", 1, "Animation 17", "TimeScale", 0, "Animation 9", "TimeScale 2", 0, "Animation 15", "TimeScale 3", 0, "Animation 11", "TimeScale 4", 0, "Animation 18", "WSTransition", 0, "Animation 14", "WSTransition", 1, "Animation 13", "WSTransition", 2, "Animation 12", "WSTransition", 3, "Animation 10", "WSTransition", 5, "Animation 8", "WSTransition", 6, "StopAttack", "WSTransition", 7, "StopAttack2", "WSTransition", 8, "StopAttack3", "WSTransition", 9, "Animation 6", "WSTransition", 10, "TimeScale 6" ]
 
 [sub_resource type="CapsuleShape2D" id=47]
 height = 43.999
@@ -1460,6 +1656,7 @@ collision_layer = 4
 collision_mask = 11
 script = ExtResource( 1 )
 doingAction = true
+doingDash = true
 runSmokeEffect = ExtResource( 170 )
 enemyHitEffect = ExtResource( 173 )
 blood = ExtResource( 201 )
@@ -1477,8 +1674,7 @@ shape = SubResource( 41 )
 position = Vector2( 12, -8 )
 scale = Vector2( 1.8015, 1.91911 )
 frames = SubResource( 1 )
-animation = "PlayerIdle"
-frame = 5
+animation = "PlayerRoll"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite")
@@ -1486,6 +1682,7 @@ anims/PlayerDash = SubResource( 48 )
 anims/PlayerDeath = SubResource( 6 )
 anims/PlayerGetHit = SubResource( 5 )
 anims/PlayerIdle = SubResource( 4 )
+anims/PlayerRoll = SubResource( 53 )
 anims/PlayerRun = SubResource( 7 )
 anims/RESET = SubResource( 3 )
 anims/TSPlayerPutAwaySword = SubResource( 8 )
@@ -1497,13 +1694,13 @@ anims/WSPlayerGetHit = SubResource( 10 )
 anims/WSPlayerIdle = SubResource( 2 )
 anims/WSPlayerParry = SubResource( 11 )
 anims/WSPlayerParryWithoutHit = SubResource( 12 )
+anims/WSPlayerRoll = SubResource( 52 )
 anims/WSPlayerRun = SubResource( 13 )
 anims/WSPlayerStopAttack = SubResource( 14 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 19 )
 anim_player = NodePath("../AnimationPlayer")
-active = true
 parameters/NMTransition/current = 0
 parameters/PlayerState/current = 1
 parameters/StopAttack/active = false
@@ -1513,6 +1710,8 @@ parameters/TimeScale/scale = 2.0
 "parameters/TimeScale 2/scale" = 2.0
 "parameters/TimeScale 3/scale" = 2.2
 "parameters/TimeScale 4/scale" = 2.0
+"parameters/TimeScale 5/scale" = 2.0
+"parameters/TimeScale 6/scale" = 2.0
 parameters/WSTransition/current = 1
 
 [node name="PlayerShadow" type="Sprite" parent="."]

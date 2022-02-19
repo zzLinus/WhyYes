@@ -1,6 +1,7 @@
 extends KinematicBody2D
 export(bool) var doingAction
 export(bool) var doingTrans
+export(bool) var doingDash
 
 export(PackedScene) var runSmokeEffect: PackedScene
 export(PackedScene) var enemyHitEffect: PackedScene
@@ -28,7 +29,7 @@ onready var dashSound = $Dash
 onready var interrupTimer = $InterruTimer
 
 enum SWstate { WITHSWORD, WOSWORD }
-enum NMstate { IDLE, RUN, DEATH, GETHIT, PUTSWORD, DASH }
+enum NMstate { IDLE, RUN, DEATH, GETHIT, PUTSWORD, DASH , ROLL }
 enum WSstate {
 	PARRY,
 	IDLE,
@@ -39,7 +40,8 @@ enum WSstate {
 	ATTACK1,
 	ATTACK2,
 	ATTACK3,
-	TAKESWORD
+	TAKESWORD,
+	ROLL
 }
 
 signal healthChanged(damage)
@@ -51,6 +53,7 @@ func _ready():
 	global_scale *= 0.7
 	doingTrans = false
 	doingAction = false
+	doingDash = false
 	comboAction = WSstate.ATTACK1
 	interrupTimer.wait_time = interrupCD
 
@@ -71,14 +74,19 @@ func _ready():
 func _process(delta):
 	AutoloadScript.playerData.playerPos = global_position
 	#switch animation group
-	if !doingAction:
+	if !doingAction && !doingDash:
 		handlePlayerState()
 
 	#switch animation in norm state animgroup or ws animgroup
 	if !doingTrans:
 		handlePlayerAnim()
 
-	if !doingTrans && !doingAction:
+	if doingDash && global_scale.y < 0:
+		move_and_slide(Vector2(-200,0))
+	elif doingDash && global_scale.y > 0:
+		move_and_slide(Vector2(200,0))
+
+	if !doingTrans && !doingAction && !doingDash:
 		isRunning = handleMovement(delta)
 
 
@@ -90,10 +98,14 @@ func handlePlayerAnim():
 
 
 func handleWithSwordAnim():
-	if Input.is_action_just_pressed("attack") && (!comboTimer.is_stopped() || !doingAction):
+	if Input.is_action_just_pressed("attack") && (!comboTimer.is_stopped() || !doingAction) && !doingDash:
 		handleAttackAnim()
 		return
-	elif !doingAction:
+	elif Input.is_action_just_pressed("Roll") && !doingAction:
+		print("ROLL")
+		animTree.set("parameters/WSTransition/current", WSstate.ROLL)
+		return
+	elif !doingAction && !doingDash:
 		if isRunning == true:
 			animTree.set("parameters/WSTransition/current", WSstate.RUN)
 		else:
@@ -101,10 +113,13 @@ func handleWithSwordAnim():
 
 
 func handleNormAnim():
-	if Input.is_action_just_pressed("Dash"):
+	if Input.is_action_just_pressed("Dash") && !doingDash:
 		animTree.set("parameters/NMTransition/current", NMstate.DASH)
 		doingAction = true
-	elif !doingAction:
+	elif Input.is_action_just_pressed("Roll"):
+		animTree.set("parameters/NMTransition/current", NMstate.ROLL)
+		return
+	elif !doingAction && !doingDash:
 		if isRunning == true:
 			animTree.set("parameters/NMTransition/current", NMstate.RUN)
 		else:

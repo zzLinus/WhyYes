@@ -54,9 +54,21 @@ func _process(delta):
 		animTree.set("parameters/EnemyState/current", enemyState.IDLE)
 
 	if (playerPos - global_position).abs() < Vector2(100, 100) && !isAttain:
+		isAttain = true
 		attainSprite.visible = true
 		attainSprite.play("Active")
 		#handle enemy turning
+		if isLeft && !isLookLeft:
+			animTree.set("parameters/EnemyState/current", enemyState.TURN)
+			print("is on left")
+			doingAction = true
+			isLookLeft = true
+		elif !isLeft && isLookLeft:
+			animTree.set("parameters/EnemyState/current", enemyState.TURN)
+			print("is on right")
+			doingAction = true
+			isLookLeft = false 
+	elif isAttain:
 		if isLeft && !isLookLeft:
 			animTree.set("parameters/EnemyState/current", enemyState.TURN)
 			print("is on left")
@@ -183,6 +195,5 @@ func death():
 
 
 func _on_enemyAttaintion_animation_finished():
-	isAttain = true
 	attainSprite.visible = false
 	attainSprite.stop()
