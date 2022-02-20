@@ -269,6 +269,18 @@ tracks/3/keys = {
 "method": "framefreeze"
 } ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("AnimatedSprite:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "EnemyIdle"
@@ -379,6 +391,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [ true, false ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("AnimatedSprite:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.533334 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
 
 [sub_resource type="Animation" id=33]
 resource_name = "Turn"
@@ -476,7 +500,7 @@ input_4/name = "EnemyTurn"
 input_4/auto_advance = false
 
 [sub_resource type="AnimationNodeBlendTree" id=7]
-graph_offset = Vector2( -125.088, 122.731 )
+graph_offset = Vector2( 0, 212 )
 nodes/Animation/node = SubResource( 9 )
 nodes/Animation/position = Vector2( 20, 140 )
 "nodes/Animation 2/node" = SubResource( 8 )
@@ -572,14 +596,13 @@ animations = [ {
 position = Vector2( 407, 286 )
 scale = Vector2( 2, 2 )
 script = ExtResource( 11 )
-doingAction = true
 playerHitEffect = ExtResource( 21 )
 blood = ExtResource( 46 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -93, -9 )
 frames = SubResource( 1 )
-animation = "Turn"
+animation = "GetHit"
 offset = Vector2( 99, 0 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

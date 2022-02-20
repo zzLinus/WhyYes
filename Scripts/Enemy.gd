@@ -45,14 +45,15 @@ func _process(delta):
 	var playerPos : Vector2 = AutoloadScript.playerData.playerPos
 	var isLeft : bool = (global_position.x - playerPos.x > 0)
 	var gameObject = detectPlayer.get_collider()
+
+	#handle attack
 	if gameObject != null && gameObject.name == "HurtBox" && !doingAction:
 		doingAction = true
 		animTree.set("parameters/EnemyState/current", enemyState.ATTACK)
 		print("attack!!")
 
-	if !doingAction:
-		animTree.set("parameters/EnemyState/current", enemyState.IDLE)
 
+	#handle turning
 	if (playerPos - global_position).abs() < Vector2(100, 100) && !isAttain:
 		isAttain = true
 		attainSprite.visible = true
@@ -84,6 +85,23 @@ func _process(delta):
 		isAttain = false
 		attainSprite.stop()
 
+	if !doingAction:
+		var diraction = HandleMovement(playerPos)
+		diraction = diraction.normalized()
+		move_and_slide(diraction * 100)
+
+
+	#default behaviour
+	if !doingAction:
+		animTree.set("parameters/EnemyState/current", enemyState.IDLE)
+
+
+
+func HandleMovement(playerpos) -> Vector2:
+	var diraction : Vector2
+	diraction = playerpos - global_position
+	animTree.set("parameter/EnemyState/current", enemyState.RUN)
+	return diraction 
 
 
 
