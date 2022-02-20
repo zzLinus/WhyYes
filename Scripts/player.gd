@@ -60,6 +60,7 @@ func _ready():
 	if AutoloadScript.playerData.playerIsFirstLoad:
 		playerHealth = 100
 		playerState = SWstate.WOSWORD
+		global_position = Vector2(1080, 1626)
 		AutoloadScript.playerData.playerIsFirstLoad = false
 	else:
 		LoadPlayerData()

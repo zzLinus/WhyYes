@@ -7,6 +7,7 @@ var isLookLeft : bool = true
 var enemyVelocity : Vector2 = Vector2(0 ,0)
 var transformer = Transform2D()
 var interrupCD : float = 2.5
+var attenDisten : int = 150
 
 export(bool) var doingAction
 export(PackedScene) var playerHitEffect: PackedScene
@@ -54,46 +55,48 @@ func _process(delta):
 
 
 	#handle turning
-	if (playerPos - global_position).abs() < Vector2(100, 100) && !isAttain:
-		isAttain = true
-		attainSprite.visible = true
-		attainSprite.play("Active")
-		#handle enemy turning
-		if isLeft && !isLookLeft:
-			animTree.set("parameters/EnemyState/current", enemyState.TURN)
-			print("is on left")
-			doingAction = true
-			isLookLeft = true
-		elif !isLeft && isLookLeft:
-			animTree.set("parameters/EnemyState/current", enemyState.TURN)
-			print("is on right")
-			doingAction = true
-			isLookLeft = false 
-	elif isAttain:
-		if isLeft && !isLookLeft:
-			animTree.set("parameters/EnemyState/current", enemyState.TURN)
-			print("is on left")
-			doingAction = true
-			isLookLeft = true
-		elif !isLeft && isLookLeft:
-			animTree.set("parameters/EnemyState/current", enemyState.TURN)
-			print("is on right")
-			doingAction = true
-			isLookLeft = false 
-	elif (playerPos - global_position).abs() > Vector2(100, 100):
-		attainSprite.visible = false
-		isAttain = false
-		attainSprite.stop()
+	if !doingAction:
+		if (playerPos - global_position).abs() < Vector2(attenDisten, attenDisten) && !isAttain:
+			isAttain = true
+			attainSprite.visible = true
+			attainSprite.play("Active")
+			#handle enemy turning
+			if isLeft && !isLookLeft:
+				animTree.set("parameters/EnemyState/current", enemyState.TURN)
+				print("is on left")
+				doingAction = true
+				isLookLeft = true
+			elif !isLeft && isLookLeft:
+				animTree.set("parameters/EnemyState/current", enemyState.TURN)
+				print("is on right")
+				doingAction = true
+				isLookLeft = false 
+		elif (playerPos - global_position).abs() > Vector2(attenDisten, attenDisten):
+			attainSprite.visible = false
+			isAttain = false
+			print("not attaention")
+			attainSprite.stop()
+		elif isAttain:
+			if isLeft && !isLookLeft:
+				animTree.set("parameters/EnemyState/current", enemyState.TURN)
+				print("is on left")
+				doingAction = true
+				isLookLeft = true
+			elif !isLeft && isLookLeft:
+				animTree.set("parameters/EnemyState/current", enemyState.TURN)
+				print("is on right")
+				doingAction = true
+				isLookLeft = false 
+
 
 	if !doingAction:
-		var diraction = HandleMovement(playerPos)
-		diraction = diraction.normalized()
-		move_and_slide(diraction * 100)
-
-
-	#default behaviour
-	if !doingAction:
-		animTree.set("parameters/EnemyState/current", enemyState.IDLE)
+		if !isAttain:
+			animTree.set("parameters/EnemyState/current", enemyState.IDLE)
+		else:
+			var diraction = HandleMovement(playerPos)
+			diraction = diraction.normalized()
+			move_and_slide(diraction * 100)
+			animTree.set("parameters/EnemyState/current", enemyState.RUN)
 
 
 
