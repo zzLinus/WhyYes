@@ -97,6 +97,7 @@ func handlePlayerAnim():
 		handleWithSwordAnim()
 
 
+
 func handleWithSwordAnim():
 	if Input.is_action_just_pressed("attack") && (!comboTimer.is_stopped() || !doingAction) && !doingDash:
 		handleAttackAnim()
