@@ -82,10 +82,11 @@ func _process(delta):
 	if !doingTrans:
 		handlePlayerAnim()
 
+	#handle dash movement
 	if doingDash && global_scale.y < 0:
-		move_and_slide(Vector2(-200,0))
+		move_and_slide(Vector2(-350,0))
 	elif doingDash && global_scale.y > 0:
-		move_and_slide(Vector2(200,0))
+		move_and_slide(Vector2(350,0))
 
 	if !doingTrans && !doingAction && !doingDash:
 		isRunning = handleMovement(delta)
@@ -104,7 +105,6 @@ func handleWithSwordAnim():
 		handleAttackAnim()
 		return
 	elif Input.is_action_just_pressed("Roll") && !doingAction:
-		print("ROLL")
 		animTree.set("parameters/WSTransition/current", WSstate.ROLL)
 		return
 	elif !doingAction && !doingDash:
@@ -118,7 +118,7 @@ func handleNormAnim():
 	if Input.is_action_just_pressed("Dash") && !doingDash:
 		animTree.set("parameters/NMTransition/current", NMstate.DASH)
 		doingAction = true
-	elif Input.is_action_just_pressed("Roll"):
+	elif Input.is_action_just_pressed("Roll") && !doingAction:
 		animTree.set("parameters/NMTransition/current", NMstate.ROLL)
 		return
 	elif !doingAction && !doingDash:
@@ -280,7 +280,6 @@ func _on_HurtBox_area_entered(area: Area2D):
 		cameraShake.Start()
 	elif area.name == "PhyTrapHitBox":
 		damage = area.trapDamage[area.get_parent().trapType]
-		hurtSound.play()
 		cameraShake.Start()
 	elif area.name == "Magic":
 		damage = 10
@@ -289,9 +288,10 @@ func _on_HurtBox_area_entered(area: Area2D):
 
 
 	if damage != 0:
-		spawnEffect(enemyHitEffect, global_position + Vector2(-10, 10))
 		playerHealth -= damage
-		emit_signal("healthChanged", damage)
+		if area.name != "PhyTrapHitBox":
+			spawnEffect(enemyHitEffect, global_position + Vector2(-10, 10))
+			emit_signal("healthChanged", damage)
 
 	if playerHealth <= 0:
 		death()

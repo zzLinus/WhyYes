@@ -1,5 +1,5 @@
 extends Area2D
-var trapDamage = [20, 30, 40, 50, 60, 70]
+var trapDamage = [100, 100, 100, 100, 100, 100]
 
 
 # Called when the node enters the scene tree for the first time.

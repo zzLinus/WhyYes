@@ -110,6 +110,8 @@ Roll={
 2d_physics/layer_7="PlayerHurtBox"
 2d_physics/layer_8="ChangeZ"
 2d_physics/layer_9="Projectile"
+2d_physics/layer_10="PlayerDrop"
+2d_physics/layer_11="DropHitBox"
 
 [physics]
 

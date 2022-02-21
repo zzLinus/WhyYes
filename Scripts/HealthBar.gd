@@ -2,10 +2,12 @@ extends TextureProgress
 
 onready var tween = $Tween
 
+var initScale
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print(get_parent())
+	initScale= rect_scale
 	if get_parent().name != "Enemy":
 		rect_scale = Vector2(4, 4)
 	if get_parent().name == "Enemy":
@@ -16,6 +18,10 @@ func _ready():
 		max_value = AutoloadScript.playerData.playerMaxHealth
 		value = AutoloadScript.playerData.playerHealth
 		print("playerMaxHealth" + str(max_value))
+
+
+func _process(delta):
+	pass
 
 
 func animHealthBar(start, end):

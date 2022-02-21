@@ -357,7 +357,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 1.6 ),
+"times": PoolRealArray( 1.53333 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
@@ -375,6 +375,18 @@ tracks/3/keys = {
 "args": [  ],
 "method": "playerDash"
 } ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../HurtBox/HurtboxColli:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1.53333 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -413,6 +425,18 @@ tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0.55 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("..:doingAction")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
@@ -465,6 +489,18 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("..:doingDash")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
 "times": PoolRealArray( 0.4 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -536,7 +572,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.666667 ),
+"times": PoolRealArray( 0, 0.733333 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -605,66 +641,6 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id=3]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ "PlayerRoll" ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("..:doingAction")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ true ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("..:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 399, 298 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("..:doingDash")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ true ]
-}
 
 [sub_resource type="Animation" id=8]
 resource_name = "TSPlayerPutAwaySword"
@@ -1179,6 +1155,18 @@ tracks/6/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/7/type = "value"
+tracks/7/path = NodePath("..:doingDash")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.45 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "WSPlayerIdle"
@@ -1641,7 +1629,7 @@ nodes/TimeScale/position = Vector2( 220, -500 )
 nodes/WSTransition/node = SubResource( 28 )
 nodes/WSTransition/position = Vector2( 960, -620 )
 nodes/output/position = Vector2( 1880, -60 )
-node_connections = [ "output", 0, "PlayerState", "TimeScale 6", 0, "Animation 19", "TimeScale 5", 0, "Animation 20", "NMTransition", 0, "Animation", "NMTransition", 1, "Animation 3", "NMTransition", 2, "Animation 4", "NMTransition", 3, "Animation 2", "NMTransition", 4, "Animation 5", "NMTransition", 5, "TimeScale 4", "NMTransition", 6, "TimeScale 5", "PlayerState", 0, "WSTransition", "PlayerState", 1, "NMTransition", "StopAttack", 0, "TimeScale", "StopAttack", 1, "Animation 7", "StopAttack2", 0, "TimeScale 2", "StopAttack2", 1, "Animation 16", "StopAttack3", 0, "TimeScale 3", "StopAttack3", 1, "Animation 17", "TimeScale", 0, "Animation 9", "TimeScale 2", 0, "Animation 15", "TimeScale 3", 0, "Animation 11", "TimeScale 4", 0, "Animation 18", "WSTransition", 0, "Animation 14", "WSTransition", 1, "Animation 13", "WSTransition", 2, "Animation 12", "WSTransition", 3, "Animation 10", "WSTransition", 5, "Animation 8", "WSTransition", 6, "StopAttack", "WSTransition", 7, "StopAttack2", "WSTransition", 8, "StopAttack3", "WSTransition", 9, "Animation 6", "WSTransition", 10, "TimeScale 6" ]
+node_connections = [ "output", 0, "PlayerState", "NMTransition", 0, "Animation", "NMTransition", 1, "Animation 3", "NMTransition", 2, "Animation 4", "NMTransition", 3, "Animation 2", "NMTransition", 4, "Animation 5", "NMTransition", 5, "TimeScale 4", "NMTransition", 6, "TimeScale 5", "PlayerState", 0, "WSTransition", "PlayerState", 1, "NMTransition", "StopAttack", 0, "TimeScale", "StopAttack", 1, "Animation 7", "StopAttack2", 0, "TimeScale 2", "StopAttack2", 1, "Animation 16", "StopAttack3", 0, "TimeScale 3", "StopAttack3", 1, "Animation 17", "TimeScale", 0, "Animation 9", "TimeScale 2", 0, "Animation 15", "TimeScale 3", 0, "Animation 11", "TimeScale 4", 0, "Animation 18", "TimeScale 5", 0, "Animation 20", "TimeScale 6", 0, "Animation 19", "WSTransition", 0, "Animation 14", "WSTransition", 1, "Animation 13", "WSTransition", 2, "Animation 12", "WSTransition", 3, "Animation 10", "WSTransition", 5, "Animation 8", "WSTransition", 6, "StopAttack", "WSTransition", 7, "StopAttack2", "WSTransition", 8, "StopAttack3", "WSTransition", 9, "Animation 6", "WSTransition", 10, "TimeScale 6" ]
 
 [sub_resource type="CapsuleShape2D" id=47]
 height = 43.999
@@ -1653,10 +1641,9 @@ position = Vector2( 399, 298 )
 z_index = 3
 z_as_relative = false
 collision_layer = 4
-collision_mask = 11
+collision_mask = 27
 script = ExtResource( 1 )
 doingAction = true
-doingDash = true
 runSmokeEffect = ExtResource( 170 )
 enemyHitEffect = ExtResource( 173 )
 blood = ExtResource( 201 )
@@ -1747,6 +1734,7 @@ script = ExtResource( 147 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBoxForAttack1"]
 polygon = PoolVector2Array( -26, 24, -14, 42, -4, 46, 2, 48, 8, 46, 12, 34, 10, 16, 12, 8, 20, -2, 60, -28, 64, -14, 66, -8, 66, -2, 66, 24, 62, 36, 50, 48, 42, 56, 28, 62, 20, 64, 10, 66, -8, 64, -36, 56, -50, 40, -50, 34 )
+disabled = true
 
 [node name="HitBoxForAttack2" type="Area2D" parent="."]
 collision_layer = 16
@@ -1755,6 +1743,7 @@ script = ExtResource( 147 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBoxForAttack2"]
 polygon = PoolVector2Array( 22, -10, 74, -10, 88, 16, 72, 38, 18, 38, 12, 26, 12, 2 )
+disabled = true
 
 [node name="HitBoxForAttack3" type="Area2D" parent="."]
 collision_layer = 16
@@ -1764,6 +1753,7 @@ script = ExtResource( 147 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBoxForAttack3"]
 position = Vector2( 8, -2 )
 polygon = PoolVector2Array( -16, -34, -22, -62, -12, -74, 8, -80, 32, -82, 46, -78, 62, -74, 70, -64, 80, -56, 88, -38, 92, -24, 94, -14, 96, 0, 94, 16, 94, 26, 92, 38, 90, 46, 86, 54, 16, 46, 10, 38, 18, 16, 16, -18 )
+disabled = true
 
 [node name="BladeSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 144 )
@@ -1782,8 +1772,8 @@ stream = ExtResource( 200 )
 stream = ExtResource( 202 )
 
 [node name="InteractWithPortal" type="Area2D" parent="."]
-collision_layer = 4
-collision_mask = 32
+collision_layer = 512
+collision_mask = 1056
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractWithPortal"]
 position = Vector2( 0, 37.9998 )

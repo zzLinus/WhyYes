@@ -7,7 +7,7 @@ var isLookLeft : bool = true
 var enemyVelocity : Vector2 = Vector2(0 ,0)
 var transformer = Transform2D()
 var interrupCD : float = 2.5
-var attenDisten : int = 150
+var attenDisten : int = 250
 
 export(bool) var doingAction
 export(PackedScene) var playerHitEffect: PackedScene
@@ -51,7 +51,6 @@ func _process(delta):
 	if gameObject != null && gameObject.name == "HurtBox" && !doingAction:
 		doingAction = true
 		animTree.set("parameters/EnemyState/current", enemyState.ATTACK)
-		print("attack!!")
 
 
 	#handle turning
@@ -63,28 +62,23 @@ func _process(delta):
 			#handle enemy turning
 			if isLeft && !isLookLeft:
 				animTree.set("parameters/EnemyState/current", enemyState.TURN)
-				print("is on left")
 				doingAction = true
 				isLookLeft = true
 			elif !isLeft && isLookLeft:
 				animTree.set("parameters/EnemyState/current", enemyState.TURN)
-				print("is on right")
 				doingAction = true
 				isLookLeft = false 
 		elif (playerPos - global_position).abs() > Vector2(attenDisten, attenDisten):
 			attainSprite.visible = false
 			isAttain = false
-			print("not attaention")
 			attainSprite.stop()
 		elif isAttain:
 			if isLeft && !isLookLeft:
 				animTree.set("parameters/EnemyState/current", enemyState.TURN)
-				print("is on left")
 				doingAction = true
 				isLookLeft = true
 			elif !isLeft && isLookLeft:
 				animTree.set("parameters/EnemyState/current", enemyState.TURN)
-				print("is on right")
 				doingAction = true
 				isLookLeft = false 
 
@@ -118,6 +112,7 @@ func HandlePlayerTurn():
 
 	transform.x = transformer.x * 2
 	transform.y = transformer.y * 2
+	doingAction = false
 
 
 #TODO:apply damage to enemy

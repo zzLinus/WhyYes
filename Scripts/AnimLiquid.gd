@@ -7,6 +7,7 @@ onready var timer = $Timer
 func _ready():
 	var randNum: float = randf()
 	timer.wait_time = randNum * 2
+	yield(get_tree().create_timer(randNum * 2),"timeout")
 	animPlayer.play("VolcBubble")
 
 

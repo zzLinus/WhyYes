@@ -2,7 +2,7 @@ extends Node
 
 var playerData = {
 	"playerMaxHealth": 100,
-	"playerHealth": 200,
+	"playerHealth": 100,
 	"playerSpeed": 250,
 	"playerState": 1,
 	"playerDoingTrans": false,

@@ -34,55 +34,46 @@ z_index = 2
 z_as_relative = false
 
 [node name="AnimatedSprite" parent="TiledMap editor example-/Candles" index="0"]
-frame = 2
-
-[node name="AnimatedSprite2" parent="TiledMap editor example-/Candles" index="1"]
-frame = 4
-
-[node name="AnimatedSprite3" parent="TiledMap editor example-/Candles" index="2"]
-frame = 2
-
-[node name="AnimatedSprite4" parent="TiledMap editor example-/Candles" index="3"]
-frame = 3
-
-[node name="AnimatedSprite5" parent="TiledMap editor example-/Candles" index="4"]
-frame = 14
-
-[node name="AnimatedSprite6" parent="TiledMap editor example-/Candles" index="5"]
-frame = 6
-
-[node name="AnimatedSprite7" parent="TiledMap editor example-/Candles" index="6"]
-frame = 4
-
-[node name="AnimatedSprite8" parent="TiledMap editor example-/Candles" index="7"]
-frame = 6
-
-[node name="AnimatedSprite9" parent="TiledMap editor example-/Candles" index="8"]
 frame = 1
 
-[node name="AnimatedSprite15" parent="TiledMap editor example-/Candles" index="9"]
-frame = 4
-
-[node name="AnimatedSprite16" parent="TiledMap editor example-/Candles" index="10"]
-frame = 4
-
-[node name="AnimatedSprite10" parent="TiledMap editor example-/Candles" index="11"]
-frame = 13
-
-[node name="AnimatedSprite11" parent="TiledMap editor example-/Candles" index="12"]
-frame = 6
-
-[node name="AnimatedSprite14" parent="TiledMap editor example-/Candles" index="13"]
-frame = 16
-
-[node name="AnimatedSprite12" parent="TiledMap editor example-/Candles" index="14"]
+[node name="AnimatedSprite2" parent="TiledMap editor example-/Candles" index="1"]
 frame = 3
 
-[node name="AnimatedSprite13" parent="TiledMap editor example-/Candles" index="15"]
-frame = 10
+[node name="AnimatedSprite3" parent="TiledMap editor example-/Candles" index="2"]
+frame = 1
 
-[node name="AnimatedSprite17" parent="TiledMap editor example-/Candles" index="16"]
-frame = 10
+[node name="AnimatedSprite5" parent="TiledMap editor example-/Candles" index="4"]
+frame = 15
+
+[node name="AnimatedSprite6" parent="TiledMap editor example-/Candles" index="5"]
+frame = 5
+
+[node name="AnimatedSprite7" parent="TiledMap editor example-/Candles" index="6"]
+frame = 5
+
+[node name="AnimatedSprite8" parent="TiledMap editor example-/Candles" index="7"]
+frame = 5
+
+[node name="AnimatedSprite9" parent="TiledMap editor example-/Candles" index="8"]
+frame = 0
+
+[node name="AnimatedSprite15" parent="TiledMap editor example-/Candles" index="9"]
+frame = 5
+
+[node name="AnimatedSprite16" parent="TiledMap editor example-/Candles" index="10"]
+frame = 5
+
+[node name="AnimatedSprite10" parent="TiledMap editor example-/Candles" index="11"]
+frame = 14
+
+[node name="AnimatedSprite11" parent="TiledMap editor example-/Candles" index="12"]
+frame = 5
+
+[node name="AnimatedSprite14" parent="TiledMap editor example-/Candles" index="13"]
+frame = 17
+
+[node name="AnimatedSprite12" parent="TiledMap editor example-/Candles" index="14"]
+frame = 4
 
 [node name="Trap" type="Node2D" parent="TiledMap editor example-"]
 position = Vector2( -2, 0 )
@@ -233,35 +224,35 @@ frame = 0
 playing = false
 magicType = 0
 magicTrapType = 4
-lifetime = 0.7
+lifetime = 1.0
 
 [node name="AnimatedSprite2" parent="TiledMap editor example-/Trap/MagicTrap" instance=ExtResource( 5 )]
 position = Vector2( 944, 540 )
 frame = 0
 playing = false
 magicTrapType = 3
-lifetime = 0.7
+lifetime = 1.0
 
 [node name="AnimatedSprite3" parent="TiledMap editor example-/Trap/MagicTrap" instance=ExtResource( 5 )]
 position = Vector2( 752, 531 )
 frame = 0
 playing = false
 magicType = 0
-lifetime = 0.7
+lifetime = 1.0
 
 [node name="AnimatedSprite4" parent="TiledMap editor example-/Trap/MagicTrap" instance=ExtResource( 5 )]
 position = Vector2( 484, 528 )
 frame = 0
 playing = false
 magicTrapType = 2
-lifetime = 0.7
+lifetime = 1.0
 
 [node name="AnimatedSprite5" parent="TiledMap editor example-/Trap/MagicTrap" instance=ExtResource( 5 )]
 position = Vector2( 974, 1016 )
 frame = 0
 playing = false
 magicType = 1
-lifetime = 0.7
+lifetime = 0.8
 
 [node name="ChangeZ" type="Node2D" parent="TiledMap editor example-"]
 visible = false
@@ -333,6 +324,7 @@ position = Vector2( 212, -20 )
 scale = Vector2( 2.59065, 1.08342 )
 z_index = 5
 z_as_relative = false
+collision_mask = 4
 nextScenePath = "res://Scenes/mainScene3.tscn"
 
 [node name="Portal1-2" parent="." instance=ExtResource( 3 )]
@@ -340,6 +332,7 @@ position = Vector2( 1121, -19 )
 scale = Vector2( 2.59065, 1.08342 )
 z_index = 5
 z_as_relative = false
+collision_mask = 4
 nextScenePath = "res://Scenes/mainScene3.tscn"
 
 [node name="Portal1-3" parent="." instance=ExtResource( 3 )]
@@ -347,6 +340,7 @@ position = Vector2( 217, 1296 )
 scale = Vector2( 2.59065, 1.08342 )
 z_index = 5
 z_as_relative = false
+collision_mask = 4
 nextScenePath = "res://Scenes/mainScene3.tscn"
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
@@ -381,7 +375,6 @@ position = Vector2( 869, 989 )
 [editable path="TiledMap editor example-/Candles/AnimatedSprite12"]
 [editable path="TiledMap editor example-/Candles/AnimatedSprite13"]
 [editable path="TiledMap editor example-/Candles/AnimatedSprite17"]
-[editable path="TiledMap editor example-/Trap/AnimatedSprite"]
 [editable path="Player"]
 [editable path="Player/UI"]
 [editable path="Player/UI/PlayerUI"]
