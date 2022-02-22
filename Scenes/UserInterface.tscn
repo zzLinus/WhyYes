@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/HealthBar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Keyboard.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Texture/DarkMagicSpell/Dark VFX 1 (40x32)1.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/oldmonitor.gdshader" type="Shader" id=4]
+[ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=5]
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 4 )
@@ -46,8 +47,10 @@ rect_scale = Vector2( 3.24031, 2.82913 )
 [node name="Keyboard" parent="." instance=ExtResource( 2 )]
 position = Vector2( 144, 520 )
 
+[node name="PauseMenu" parent="." instance=ExtResource( 5 )]
+
 [node name="Shader" type="Sprite" parent="."]
 material = SubResource( 2 )
-position = Vector2( 414, 309 )
-scale = Vector2( 21.7, 20.125 )
+position = Vector2( 400, 300 )
+scale = Vector2( 20, 18.75 )
 texture = ExtResource( 3 )

@@ -280,6 +280,7 @@ func _on_HurtBox_area_entered(area: Area2D):
 		cameraShake.Start()
 	elif area.name == "PhyTrapHitBox":
 		damage = area.trapDamage[area.get_parent().trapType]
+		print("hurt by physical tray")
 		cameraShake.Start()
 	elif area.name == "Magic":
 		damage = 10
@@ -289,9 +290,8 @@ func _on_HurtBox_area_entered(area: Area2D):
 
 	if damage != 0:
 		playerHealth -= damage
-		if area.name != "PhyTrapHitBox":
-			spawnEffect(enemyHitEffect, global_position + Vector2(-10, 10))
-			emit_signal("healthChanged", damage)
+		spawnEffect(enemyHitEffect, global_position + Vector2(-10, 10))
+		emit_signal("healthChanged", damage)
 
 	if playerHealth <= 0:
 		death()
@@ -364,6 +364,14 @@ func _on_InteractWithPortal_area_entered(area):
 		spawnEffect(darkMagicEffect, global_position)
 		doingAction = true
 		playerSprite.visible = false
+	elif area.name == "PhyTrapHitBox":
+		var damage = area.trapDamage[area.get_parent().trapType]
+		print("hurt by physical tray")
+		cameraShake.Start()
+		playerHealth -= damage
+		emit_signal("healthChanged", damage)
+		if playerHealth <= 0:
+			death()
 
 
 func _on_Ztransform_body_exited(body: Node):
