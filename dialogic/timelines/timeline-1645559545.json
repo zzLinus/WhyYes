@@ -1,0 +1,21 @@
+{
+	"events": [
+		{
+			"character": "character-1645559553.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hi,young man. Good morning!"
+		},
+		{
+			"character": "character-1645559543.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Fxxk you....ew...Sorry,i mean Good morning.."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2.5",
+		"file": "timeline-1645559545.json",
+		"name": "firstConversation"
+	}
+}
