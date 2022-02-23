@@ -17,7 +17,7 @@ var comboAction: int
 var playerHealth: int
 var comboTrigger: bool
 var spawnPointID: int
-var interrupCD : float = 2.5
+var interrupCD: float = 3
 
 onready var playerSprite = $AnimatedSprite
 onready var animTree = $AnimationTree
@@ -29,7 +29,7 @@ onready var dashSound = $Dash
 onready var interrupTimer = $InterruTimer
 
 enum SWstate { WITHSWORD, WOSWORD }
-enum NMstate { IDLE, RUN, DEATH, GETHIT, PUTSWORD, DASH , ROLL }
+enum NMstate { IDLE, RUN, DEATH, GETHIT, PUTSWORD, DASH, ROLL }
 enum WSstate {
 	PARRY,
 	IDLE,
@@ -84,9 +84,9 @@ func _process(delta):
 
 	#handle dash movement
 	if doingDash && global_scale.y < 0:
-		move_and_slide(Vector2(-350,0))
+		move_and_slide(Vector2(-350, 0))
 	elif doingDash && global_scale.y > 0:
-		move_and_slide(Vector2(350,0))
+		move_and_slide(Vector2(350, 0))
 
 	if !doingTrans && !doingAction && !doingDash:
 		isRunning = handleMovement(delta)
@@ -99,9 +99,12 @@ func handlePlayerAnim():
 		handleWithSwordAnim()
 
 
-
 func handleWithSwordAnim():
-	if Input.is_action_just_pressed("attack") && (!comboTimer.is_stopped() || !doingAction) && !doingDash:
+	if (
+		Input.is_action_just_pressed("attack")
+		&& (!comboTimer.is_stopped() || !doingAction)
+		&& !doingDash
+	):
 		handleAttackAnim()
 		return
 	elif Input.is_action_just_pressed("Roll") && !doingAction:
@@ -287,7 +290,6 @@ func _on_HurtBox_area_entered(area: Area2D):
 		hurtSound.play()
 		cameraShake.Start()
 
-
 	if damage != 0:
 		playerHealth -= damage
 		spawnEffect(enemyHitEffect, global_position + Vector2(-10, 10))
@@ -382,3 +384,13 @@ func _on_Ztransform_body_exited(body: Node):
 func _on_Ztransform_body_entered(body: Node):
 	self.z_index = 1
 	print("body enter")
+
+
+func _on_Ztransform_area_entered(area):
+	self.z_index = 1
+	print("body enter")
+
+
+func _on_Ztransform_area_exited(area):
+	self.z_index = 3
+	print("body exit")

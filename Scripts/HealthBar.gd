@@ -7,7 +7,7 @@ var initScale
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	initScale= rect_scale
+	initScale = rect_scale
 	if get_parent().name != "Enemy":
 		rect_scale = Vector2(4, 4)
 	if get_parent().name == "Enemy":

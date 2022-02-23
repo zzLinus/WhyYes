@@ -1,21 +1,19 @@
 extends KinematicBody2D
 
 var enemyHealth: int
-var playerPos : Vector2
-var isAttain : bool = false
-var isLookLeft : bool = true
-var enemyVelocity : Vector2 = Vector2(0 ,0)
+var playerPos: Vector2
+var isAttain: bool = false
+var isLookLeft: bool = true
+var enemyVelocity: Vector2 = Vector2(0, 0)
 var transformer = Transform2D()
-var interrupCD : float = 2.5
-var attenDisten : int = 250
+var interrupCD: float = 1.5
+var attenDisten: int = 250
 
 export(bool) var doingAction
 export(PackedScene) var playerHitEffect: PackedScene
 export(PackedScene) var blood: PackedScene
 
-
-enum enemyState { IDLE, GETHIT, ATTACK ,RUN , TURN }
-
+enum enemyState { IDLE, GETHIT, ATTACK, RUN, TURN }
 
 onready var animTree = $AnimationTree
 onready var hitBox = $EnemyAttack/CollisionPolygon2D
@@ -26,7 +24,6 @@ onready var attainSprite = $enemyAttaintion
 onready var animSprite = $AnimatedSprite
 onready var detectPlayer = $RayCast2D
 onready var interruTimer = $InterruptCD
-
 
 signal enemyHealthChanged(damage)
 
@@ -43,15 +40,14 @@ func _ready():
 
 
 func _process(delta):
-	var playerPos : Vector2 = AutoloadScript.playerData.playerPos
-	var isLeft : bool = (global_position.x - playerPos.x > 0)
+	var playerPos: Vector2 = AutoloadScript.playerData.playerPos
+	var isLeft: bool = global_position.x - playerPos.x > 0
 	var gameObject = detectPlayer.get_collider()
 
 	#handle attack
 	if gameObject != null && gameObject.name == "HurtBox" && !doingAction:
 		doingAction = true
 		animTree.set("parameters/EnemyState/current", enemyState.ATTACK)
-
 
 	#handle turning
 	if !doingAction:
@@ -67,7 +63,7 @@ func _process(delta):
 			elif !isLeft && isLookLeft:
 				animTree.set("parameters/EnemyState/current", enemyState.TURN)
 				doingAction = true
-				isLookLeft = false 
+				isLookLeft = false
 		elif (playerPos - global_position).abs() > Vector2(attenDisten, attenDisten):
 			attainSprite.visible = false
 			isAttain = false
@@ -80,8 +76,7 @@ func _process(delta):
 			elif !isLeft && isLookLeft:
 				animTree.set("parameters/EnemyState/current", enemyState.TURN)
 				doingAction = true
-				isLookLeft = false 
-
+				isLookLeft = false
 
 	if !doingAction:
 		if !isAttain:
@@ -93,13 +88,11 @@ func _process(delta):
 			animTree.set("parameters/EnemyState/current", enemyState.RUN)
 
 
-
 func HandleMovement(playerpos) -> Vector2:
-	var diraction : Vector2
+	var diraction: Vector2
 	diraction = playerpos - global_position
 	animTree.set("parameter/EnemyState/current", enemyState.RUN)
-	return diraction 
-
+	return diraction
 
 
 func HandlePlayerTurn():

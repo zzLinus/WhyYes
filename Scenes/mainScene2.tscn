@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Dungeonlayer1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scenes/Trap1.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Magictrap.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scripts/SpawnPoint.gd" type="Script" id=6]
+[ext_resource path="res://Assets/BGM/xDeviruchi - The Icy Cave .wav" type="AudioStream" id=7]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -34,55 +35,55 @@ z_index = 2
 z_as_relative = false
 
 [node name="AnimatedSprite" parent="TiledMap editor example-/Candles" index="0"]
-frame = 5
-
-[node name="AnimatedSprite2" parent="TiledMap editor example-/Candles" index="1"]
-frame = 7
-
-[node name="AnimatedSprite3" parent="TiledMap editor example-/Candles" index="2"]
-frame = 5
-
-[node name="AnimatedSprite4" parent="TiledMap editor example-/Candles" index="3"]
-frame = 6
-
-[node name="AnimatedSprite5" parent="TiledMap editor example-/Candles" index="4"]
-frame = 11
-
-[node name="AnimatedSprite6" parent="TiledMap editor example-/Candles" index="5"]
-frame = 1
-
-[node name="AnimatedSprite7" parent="TiledMap editor example-/Candles" index="6"]
-frame = 1
-
-[node name="AnimatedSprite8" parent="TiledMap editor example-/Candles" index="7"]
-frame = 1
-
-[node name="AnimatedSprite9" parent="TiledMap editor example-/Candles" index="8"]
-frame = 4
-
-[node name="AnimatedSprite15" parent="TiledMap editor example-/Candles" index="9"]
-frame = 1
-
-[node name="AnimatedSprite16" parent="TiledMap editor example-/Candles" index="10"]
-frame = 1
-
-[node name="AnimatedSprite10" parent="TiledMap editor example-/Candles" index="11"]
-frame = 10
-
-[node name="AnimatedSprite11" parent="TiledMap editor example-/Candles" index="12"]
-frame = 1
-
-[node name="AnimatedSprite14" parent="TiledMap editor example-/Candles" index="13"]
-frame = 13
-
-[node name="AnimatedSprite12" parent="TiledMap editor example-/Candles" index="14"]
 frame = 0
 
+[node name="AnimatedSprite2" parent="TiledMap editor example-/Candles" index="1"]
+frame = 2
+
+[node name="AnimatedSprite3" parent="TiledMap editor example-/Candles" index="2"]
+frame = 0
+
+[node name="AnimatedSprite4" parent="TiledMap editor example-/Candles" index="3"]
+frame = 5
+
+[node name="AnimatedSprite5" parent="TiledMap editor example-/Candles" index="4"]
+frame = 16
+
+[node name="AnimatedSprite6" parent="TiledMap editor example-/Candles" index="5"]
+frame = 4
+
+[node name="AnimatedSprite7" parent="TiledMap editor example-/Candles" index="6"]
+frame = 6
+
+[node name="AnimatedSprite8" parent="TiledMap editor example-/Candles" index="7"]
+frame = 4
+
+[node name="AnimatedSprite9" parent="TiledMap editor example-/Candles" index="8"]
+frame = 7
+
+[node name="AnimatedSprite15" parent="TiledMap editor example-/Candles" index="9"]
+frame = 6
+
+[node name="AnimatedSprite16" parent="TiledMap editor example-/Candles" index="10"]
+frame = 6
+
+[node name="AnimatedSprite10" parent="TiledMap editor example-/Candles" index="11"]
+frame = 15
+
+[node name="AnimatedSprite11" parent="TiledMap editor example-/Candles" index="12"]
+frame = 4
+
+[node name="AnimatedSprite14" parent="TiledMap editor example-/Candles" index="13"]
+frame = 0
+
+[node name="AnimatedSprite12" parent="TiledMap editor example-/Candles" index="14"]
+frame = 5
+
 [node name="AnimatedSprite13" parent="TiledMap editor example-/Candles" index="15"]
-frame = 1
+frame = 0
 
 [node name="AnimatedSprite17" parent="TiledMap editor example-/Candles" index="16"]
-frame = 1
+frame = 0
 
 [node name="Trap" type="Node2D" parent="TiledMap editor example-"]
 position = Vector2( -2, 0 )
@@ -353,6 +354,11 @@ nextScenePath = "res://Scenes/mainScene3.tscn"
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 869, 989 )
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -19.227
+autoplay = true
 
 [connection signal="body_entered" from="TiledMap editor example-/ChangeZ/Ztransform" to="Player" method="_on_Ztransform_body_entered"]
 [connection signal="body_exited" from="TiledMap editor example-/ChangeZ/Ztransform" to="Player" method="_on_Ztransform_body_exited"]

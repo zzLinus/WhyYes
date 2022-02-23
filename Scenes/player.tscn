@@ -236,6 +236,11 @@ animations = [ {
 "name": "PlayerRoll",
 "speed": 15.0
 }, {
+"frames": [ ExtResource( 223 ), ExtResource( 222 ), ExtResource( 225 ), ExtResource( 226 ), ExtResource( 216 ), ExtResource( 217 ), ExtResource( 218 ), ExtResource( 220 ), ExtResource( 221 ), ExtResource( 219 ), ExtResource( 224 ) ],
+"loop": true,
+"name": "WSPlayerRoll",
+"speed": 15.0
+}, {
 "frames": [ ExtResource( 187 ), ExtResource( 174 ), ExtResource( 151 ), ExtResource( 183 ), ExtResource( 181 ), ExtResource( 162 ), ExtResource( 178 ), ExtResource( 175 ), ExtResource( 172 ), ExtResource( 171 ), ExtResource( 185 ), ExtResource( 169 ), ExtResource( 168 ) ],
 "loop": true,
 "name": "WSPlayerAttack3",
@@ -314,11 +319,6 @@ animations = [ {
 "frames": [ ExtResource( 68 ), ExtResource( 72 ), ExtResource( 67 ), ExtResource( 66 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 69 ), ExtResource( 73 ) ],
 "loop": true,
 "name": "WSPlayerParryWithoutHit",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 223 ), ExtResource( 222 ), ExtResource( 225 ), ExtResource( 226 ), ExtResource( 216 ), ExtResource( 217 ), ExtResource( 218 ), ExtResource( 220 ), ExtResource( 221 ), ExtResource( 219 ), ExtResource( 224 ) ],
-"loop": true,
-"name": "WSPlayerRoll",
 "speed": 15.0
 } ]
 
@@ -1772,7 +1772,7 @@ stream = ExtResource( 202 )
 
 [node name="InteractWithPortal" type="Area2D" parent="."]
 collision_layer = 512
-collision_mask = 1056
+collision_mask = 1184
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractWithPortal"]
 position = Vector2( 0, 37.9998 )

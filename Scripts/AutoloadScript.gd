@@ -13,7 +13,7 @@ var playerData = {
 	"playerPos": Vector2(0, 0),
 }
 
-var enemyData= {
+var enemyData = {
 	"enemyMaxHealth": 300,
 }
 
