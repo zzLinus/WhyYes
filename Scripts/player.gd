@@ -75,7 +75,7 @@ func _ready():
 
 
 func _process(delta):
-	AutoloadScript.playerData.playerPos = global_position
+	AutoloadScript.playerData.playerPos = $HurtBox.global_position
 	#switch animation group
 	if !doingAction && !doingDash:
 		handlePlayerState()
@@ -111,6 +111,9 @@ func handleWithSwordAnim():
 		return
 	elif Input.is_action_just_pressed("Roll") && !doingAction:
 		animTree.set("parameters/WSTransition/current", WSstate.ROLL)
+		return
+	elif Input.is_action_just_pressed("Parry") && !doingAction:
+		animTree.set("parameters/WSTransition/current", WSstate.PARRYWITHOUTHIT)
 		return
 	elif !doingAction && !doingDash:
 		if isRunning == true:
@@ -268,6 +271,12 @@ func triggerStopAttackShot3():
 
 func _on_HurtBox_area_entered(area: Area2D):
 	#handle animation
+	if animTree.get("parameters/WSTransition/current") == WSstate.PARRYWITHOUTHIT:
+		animTree.set("parameters/WSTransition/current", WSstate.PARRY)
+		return
+	elif animTree.get("parameters/WSTransition/current") == WSstate.PARRY:
+		return
+
 	if interrupTimer.is_stopped():
 		interrupTimer.start()
 		doingAction = true

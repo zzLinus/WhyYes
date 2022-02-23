@@ -1,4 +1,4 @@
-[gd_scene load_steps=283 format=2]
+[gd_scene load_steps=284 format=2]
 
 [ext_resource path="res://Scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Texture/charactor/Player_Idle_04.png" type="Texture" id=2]
@@ -319,6 +319,16 @@ animations = [ {
 "frames": [ ExtResource( 68 ), ExtResource( 72 ), ExtResource( 67 ), ExtResource( 66 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 69 ), ExtResource( 73 ) ],
 "loop": true,
 "name": "WSPlayerParryWithoutHit",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 65 ), ExtResource( 60 ), ExtResource( 58 ), ExtResource( 63 ), ExtResource( 56 ), ExtResource( 59 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 57 ), ExtResource( 64 ) ],
+"loop": true,
+"name": "WSPlayeParry",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 68 ), ExtResource( 72 ), ExtResource( 67 ), ExtResource( 66 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 69 ), ExtResource( 73 ) ],
+"loop": true,
+"name": "WSPlayerParryWithoutHit 1",
 "speed": 15.0
 } ]
 
@@ -641,6 +651,18 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id=3]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:doingAction")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=8]
 resource_name = "TSPlayerPutAwaySword"
@@ -1200,7 +1222,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=11]
 resource_name = "WSPlayerParry"
-length = 0.5
+length = 0.3
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:animation")
@@ -1221,16 +1243,28 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+"values": [ 4, 5, 6, 7, 8, 9 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("..:doingAction")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
 }
 
 [sub_resource type="Animation" id=12]
 resource_name = "WSPlayerParryWithoutHit"
-length = 0.5
-step = 0.05
+length = 0.866667
+step = 0.0666667
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:animation")
 tracks/0/interp = 1
@@ -1250,10 +1284,22 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533333, 0.6, 0.666667, 0.733333, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+"values": [ 0, 1, 2, 4, 5, 6, 8, 9, 9, 9, 9, 9, 9 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("..:doingAction")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.666667 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
 }
 
 [sub_resource type="Animation" id=52]
@@ -1471,6 +1517,8 @@ animation = "PlayerGetHit"
 [sub_resource type="AnimationNodeAnimation" id=55]
 animation = "PlayerRoll"
 
+[sub_resource type="AnimationNodeAnimation" id=58]
+
 [sub_resource type="AnimationNodeAnimation" id=22]
 animation = "PlayerRun"
 
@@ -1538,7 +1586,7 @@ input_1/auto_advance = false
 [sub_resource type="AnimationNodeTimeScale" id=40]
 
 [sub_resource type="AnimationNodeTransition" id=28]
-input_count = 11
+input_count = 12
 input_0/name = "WSPlayerParry"
 input_0/auto_advance = false
 input_1/name = "WSPlayerIdle"
@@ -1561,9 +1609,11 @@ input_9/name = "TakeSword"
 input_9/auto_advance = false
 input_10/name = "WSPlayerRoll"
 input_10/auto_advance = false
+input_11/name = "WSPlayerParry"
+input_11/auto_advance = false
 
 [sub_resource type="AnimationNodeBlendTree" id=19]
-graph_offset = Vector2( 1066.63, -407.872 )
+graph_offset = Vector2( 505.168, -688.71 )
 nodes/Animation/node = SubResource( 18 )
 nodes/Animation/position = Vector2( 360, 140 )
 "nodes/Animation 10/node" = SubResource( 29 )
@@ -1585,11 +1635,13 @@ nodes/Animation/position = Vector2( 360, 140 )
 "nodes/Animation 18/node" = SubResource( 49 )
 "nodes/Animation 18/position" = Vector2( 320, 760 )
 "nodes/Animation 19/node" = SubResource( 54 )
-"nodes/Animation 19/position" = Vector2( 900, -180 )
+"nodes/Animation 19/position" = Vector2( 1100, -180 )
 "nodes/Animation 2/node" = SubResource( 21 )
 "nodes/Animation 2/position" = Vector2( 360, 500 )
 "nodes/Animation 20/node" = SubResource( 55 )
 "nodes/Animation 20/position" = Vector2( 1060, 360 )
+"nodes/Animation 21/node" = SubResource( 58 )
+"nodes/Animation 21/position" = Vector2( 860, -200 )
 "nodes/Animation 3/node" = SubResource( 22 )
 "nodes/Animation 3/position" = Vector2( 360, 260 )
 "nodes/Animation 4/node" = SubResource( 23 )
@@ -1625,7 +1677,7 @@ nodes/TimeScale/position = Vector2( 220, -500 )
 "nodes/TimeScale 5/node" = SubResource( 56 )
 "nodes/TimeScale 5/position" = Vector2( 1240, 360 )
 "nodes/TimeScale 6/node" = SubResource( 57 )
-"nodes/TimeScale 6/position" = Vector2( 1100, -200 )
+"nodes/TimeScale 6/position" = Vector2( 1280, -240 )
 nodes/WSTransition/node = SubResource( 28 )
 nodes/WSTransition/position = Vector2( 960, -620 )
 nodes/output/position = Vector2( 1880, -60 )
@@ -1635,14 +1687,16 @@ node_connections = [ "output", 0, "PlayerState", "NMTransition", 0, "Animation",
 height = 43.999
 
 [sub_resource type="CapsuleShape2D" id=51]
+height = 7.24805
 
 [node name="Player" type="KinematicBody2D" groups=["Player"]]
-position = Vector2( 399, 298 )
+position = Vector2( 1, -15 )
 z_index = 3
 z_as_relative = false
 collision_layer = 4
 collision_mask = 27
 script = ExtResource( 1 )
+doingAction = true
 runSmokeEffect = ExtResource( 170 )
 enemyHitEffect = ExtResource( 173 )
 blood = ExtResource( 201 )
@@ -1660,8 +1714,8 @@ shape = SubResource( 41 )
 position = Vector2( 12, -8 )
 scale = Vector2( 1.8015, 1.91911 )
 frames = SubResource( 1 )
-animation = "WSPlayerAttack3"
-frame = 12
+animation = "WSPlayerParryWithoutHit"
+frame = 9
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite")
@@ -1688,8 +1742,9 @@ anims/WSPlayerStopAttack = SubResource( 14 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 19 )
 anim_player = NodePath("../AnimationPlayer")
+active = true
 parameters/NMTransition/current = 0
-parameters/PlayerState/current = 1
+parameters/PlayerState/current = 0
 parameters/StopAttack/active = false
 parameters/StopAttack2/active = false
 parameters/StopAttack3/active = false
@@ -1699,7 +1754,7 @@ parameters/TimeScale/scale = 2.0
 "parameters/TimeScale 4/scale" = 2.0
 "parameters/TimeScale 5/scale" = 2.0
 "parameters/TimeScale 6/scale" = 2.0
-parameters/WSTransition/current = 1
+parameters/WSTransition/current = 2
 
 [node name="PlayerShadow" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.682353 )
@@ -1726,7 +1781,6 @@ script = ExtResource( 167 )
 [node name="HurtboxColli" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2( 0.0731201, 13.9998 )
 shape = SubResource( 47 )
-disabled = true
 
 [node name="HitBoxForAttack1" type="Area2D" parent="."]
 collision_layer = 16
@@ -1773,13 +1827,15 @@ stream = ExtResource( 200 )
 stream = ExtResource( 202 )
 
 [node name="InteractWithPortal" type="Area2D" parent="."]
+position = Vector2( -1, 4 )
+scale = Vector2( 0.419064, 0.942065 )
 collision_layer = 512
 collision_mask = 1184
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractWithPortal"]
-position = Vector2( 0, 37.9998 )
+position = Vector2( 0, 37.8804 )
 rotation = 1.5708
-scale = Vector2( 0.454794, 0.553945 )
+scale = Vector2( 0.240136, 0.525456 )
 shape = SubResource( 51 )
 
 [node name="InterruTimer" type="Timer" parent="."]

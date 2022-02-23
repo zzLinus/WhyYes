@@ -8,7 +8,7 @@ var initScale
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	initScale = rect_scale
-	if get_parent().name != "Enemy":
+	if get_parent().name == "Player":
 		rect_scale = Vector2(4, 4)
 	if get_parent().name == "Enemy":
 		max_value = AutoloadScript.enemyData.enemyMaxHealth

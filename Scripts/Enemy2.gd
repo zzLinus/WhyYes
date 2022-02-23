@@ -7,14 +7,16 @@ var setLookLeft : bool = true
 var isLookLeft: bool = false
 var enemyVelocity: Vector2 = Vector2(0, 0)
 var transformer = Transform2D()
-var interrupCD: float = 5
+var interrupCD: float = 4 
 var attenDisten: int = 200
+var bulletNum : int = 6
+var diraction
 
 export(bool) var doingAction
 export(PackedScene) var playerHitEffect: PackedScene
 export(PackedScene) var blood: PackedScene
 
-enum enemyState { IDLE, GETHIT, ATTACK, RUN, TURN }
+enum enemyState { IDLE, GETHIT, ATTACK, RUN, PREPARE, RELOAD,PUTAWAY}
 
 onready var animTree = $AnimationTree
 onready var hitBox = $EnemyAttack/CollisionPolygon2D
@@ -25,10 +27,13 @@ onready var attainSprite = $enemyAttaintion
 onready var animSprite = $AnimatedSprite
 onready var detectPlayer = $RayCast2D
 onready var interruTimer = $InterruptCD
+onready var firePoint = $FirePoint
+onready var firePoint2 = $FirePoint2
 
 signal enemyHealthChanged(damage)
 signal enemyDeath
 
+const bullet = preload("res://Scenes/Bullet.tscn")
 
 func _ready():
 	attainSprite.visible = false
@@ -45,11 +50,23 @@ func _process(delta):
 	var playerPos: Vector2 = AutoloadScript.playerData.playerPos
 	var isLeft: bool = global_position.x - playerPos.x > 0
 	var gameObject = detectPlayer.get_collider()
+	diraction = HandleMovement(playerPos)
+	diraction = diraction.normalized()
 
 	#handle attack
-	if gameObject != null && gameObject.name == "HurtBox" && !doingAction:
+	if   isAttain && !doingAction:
 		doingAction = true
-		animTree.set("parameters/EnemyState/current", enemyState.ATTACK)
+		if bulletNum >=2:
+			animTree.set("parameters/EnemyState/current", enemyState.PREPARE)
+			yield(get_tree().create_timer(0.45),"timeout")
+			animTree.set("parameters/EnemyState/current", enemyState.ATTACK)
+			yield(get_tree().create_timer(1.05),"timeout")
+			animTree.set("parameters/EnemyState/current", enemyState.PUTAWAY)
+		else:
+			animTree.set("parameters/EnemyState/current", enemyState.RELOAD)
+			bulletNum = 6
+			yield(get_tree().create_timer(0.8),"timeout")
+			animTree.set("parameters/EnemyState/current", enemyState.ATTACK)
 
 	#handle turning
 	if !doingAction:
@@ -59,43 +76,57 @@ func _process(delta):
 			attainSprite.play("Active")
 			#handle enemy turning
 			if isLeft && !isLookLeft:
-				animTree.set("parameters/EnemyState/current", enemyState.TURN)
-				doingAction = true
-				setLookLeft = true
+				isLookLeft = true
+				HandlePlayerTurn()
 			elif !isLeft && isLookLeft:
-				animTree.set("parameters/EnemyState/current", enemyState.TURN)
-				doingAction = true
-				setLookLeft = false
+				isLookLeft = false
+				HandlePlayerTurn()
 		elif (playerPos - global_position).length() > attenDisten:
 			attainSprite.visible = false
 			isAttain = false
 			attainSprite.stop()
 		elif isAttain:
 			if isLeft && !isLookLeft:
-				animTree.set("parameters/EnemyState/current", enemyState.TURN)
-				doingAction = true
-				setLookLeft = true
+				isLookLeft = true
+				HandlePlayerTurn()
 			elif !isLeft && isLookLeft:
-				animTree.set("parameters/EnemyState/current", enemyState.TURN)
-				doingAction = true
-				setLookLeft = false
+				isLookLeft = false
+				HandlePlayerTurn()
+
 
 	if !doingAction:
 		if !isAttain:
 			animTree.set("parameters/EnemyState/current", enemyState.IDLE)
 		else:
-			var diraction = HandleMovement(playerPos)
-			diraction = diraction.normalized()
-			move_and_slide(diraction * 100)
+			if isLookLeft:
+				var moveto = playerPos + Vector2(100,0)
+			else:
+				var moveto = playerPos + Vector2(-100,0)
+			# if (global_position - playerPos).length() < 100:
+			move_and_slide(-diraction * 100)
 			animTree.set("parameters/EnemyState/current", enemyState.RUN)
 
 
 func HandleMovement(playerpos) -> Vector2:
 	var diraction: Vector2
-	diraction = playerpos - global_position
+	diraction = playerpos - $FirePoint.global_position
 	animTree.set("parameter/EnemyState/current", enemyState.RUN)
 	return diraction
 
+func Shoot():
+	bulletNum -= 2
+	var projectile = bullet.instance()
+	var projectile2 = bullet.instance()
+
+	projectile.linear_velocity = Vector2(500 * diraction)
+	projectile.rotate(PI-diraction.angle())
+	projectile2.linear_velocity = Vector2(500 * diraction)
+	projectile2.rotate(PI-diraction.angle())
+
+	call_deferred("add_child", projectile)
+	projectile.global_position = firePoint.position
+	call_deferred("add_child", projectile2)
+	projectile.global_position = firePoint.position
 
 func HandlePlayerTurn():
 	if isLookLeft:
@@ -105,15 +136,10 @@ func HandlePlayerTurn():
 		transformer.x.x = 1
 		transformer.x.y = 0
 
-	if setLookLeft:
-		isLookLeft = true
-	else:
-		isLookLeft = false
-
 
 	transform.x = transformer.x * 2
-	transform.y = transformer.y * 2
 	doingAction = false
+	transform.y = transformer.y * 2
 
 
 #TODO:apply damage to enemy

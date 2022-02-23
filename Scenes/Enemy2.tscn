@@ -1,0 +1,735 @@
+[gd_scene load_steps=109 format=2]
+
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Idle_04.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Idle_05.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Idle_07.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Idle_03.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Idle_02.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Idle_06.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Idle_01.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Idle_08.png" type="Texture" id=8]
+[ext_resource path="res://Scripts/HurtBox.gd" type="Script" id=9]
+[ext_resource path="res://Assets/Texture/charactor/PlayerShadown.png" type="Texture" id=10]
+[ext_resource path="res://Scripts/Enemy2.gd" type="Script" id=11]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Hit_04.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Hit_02.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Hit_05.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Hit_06.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Hit_01.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Hit_07.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Hit_03.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Run_05.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Run_08.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Shoot_07.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Shoot_02.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Shoot_04.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Shoot_06.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Shoot_15.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Shoot_01.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Shoot_08.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Shoot_03.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Shoot_09.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Shoot_14.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Shoot_13.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Shoot_16.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Shoot_12.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Shoot_10.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Shoot_11.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Shoot_05.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Run_04.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Run_07.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Run_06.png" type="Texture" id=41]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Run_01.png" type="Texture" id=42]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Run_03.png" type="Texture" id=43]
+[ext_resource path="res://Assets/SoundEffects/Hyper Light Atk Sfx.wav" type="AudioStream" id=44]
+[ext_resource path="res://Assets/SoundEffects/SPLAT Crush 01.ogg" type="AudioStream" id=45]
+[ext_resource path="res://Scenes/EnemyHealthBar.tscn" type="PackedScene" id=47]
+[ext_resource path="res://Assets/Texture/UI/enemyAttantion.png" type="Texture" id=48]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Run_02.png" type="Texture" id=49]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_PrepareShoot_05.png" type="Texture" id=50]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_PrepareShoot_04.png" type="Texture" id=51]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_PrepareShoot_03.png" type="Texture" id=52]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_PrepareShoot_06.png" type="Texture" id=53]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_PrepareShoot_07.png" type="Texture" id=54]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_PrepareShoot_01.png" type="Texture" id=55]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_PrepareShoot_02.png" type="Texture" id=56]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_PutGunAway_01.png" type="Texture" id=57]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_PutGunAway_07.png" type="Texture" id=58]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_PutGunAway_05.png" type="Texture" id=59]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_PutGunAway_04.png" type="Texture" id=60]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_PutGunAway_03.png" type="Texture" id=61]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_PutGunAway_02.png" type="Texture" id=62]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_PutGunAway_06.png" type="Texture" id=63]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Reload_06.png" type="Texture" id=64]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Reload_11.png" type="Texture" id=65]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Reload_10.png" type="Texture" id=66]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Reload_03.png" type="Texture" id=67]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Reload_12.png" type="Texture" id=68]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Reload_02.png" type="Texture" id=69]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Reload_08.png" type="Texture" id=70]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Reload_07.png" type="Texture" id=71]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Reload_05.png" type="Texture" id=72]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Reload_01.png" type="Texture" id=73]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Reload_04.png" type="Texture" id=74]
+[ext_resource path="res://Assets/Texture/charactor/Enemy02_Reload_09.png" type="Texture" id=75]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 73 ), ExtResource( 69 ), ExtResource( 67 ), ExtResource( 74 ), ExtResource( 72 ), ExtResource( 64 ), ExtResource( 71 ), ExtResource( 70 ), ExtResource( 75 ), ExtResource( 66 ), ExtResource( 65 ), ExtResource( 68 ) ],
+"loop": true,
+"name": "Reload",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 42 ), ExtResource( 49 ), ExtResource( 43 ), ExtResource( 39 ), ExtResource( 19 ), ExtResource( 41 ), ExtResource( 40 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "Run",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 13 ), ExtResource( 18 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "GetHit",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 28 ), ExtResource( 24 ), ExtResource( 30 ), ExtResource( 25 ), ExtResource( 38 ), ExtResource( 26 ), ExtResource( 23 ), ExtResource( 29 ), ExtResource( 31 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 35 ), ExtResource( 33 ), ExtResource( 32 ), ExtResource( 27 ), ExtResource( 34 ) ],
+"loop": true,
+"name": "Attack",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 57 ), ExtResource( 62 ), ExtResource( 61 ), ExtResource( 60 ), ExtResource( 59 ), ExtResource( 63 ), ExtResource( 58 ) ],
+"loop": true,
+"name": "PutGunAway",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 55 ), ExtResource( 56 ), ExtResource( 52 ), ExtResource( 51 ), ExtResource( 50 ), ExtResource( 53 ), ExtResource( 54 ) ],
+"loop": true,
+"name": "Prepare",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=11]
+resource_name = "EnemyAttack"
+length = 1.06667
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Attack" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533333, 0.6, 0.666667, 0.733333, 0.8, 0.866667, 0.933333, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:doingAction")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.06667 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("AnimatedSprite:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "Shoot"
+} ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "EnemyGetHit"
+length = 0.6
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "GetHit" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533333 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:doingAction")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.7, 0.2 ],
+"method": "framefreeze"
+} ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AnimatedSprite:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "EnemyIdle"
+length = 0.533333
+loop = true
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Idle" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimatedSprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=36]
+resource_name = "EnemyPrepare"
+length = 0.466667
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Prepare" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6 ]
+}
+
+[sub_resource type="Animation" id=38]
+resource_name = "PutAway"
+length = 0.466667
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "PutGunAway" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:doingAction")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.466667 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:doingAction")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("AnimatedSprite:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "Prepare" ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AnimatedSprite:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=37]
+resource_name = "Reload"
+length = 0.8
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Reload" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533333, 0.6, 0.666667, 0.733333 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:doingAction")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=32]
+resource_name = "Run"
+length = 0.533333
+loop = true
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Run" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimatedSprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.533333 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "EnemyGetHit"
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "EnemyAttack"
+
+[sub_resource type="AnimationNodeAnimation" id=34]
+animation = "Run"
+
+[sub_resource type="AnimationNodeAnimation" id=39]
+animation = "Reload"
+
+[sub_resource type="AnimationNodeAnimation" id=40]
+animation = "PutAway"
+
+[sub_resource type="AnimationNodeAnimation" id=41]
+animation = "EnemyPrepare"
+
+[sub_resource type="AnimationNodeAnimation" id=9]
+animation = "EnemyIdle"
+
+[sub_resource type="AnimationNodeTransition" id=10]
+input_count = 7
+input_0/name = "EnemyIdle"
+input_0/auto_advance = false
+input_1/name = "EnemyGetHit"
+input_1/auto_advance = false
+input_2/name = "EnemyAttack"
+input_2/auto_advance = false
+input_3/name = "EnemyRun"
+input_3/auto_advance = false
+input_4/name = "EnemyPrepare"
+input_4/auto_advance = false
+input_5/name = "EnemyReload"
+input_5/auto_advance = false
+input_6/name = "EnemyPutAway"
+input_6/auto_advance = false
+
+[sub_resource type="AnimationNodeBlendTree" id=7]
+graph_offset = Vector2( -178.72, 356.22 )
+nodes/Animation/node = SubResource( 9 )
+nodes/Animation/position = Vector2( 20, 140 )
+"nodes/Animation 2/node" = SubResource( 8 )
+"nodes/Animation 2/position" = Vector2( 20, 240 )
+"nodes/Animation 3/node" = SubResource( 12 )
+"nodes/Animation 3/position" = Vector2( 20, 340 )
+"nodes/Animation 4/node" = SubResource( 34 )
+"nodes/Animation 4/position" = Vector2( 40, 440 )
+"nodes/Animation 5/node" = SubResource( 39 )
+"nodes/Animation 5/position" = Vector2( 60, 660 )
+"nodes/Animation 6/node" = SubResource( 40 )
+"nodes/Animation 6/position" = Vector2( 60, 760 )
+"nodes/Animation 7/node" = SubResource( 41 )
+"nodes/Animation 7/position" = Vector2( 40, 560 )
+nodes/EnemyState/node = SubResource( 10 )
+nodes/EnemyState/position = Vector2( 560, 280 )
+nodes/output/position = Vector2( 700, 220 )
+node_connections = [ "output", 0, "EnemyState", "EnemyState", 0, "Animation", "EnemyState", 1, "Animation 2", "EnemyState", 2, "Animation 3", "EnemyState", 3, "Animation 4", "EnemyState", 4, "Animation 7", "EnemyState", 5, "Animation 5", "EnemyState", 6, "Animation 6" ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 5.8515
+height = 43.5381
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 5.0
+height = 4.0
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 48 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 48 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 48 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 48 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 48 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 48 )
+region = Rect2( 80, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 48 )
+region = Rect2( 96, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 48 )
+region = Rect2( 112, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 48 )
+region = Rect2( 128, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 48 )
+region = Rect2( 96, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 48 )
+region = Rect2( 112, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 48 )
+region = Rect2( 128, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 48 )
+region = Rect2( 96, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 48 )
+region = Rect2( 112, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 48 )
+region = Rect2( 128, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=16]
+animations = [ {
+"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
+"loop": true,
+"name": "Active",
+"speed": 20.0
+} ]
+
+[node name="Enemy2" type="KinematicBody2D"]
+position = Vector2( 407, 286 )
+scale = Vector2( 2, 2 )
+collision_layer = 8
+script = ExtResource( 11 )
+doingAction = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -97.5, -15 )
+frames = SubResource( 1 )
+animation = "Prepare"
+offset = Vector2( 99, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/EnemyAttack = SubResource( 11 )
+anims/EnemyGetHit = SubResource( 6 )
+anims/EnemyIdle = SubResource( 4 )
+anims/EnemyPrepare = SubResource( 36 )
+anims/PutAway = SubResource( 38 )
+anims/RESET = SubResource( 5 )
+anims/Reload = SubResource( 37 )
+anims/Run = SubResource( 32 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 7 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/EnemyState/current = 2
+
+[node name="PlayerShadow" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.682353 )
+position = Vector2( 0, 10 )
+scale = Vector2( 0.637058, 0.504121 )
+texture = ExtResource( 10 )
+
+[node name="HurtBox" type="Area2D" parent="."]
+position = Vector2( 6, -9 )
+collision_layer = 8
+collision_mask = 16
+script = ExtResource( 9 )
+
+[node name="HurtboxColli" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2( -5.5, 0.5 )
+scale = Vector2( 0.876311, 0.905123 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 12 )
+rotation = 1.5708
+scale = Vector2( 0.44, 1 )
+shape = SubResource( 3 )
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 6, -9 )
+stream = ExtResource( 45 )
+
+[node name="BladeSound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 6, -9 )
+stream = ExtResource( 44 )
+volume_db = 3.355
+pitch_scale = 1.56
+
+[node name="TextureProgress" parent="." instance=ExtResource( 47 )]
+margin_left = -14.5
+margin_top = -46.0
+margin_right = 47.5
+margin_bottom = -41.0
+max_value = 300.0
+value = 300.0
+
+[node name="enemyAttaintion" type="AnimatedSprite" parent="."]
+position = Vector2( -14, -10 )
+frames = SubResource( 16 )
+animation = "Active"
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+rotation = 0.00194952
+scale = Vector2( 4.28019, 1 )
+enabled = true
+cast_to = Vector2( 40.786, 0 )
+collision_mask = 512
+collide_with_areas = true
+
+[node name="InterruptCD" type="Timer" parent="."]
+one_shot = true
+
+[node name="FirePoint" type="Position2D" parent="."]
+position = Vector2( 22, -8.5 )
+
+[node name="FirePoint2" type="Position2D" parent="."]
+position = Vector2( -3.5, -6 )
+
+[connection signal="enemyHealthChanged" from="." to="TextureProgress" method="_on_KinematicBody2D_enemyHealthChanged"]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
+[connection signal="animation_finished" from="enemyAttaintion" to="." method="_on_enemyAttaintion_animation_finished"]
