@@ -59,12 +59,15 @@ func _ready():
 
 	if AutoloadScript.playerData.playerIsFirstLoad:
 		print("load first time")
+		AutoloadScript.currentScene = 1
 		playerHealth = 100
 		playerState = SWstate.WOSWORD
 		global_position = Vector2(1080, 1626)
 		emit_signal("healthChanged", 0)
 		AutoloadScript.playerData.playerIsFirstLoad = false
 	else:
+		print("load not first time")
+		AutoloadScript.currentScene += 1
 		LoadPlayerData()
 		global_position = AutoloadScript.GetSpawnPoint()
 
@@ -345,11 +348,13 @@ func SavePlayerData():
 	AutoloadScript.playerData.playerComboAction = comboAction
 	AutoloadScript.playerData.playerSpawnPoint = spawnPointID
 	print("player data saved")
+	print(AutoloadScript.playerData)
 
 
 func LoadPlayerData():
 	playerHealth = AutoloadScript.playerData.playerHealth
 	playerState = AutoloadScript.playerData.playerState
+	spawnPointID = AutoloadScript.playerData.playerSpawnPoint
 	emit_signal("healthChanged", 0)
 	print(AutoloadScript.playerData)
 	print("player data loaded")

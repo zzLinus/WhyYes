@@ -1,5 +1,7 @@
 extends Node
 
+var currentScene : int
+
 var playerData = {
 	"playerMaxHealth": 100,
 	"playerHealth": 100,

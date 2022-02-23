@@ -19,7 +19,6 @@ export(PackedScene) var blood: PackedScene
 enum enemyState { IDLE, GETHIT, ATTACK, RUN, PREPARE, RELOAD,PUTAWAY}
 
 onready var animTree = $AnimationTree
-onready var hitBox = $EnemyAttack/CollisionPolygon2D
 onready var bladeSound = $BladeSound
 onready var cameraShake = get_node("../Player/Camera2D/Node")
 onready var hurtSound = $Hurt
@@ -42,7 +41,6 @@ func _ready():
 	isLookLeft = false
 	interruTimer.wait_time = interrupCD
 	animTree.active = true
-	hitBox.disabled = true
 	animTree.set("parameters/EnemyState/current", enemyState.IDLE)
 
 
