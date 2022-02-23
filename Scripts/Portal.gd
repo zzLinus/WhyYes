@@ -4,11 +4,16 @@ export(String, FILE) var nextScenePath = ""
 
 
 func _ready():
-	pass  # Replace with function body.
+	if self.name == "Portal":
+		$colli.disabled = true
 
 
-func _on_Portal_body_entered(body):
-	if body.name == "Player":
+func _on_Enemy_enemyDeath():
+	$colli.disabled = false
+
+
+func _on_Portal_area_entered(area:Area2D):
+	if area.name == "InteractWithPortal":
 		print("player entered portal")
 
 	yield(get_tree().create_timer(1.6), "timeout")

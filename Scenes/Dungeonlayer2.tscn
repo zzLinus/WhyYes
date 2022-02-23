@@ -185,7 +185,7 @@ energy = 0.16
 position = Vector2( 3089, 1962 )
 scale = Vector2( 0.45, 0.45 )
 animation = "Smoking"
-frame = 11
+frame = 17
 
 [node name="Light2D" parent="Candles/AnimatedSprite4" index="0"]
 energy = 0.0
@@ -240,7 +240,7 @@ energy = 0.16
 position = Vector2( 4820, 1837 )
 scale = Vector2( 0.45, 0.45 )
 animation = "Smoking"
-frame = 11
+frame = 17
 flip_h = true
 
 [node name="Light2D" parent="Candles/AnimatedSprite36" index="0"]
@@ -250,7 +250,7 @@ energy = 0.0
 position = Vector2( 4753, 1834 )
 scale = Vector2( 0.45, 0.45 )
 animation = "Smoking"
-frame = 11
+frame = 17
 flip_h = true
 
 [node name="Light2D" parent="Candles/AnimatedSprite37" index="0"]
@@ -260,7 +260,7 @@ energy = 0.0
 position = Vector2( 4724, 1837 )
 scale = Vector2( 0.45, 0.45 )
 animation = "Smoking"
-frame = 10
+frame = 16
 
 [node name="Light2D" parent="Candles/AnimatedSprite38" index="0"]
 energy = 0.0
@@ -269,7 +269,7 @@ energy = 0.0
 position = Vector2( 4844, 1837 )
 scale = Vector2( 0.45, 0.45 )
 animation = "Smoking"
-frame = 10
+frame = 16
 flip_h = true
 
 [node name="Light2D" parent="Candles/AnimatedSprite39" index="0"]
@@ -288,7 +288,7 @@ energy = 0.16
 position = Vector2( 4736, 1831 )
 scale = Vector2( 0.7, 0.7 )
 animation = "Smoking"
-frame = 11
+frame = 17
 
 [node name="Light2D" parent="Candles/AnimatedSprite30" index="0"]
 energy = 0.0
@@ -330,7 +330,7 @@ energy = 0.16
 position = Vector2( 2740, 1965 )
 scale = Vector2( 0.45, 0.45 )
 animation = "Smoking"
-frame = 11
+frame = 17
 
 [node name="Light2D" parent="Candles/AnimatedSprite8" index="0"]
 energy = 0.0
@@ -339,7 +339,7 @@ energy = 0.0
 position = Vector2( 2769, 1962 )
 scale = Vector2( 0.45, 0.45 )
 animation = "Smoking"
-frame = 11
+frame = 17
 
 [node name="Light2D" parent="Candles/AnimatedSprite10" index="0"]
 energy = 0.0
@@ -363,7 +363,7 @@ energy = 0.14
 position = Vector2( 2932, 1817 )
 scale = Vector2( 0.6, 0.6 )
 animation = "Smoking"
-frame = 5
+frame = 11
 flip_h = true
 
 [node name="Light2D" parent="Candles/AnimatedSprite14" index="0"]
@@ -373,7 +373,7 @@ energy = 0.0
 position = Vector2( 2879, 1815 )
 scale = Vector2( 0.60497, 0.771606 )
 animation = "Smoking"
-frame = 5
+frame = 11
 
 [node name="Light2D" parent="Candles/AnimatedSprite15" index="0"]
 energy = 0.0
@@ -382,7 +382,7 @@ energy = 0.0
 position = Vector2( 2949, 1814 )
 scale = Vector2( 0.957727, 1.18917 )
 animation = "Smoking"
-frame = 5
+frame = 11
 flip_h = true
 
 [node name="Light2D" parent="Candles/AnimatedSprite16" index="0"]
@@ -402,7 +402,7 @@ energy = 0.27
 position = Vector2( 3022, 1874 )
 scale = Vector2( 0.7, 0.7 )
 animation = "Smoking"
-frame = 15
+frame = 3
 
 [node name="Light2D" parent="Candles/AnimatedSprite18" index="0"]
 position = Vector2( -1.04443, 2.52271 )
@@ -412,7 +412,7 @@ energy = 0.0
 position = Vector2( 3030, 1869 )
 scale = Vector2( 0.7, 0.7 )
 animation = "Smoking"
-frame = 15
+frame = 3
 flip_h = true
 
 [node name="Light2D" parent="Candles/AnimatedSprite19" index="0"]
@@ -423,7 +423,7 @@ energy = 0.0
 position = Vector2( 2771, 1877 )
 scale = Vector2( 0.7, 0.7 )
 animation = "Smoking"
-frame = 15
+frame = 3
 flip_h = true
 
 [node name="Light2D" parent="Candles/AnimatedSprite20" index="0"]
@@ -453,7 +453,7 @@ energy = 0.28
 [node name="AnimatedSprite11" parent="Candles" index="32" instance=ExtResource( 3 )]
 position = Vector2( 2881, 1928 )
 animation = "Smoking"
-frame = 11
+frame = 17
 
 [node name="Light2D" parent="Candles/AnimatedSprite11" index="0"]
 position = Vector2( -1, 3 )

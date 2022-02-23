@@ -67,7 +67,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/build-and-deploy/plugin.cfg", "res://addons/dialogic/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/build-and-deploy/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/vnen.tiled_importer/plugin.cfg" )
 
 [global]
 

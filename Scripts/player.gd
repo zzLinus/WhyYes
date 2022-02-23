@@ -58,9 +58,11 @@ func _ready():
 	interrupTimer.wait_time = interrupCD
 
 	if AutoloadScript.playerData.playerIsFirstLoad:
+		print("load first time")
 		playerHealth = 100
 		playerState = SWstate.WOSWORD
 		global_position = Vector2(1080, 1626)
+		emit_signal("healthChanged", 0)
 		AutoloadScript.playerData.playerIsFirstLoad = false
 	else:
 		LoadPlayerData()
@@ -269,6 +271,7 @@ func _on_HurtBox_area_entered(area: Area2D):
 	if interrupTimer.is_stopped():
 		interrupTimer.start()
 		doingAction = true
+		comboAction = WSstate.ATTACK1
 		if playerState == SWstate.WOSWORD:
 			animTree.set("parameters/PlayerState/current", SWstate.WOSWORD)
 			animTree.set("parameters/NMTransition/current", NMstate.GETHIT)
@@ -393,4 +396,3 @@ func _on_Ztransform_area_entered(area):
 
 func _on_Ztransform_area_exited(area):
 	self.z_index = 3
-	print("body exit")

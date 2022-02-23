@@ -3,11 +3,12 @@ extends KinematicBody2D
 var enemyHealth: int
 var playerPos: Vector2
 var isAttain: bool = false
-var isLookLeft: bool = true
+var setLookLeft : bool = true
+var isLookLeft: bool = false
 var enemyVelocity: Vector2 = Vector2(0, 0)
 var transformer = Transform2D()
-var interrupCD: float = 1.5
-var attenDisten: int = 250
+var interrupCD: float = 4 
+var attenDisten: int = 200
 
 export(bool) var doingAction
 export(PackedScene) var playerHitEffect: PackedScene
@@ -26,6 +27,7 @@ onready var detectPlayer = $RayCast2D
 onready var interruTimer = $InterruptCD
 
 signal enemyHealthChanged(damage)
+signal enemyDeath
 
 
 func _ready():
@@ -51,7 +53,7 @@ func _process(delta):
 
 	#handle turning
 	if !doingAction:
-		if (playerPos - global_position).abs() < Vector2(attenDisten, attenDisten) && !isAttain:
+		if (playerPos - global_position).length() < attenDisten  && !isAttain:
 			isAttain = true
 			attainSprite.visible = true
 			attainSprite.play("Active")
@@ -59,12 +61,12 @@ func _process(delta):
 			if isLeft && !isLookLeft:
 				animTree.set("parameters/EnemyState/current", enemyState.TURN)
 				doingAction = true
-				isLookLeft = true
+				setLookLeft = true
 			elif !isLeft && isLookLeft:
 				animTree.set("parameters/EnemyState/current", enemyState.TURN)
 				doingAction = true
-				isLookLeft = false
-		elif (playerPos - global_position).abs() > Vector2(attenDisten, attenDisten):
+				setLookLeft = false
+		elif (playerPos - global_position).length() > attenDisten:
 			attainSprite.visible = false
 			isAttain = false
 			attainSprite.stop()
@@ -72,11 +74,11 @@ func _process(delta):
 			if isLeft && !isLookLeft:
 				animTree.set("parameters/EnemyState/current", enemyState.TURN)
 				doingAction = true
-				isLookLeft = true
+				setLookLeft = true
 			elif !isLeft && isLookLeft:
 				animTree.set("parameters/EnemyState/current", enemyState.TURN)
 				doingAction = true
-				isLookLeft = false
+				setLookLeft = false
 
 	if !doingAction:
 		if !isAttain:
@@ -102,6 +104,12 @@ func HandlePlayerTurn():
 	else:
 		transformer.x.x = 1
 		transformer.x.y = 0
+
+	if setLookLeft:
+		isLookLeft = true
+	else:
+		isLookLeft = false
+
 
 	transform.x = transformer.x * 2
 	transform.y = transformer.y * 2
@@ -198,8 +206,9 @@ func spawnEffect(effect: PackedScene, effectPos: Vector2 = global_position, atta
 
 
 func death():
+	animTree.set("parameters/EnemyState/current", enemyState.GETHIT)
 	yield(get_tree().create_timer(0.6), "timeout")
-	# animTree.set("")
+	emit_signal("enemyDeath")
 	queue_free()
 
 

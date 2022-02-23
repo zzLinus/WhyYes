@@ -153,17 +153,17 @@ tile_data = PoolIntArray( 1048591, 1787, 0, 1048595, 1792, 0, 1048599, 1792, 0, 
 [node name="AnimatedSprite" parent="Candles" index="0" instance=ExtResource( 5 )]
 position = Vector2( 1165, 642 )
 scale = Vector2( 0.655, 0.655 )
-frame = 6
+frame = 3
 
 [node name="AnimatedSprite2" parent="Candles" index="1" instance=ExtResource( 5 )]
 position = Vector2( 1158, 583 )
 scale = Vector2( 0.655, 0.655 )
-frame = 0
+frame = 5
 
 [node name="AnimatedSprite3" parent="Candles" index="2" instance=ExtResource( 5 )]
 position = Vector2( 1199, 681 )
 scale = Vector2( 0.5, 0.5 )
-frame = 6
+frame = 3
 
 [node name="Light2D" parent="Candles/AnimatedSprite3" index="0"]
 energy = 0.29
@@ -172,7 +172,7 @@ energy = 0.29
 position = Vector2( 1228, 684 )
 scale = Vector2( 0.5, 0.5 )
 animation = "Burning"
-frame = 10
+frame = 11
 
 [node name="Light2D" parent="Candles/AnimatedSprite4" index="0"]
 energy = 0.29
@@ -181,7 +181,7 @@ energy = 0.29
 position = Vector2( 1216, 676 )
 scale = Vector2( 0.5, 0.5 )
 animation = "Smoking"
-frame = 9
+frame = 10
 
 [node name="Light2D" parent="Candles/AnimatedSprite5" index="0"]
 energy = 0.0
@@ -189,7 +189,7 @@ energy = 0.0
 [node name="AnimatedSprite6" parent="Candles" index="5" instance=ExtResource( 5 )]
 position = Vector2( 1204, 684 )
 scale = Vector2( 0.5, 0.5 )
-frame = 2
+frame = 7
 
 [node name="Light2D" parent="Candles/AnimatedSprite6" index="0"]
 energy = 0.29
@@ -198,7 +198,7 @@ energy = 0.29
 position = Vector2( 1233, 681 )
 scale = Vector2( 0.5, 0.5 )
 animation = "Smoking"
-frame = 17
+frame = 0
 
 [node name="Light2D" parent="Candles/AnimatedSprite7" index="0"]
 energy = 0.0
@@ -206,7 +206,7 @@ energy = 0.0
 [node name="AnimatedSprite8" parent="Candles" index="7" instance=ExtResource( 5 )]
 position = Vector2( 1199, 489 )
 scale = Vector2( 0.5, 0.5 )
-frame = 2
+frame = 7
 
 [node name="Light2D" parent="Candles/AnimatedSprite8" index="0"]
 energy = 0.29
@@ -214,7 +214,7 @@ energy = 0.29
 [node name="AnimatedSprite9" parent="Candles" index="8" instance=ExtResource( 5 )]
 position = Vector2( 1233, 489 )
 scale = Vector2( 0.5, 0.5 )
-frame = 5
+frame = 2
 
 [node name="Light2D" parent="Candles/AnimatedSprite9" index="0"]
 energy = 0.29
@@ -223,7 +223,7 @@ energy = 0.29
 position = Vector2( 1150, 646 )
 scale = Vector2( 0.5, 0.5 )
 animation = "Smoking"
-frame = 17
+frame = 0
 
 [node name="Light2D" parent="Candles/AnimatedSprite15" index="0"]
 energy = 0.0
@@ -232,7 +232,7 @@ energy = 0.0
 position = Vector2( 1146, 603 )
 scale = Vector2( 0.5, 0.5 )
 animation = "Smoking"
-frame = 17
+frame = 0
 
 [node name="Light2D" parent="Candles/AnimatedSprite16" index="0"]
 energy = 0.0
@@ -241,7 +241,7 @@ energy = 0.0
 position = Vector2( 1216, 484 )
 scale = Vector2( 0.5, 0.5 )
 animation = "Smoking"
-frame = 8
+frame = 9
 
 [node name="Light2D" parent="Candles/AnimatedSprite10" index="0"]
 energy = 0.0
@@ -249,7 +249,7 @@ energy = 0.0
 [node name="AnimatedSprite11" parent="Candles" index="12" instance=ExtResource( 5 )]
 position = Vector2( 1204, 492 )
 scale = Vector2( 0.5, 0.5 )
-frame = 2
+frame = 7
 
 [node name="Light2D" parent="Candles/AnimatedSprite11" index="0"]
 energy = 0.29
@@ -257,7 +257,7 @@ energy = 0.29
 [node name="AnimatedSprite14" parent="Candles" index="13" instance=ExtResource( 5 )]
 position = Vector2( 1170, 648 )
 animation = "Smoking"
-frame = 11
+frame = 12
 
 [node name="Light2D" parent="Candles/AnimatedSprite14" index="0"]
 position = Vector2( 0, 5 )
@@ -273,14 +273,14 @@ energy = 0.0
 
 [node name="AnimatedSprite13" parent="Candles" index="15" instance=ExtResource( 3 )]
 position = Vector2( 654, 917 )
-frame = 5
+frame = 6
 
 [node name="Light2D" parent="Candles/AnimatedSprite13" index="0"]
 energy = 0.42
 
 [node name="AnimatedSprite17" parent="Candles" index="16" instance=ExtResource( 3 )]
 position = Vector2( 78, 436 )
-frame = 5
+frame = 6
 
 [node name="Light2D" parent="Candles/AnimatedSprite17" index="0"]
 energy = 0.42

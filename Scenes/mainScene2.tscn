@@ -35,55 +35,55 @@ z_index = 2
 z_as_relative = false
 
 [node name="AnimatedSprite" parent="TiledMap editor example-/Candles" index="0"]
-frame = 0
+frame = 1
 
 [node name="AnimatedSprite2" parent="TiledMap editor example-/Candles" index="1"]
-frame = 2
+frame = 3
 
 [node name="AnimatedSprite3" parent="TiledMap editor example-/Candles" index="2"]
-frame = 0
+frame = 1
 
 [node name="AnimatedSprite4" parent="TiledMap editor example-/Candles" index="3"]
-frame = 5
+frame = 6
 
 [node name="AnimatedSprite5" parent="TiledMap editor example-/Candles" index="4"]
-frame = 16
-
-[node name="AnimatedSprite6" parent="TiledMap editor example-/Candles" index="5"]
-frame = 4
-
-[node name="AnimatedSprite7" parent="TiledMap editor example-/Candles" index="6"]
-frame = 6
-
-[node name="AnimatedSprite8" parent="TiledMap editor example-/Candles" index="7"]
-frame = 4
-
-[node name="AnimatedSprite9" parent="TiledMap editor example-/Candles" index="8"]
-frame = 7
-
-[node name="AnimatedSprite15" parent="TiledMap editor example-/Candles" index="9"]
-frame = 6
-
-[node name="AnimatedSprite16" parent="TiledMap editor example-/Candles" index="10"]
-frame = 6
-
-[node name="AnimatedSprite10" parent="TiledMap editor example-/Candles" index="11"]
-frame = 15
-
-[node name="AnimatedSprite11" parent="TiledMap editor example-/Candles" index="12"]
-frame = 4
-
-[node name="AnimatedSprite14" parent="TiledMap editor example-/Candles" index="13"]
-frame = 0
-
-[node name="AnimatedSprite12" parent="TiledMap editor example-/Candles" index="14"]
 frame = 5
 
-[node name="AnimatedSprite13" parent="TiledMap editor example-/Candles" index="15"]
+[node name="AnimatedSprite6" parent="TiledMap editor example-/Candles" index="5"]
+frame = 5
+
+[node name="AnimatedSprite7" parent="TiledMap editor example-/Candles" index="6"]
+frame = 13
+
+[node name="AnimatedSprite8" parent="TiledMap editor example-/Candles" index="7"]
+frame = 5
+
+[node name="AnimatedSprite9" parent="TiledMap editor example-/Candles" index="8"]
 frame = 0
 
+[node name="AnimatedSprite15" parent="TiledMap editor example-/Candles" index="9"]
+frame = 13
+
+[node name="AnimatedSprite16" parent="TiledMap editor example-/Candles" index="10"]
+frame = 13
+
+[node name="AnimatedSprite10" parent="TiledMap editor example-/Candles" index="11"]
+frame = 4
+
+[node name="AnimatedSprite11" parent="TiledMap editor example-/Candles" index="12"]
+frame = 5
+
+[node name="AnimatedSprite14" parent="TiledMap editor example-/Candles" index="13"]
+frame = 7
+
+[node name="AnimatedSprite12" parent="TiledMap editor example-/Candles" index="14"]
+frame = 12
+
+[node name="AnimatedSprite13" parent="TiledMap editor example-/Candles" index="15"]
+frame = 1
+
 [node name="AnimatedSprite17" parent="TiledMap editor example-/Candles" index="16"]
-frame = 0
+frame = 1
 
 [node name="Trap" type="Node2D" parent="TiledMap editor example-"]
 position = Vector2( -2, 0 )
@@ -328,30 +328,6 @@ script = ExtResource( 6 )
 rotation = 1.5708
 shape = SubResource( 1 )
 
-[node name="Portal1-1" parent="." instance=ExtResource( 3 )]
-position = Vector2( 212, -20 )
-scale = Vector2( 2.59065, 1.08342 )
-z_index = 5
-z_as_relative = false
-collision_mask = 4
-nextScenePath = "res://Scenes/mainScene3.tscn"
-
-[node name="Portal1-2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1121, -19 )
-scale = Vector2( 2.59065, 1.08342 )
-z_index = 5
-z_as_relative = false
-collision_mask = 4
-nextScenePath = "res://Scenes/mainScene3.tscn"
-
-[node name="Portal1-3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 217, 1296 )
-scale = Vector2( 2.59065, 1.08342 )
-z_index = 5
-z_as_relative = false
-collision_mask = 4
-nextScenePath = "res://Scenes/mainScene3.tscn"
-
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 869, 989 )
 
@@ -359,6 +335,21 @@ position = Vector2( 869, 989 )
 stream = ExtResource( 7 )
 volume_db = -19.227
 autoplay = true
+
+[node name="Portal1-1" parent="." instance=ExtResource( 3 )]
+position = Vector2( 223, -24 )
+scale = Vector2( 2.59065, 1.08342 )
+nextScenePath = "res://Scenes/mainScene3.tscn"
+
+[node name="Portal1-2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1122, -20 )
+scale = Vector2( 2.59065, 1.08342 )
+nextScenePath = "res://Scenes/mainScene3.tscn"
+
+[node name="Portal1-3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 223, 1289 )
+scale = Vector2( 2.59065, 1.08342 )
+nextScenePath = "res://Scenes/mainScene3.tscn"
 
 [connection signal="body_entered" from="TiledMap editor example-/ChangeZ/Ztransform" to="Player" method="_on_Ztransform_body_entered"]
 [connection signal="body_exited" from="TiledMap editor example-/ChangeZ/Ztransform" to="Player" method="_on_Ztransform_body_exited"]
@@ -370,6 +361,9 @@ autoplay = true
 [connection signal="body_exited" from="TiledMap editor example-/ChangeZ/Ztransform4" to="Player" method="_on_Ztransform_body_exited"]
 [connection signal="body_entered" from="TiledMap editor example-/ChangeZ/Ztransform5" to="Player" method="_on_Ztransform_body_entered"]
 [connection signal="body_exited" from="TiledMap editor example-/ChangeZ/Ztransform5" to="Player" method="_on_Ztransform_body_exited"]
+[connection signal="area_entered" from="Portal1-1" to="Portal1-1" method="_on_Portal_area_entered"]
+[connection signal="area_entered" from="Portal1-2" to="Portal1-2" method="_on_Portal_area_entered"]
+[connection signal="area_entered" from="Portal1-3" to="Portal1-3" method="_on_Portal_area_entered"]
 
 [editable path="TiledMap editor example-"]
 [editable path="TiledMap editor example-/Candles/AnimatedSprite"]

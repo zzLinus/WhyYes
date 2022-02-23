@@ -12,7 +12,7 @@ collision_mask = 512
 script = ExtResource( 1 )
 nextScenePath = "res://Scenes/DungeonMap.tscn"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="colli" type="CollisionShape2D" parent="."]
 rotation = -1.5708
 scale = Vector2( 0.818159, 0.910985 )
 shape = SubResource( 1 )
