@@ -23,6 +23,8 @@ tracks/0/keys = {
 length = 0.001
 
 [node name="transport" type="Sprite"]
+z_index = 4
+z_as_relative = false
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 

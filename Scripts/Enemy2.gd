@@ -52,20 +52,6 @@ func _process(delta):
 	diraction = HandleMovement(playerPos)
 	diraction = diraction.normalized()
 
-	#handle attack
-	if isAttain && !doingAction:
-		doingAction = true
-		if bulletNum >= 2:
-			animTree.set("parameters/EnemyState/current", enemyState.PREPARE)
-			yield(get_tree().create_timer(0.45), "timeout")
-			animTree.set("parameters/EnemyState/current", enemyState.ATTACK)
-			yield(get_tree().create_timer(1.05), "timeout")
-			animTree.set("parameters/EnemyState/current", enemyState.PUTAWAY)
-		else:
-			animTree.set("parameters/EnemyState/current", enemyState.RELOAD)
-			bulletNum = 6
-			yield(get_tree().create_timer(0.8), "timeout")
-			animTree.set("parameters/EnemyState/current", enemyState.ATTACK)
 
 	#handle turning
 	if !doingAction:
@@ -91,6 +77,23 @@ func _process(delta):
 			elif !isLeft && isLookLeft:
 				isLookLeft = false
 				HandlePlayerTurn()
+
+
+	#handle attack
+	if isAttain && !doingAction:
+		doingAction = true
+		if bulletNum >= 2:
+			animTree.set("parameters/EnemyState/current", enemyState.PREPARE)
+			yield(get_tree().create_timer(0.45), "timeout")
+			animTree.set("parameters/EnemyState/current", enemyState.ATTACK)
+			yield(get_tree().create_timer(1.05), "timeout")
+			animTree.set("parameters/EnemyState/current", enemyState.PUTAWAY)
+		else:
+			animTree.set("parameters/EnemyState/current", enemyState.RELOAD)
+			bulletNum = 6
+			yield(get_tree().create_timer(0.8), "timeout")
+			animTree.set("parameters/EnemyState/current", enemyState.ATTACK)
+
 
 	if !doingAction:
 		if !isAttain:
@@ -118,9 +121,13 @@ func Shoot():
 	var projectile2 = bullet.instance()
 
 	projectile.linear_velocity = Vector2(500 * diraction)
-	projectile.rotate(PI - diraction.angle())
 	projectile2.linear_velocity = Vector2(500 * diraction)
-	projectile2.rotate(PI - diraction.angle())
+	if !isLookLeft:
+		projectile.rotate(diraction.angle())
+		projectile2.rotate(diraction.angle())
+	else:
+		projectile.rotate(PI - diraction.angle())
+		projectile2.rotate(PI - diraction.angle())
 
 	call_deferred("add_child", projectile)
 	projectile.global_position = firePoint.position

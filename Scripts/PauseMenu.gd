@@ -30,6 +30,7 @@ func _on_Button3_pressed():
 	AutoloadScript.playerData.playerIsFirstLoad = false
 	var players = get_tree().get_nodes_in_group("Player")
 	if AutoloadScript.currentScene == 1:
+		AutoloadScript.playerData.playerIsFirstLoad = true
 		if get_tree().change_scene("res://Scenes/main.tscn") != OK:
 			print("unable to change scene")
 		self.isPause = false

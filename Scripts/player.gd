@@ -102,6 +102,10 @@ func _process(delta):
 
 	if !doingTrans && !doingAction && !doingDash:
 		isRunning = handleMovement(delta)
+	
+	if dashDuration.is_stopped() && points.size():
+		ClearTransportPoints(0)
+
 
 
 func handlePlayerAnim():
@@ -135,6 +139,9 @@ func handleWithSwordAnim():
 func handleNormAnim():
 	if Input.is_action_just_pressed("Dash") && !doingDash && dashDuration.is_stopped():
 		playerDash()
+	# elif Input.is_action_just_released("Dash"):
+	# 	dashDuration.stop()
+	# 	ClearTransportPoints(0)
 	elif Input.is_action_just_pressed("Roll") && !doingAction:
 		animTree.set("parameters/NMTransition/current", NMstate.ROLL)
 		return
@@ -144,75 +151,75 @@ func handleNormAnim():
 		else:
 			animTree.set("parameters/NMTransition/current", NMstate.IDLE)
 
-	if !dashDuration.is_stopped() && Input.is_key_pressed(KEY_CONTROL) && !doingAction:
-		var playerVol : Vector2 
+	if !dashDuration.is_stopped() && Input.is_action_just_released("Dash"):
+		var playerVol: Vector2
 		playerVol.x = int(Input.is_action_pressed("Right")) - int(Input.is_action_pressed("Left"))
 		playerVol.y = int(Input.is_action_pressed("Down")) - int(Input.is_action_pressed("Up"))
-		#UP 
+		#UP
 		if playerVol == Vector2(0, -1):
 			points[6].PlayFlash()
 			animTree.set("parameters/NMTransition/current", NMstate.DASH)
-			yield(get_tree().create_timer(dashDelay),"timeout")
+			yield(get_tree().create_timer(dashDelay), "timeout")
 			dashDuration.stop()
-			global_position = points[6].global_position+ Vector2(0,-30)
+			global_position = points[6].global_position + Vector2(0, -30)
 			ClearTransportPoints(1)
 		#DOWN
 		if playerVol == Vector2(0, 1):
 			points[2].PlayFlash()
 			animTree.set("parameters/NMTransition/current", NMstate.DASH)
-			yield(get_tree().create_timer(dashDelay),"timeout")
+			yield(get_tree().create_timer(dashDelay), "timeout")
 			dashDuration.stop()
-			global_position = points[2].global_position+ Vector2(0,-30)
+			global_position = points[2].global_position + Vector2(0, -30)
 			ClearTransportPoints(1)
 		#LEFT
 		if playerVol == Vector2(-1, 0):
 			points[4].PlayFlash()
 			animTree.set("parameters/NMTransition/current", NMstate.DASH)
-			yield(get_tree().create_timer(dashDelay),"timeout")
+			yield(get_tree().create_timer(dashDelay), "timeout")
 			dashDuration.stop()
-			global_position = points[4].global_position+ Vector2(0,-30)
+			global_position = points[4].global_position + Vector2(0, -30)
 			ClearTransportPoints(1)
 		#RIGHT
 		if playerVol == Vector2(1, 0):
 			points[0].PlayFlash()
 			animTree.set("parameters/NMTransition/current", NMstate.DASH)
-			yield(get_tree().create_timer(dashDelay),"timeout")
+			yield(get_tree().create_timer(dashDelay), "timeout")
 			dashDuration.stop()
-			global_position = points[0].global_position+ Vector2(0,-30)
+			global_position = points[0].global_position + Vector2(0, -30)
 			ClearTransportPoints(1)
 		#UP LEFT
-		if playerVol == Vector2(-1,-1):
+		if playerVol == Vector2(-1, -1):
 			points[5].PlayFlash()
 			animTree.set("parameters/NMTransition/current", NMstate.DASH)
-			yield(get_tree().create_timer(dashDelay),"timeout")
+			yield(get_tree().create_timer(dashDelay), "timeout")
 			dashDuration.stop()
-			global_position = points[5].global_position + Vector2(0,-30)
+			global_position = points[5].global_position + Vector2(0, -30)
 			ClearTransportPoints(1)
 			return
 		#UP RIGHT
-		if playerVol == Vector2(1,-1):
+		if playerVol == Vector2(1, -1):
 			points[7].PlayFlash()
 			animTree.set("parameters/NMTransition/current", NMstate.DASH)
-			yield(get_tree().create_timer(dashDelay),"timeout")
+			yield(get_tree().create_timer(dashDelay), "timeout")
 			dashDuration.stop()
-			global_position = points[7].global_position+ Vector2(0,-30)
+			global_position = points[7].global_position + Vector2(0, -30)
 			ClearTransportPoints(1)
 			return
 		#DOWN LEFT
-		if playerVol == Vector2(-1,1):
+		if playerVol == Vector2(-1, 1):
 			points[3].PlayFlash()
 			animTree.set("parameters/NMTransition/current", NMstate.DASH)
-			yield(get_tree().create_timer(dashDelay),"timeout")
+			yield(get_tree().create_timer(dashDelay), "timeout")
 			dashDuration.stop()
-			global_position = points[3].global_position+ Vector2(0,-30)
+			global_position = points[3].global_position + Vector2(0, -30)
 			ClearTransportPoints(1)
 		#DOWN RIGHT
-		if playerVol == Vector2(1,1):
+		if playerVol == Vector2(1, 1):
 			points[1].PlayFlash()
 			animTree.set("parameters/NMTransition/current", NMstate.DASH)
-			yield(get_tree().create_timer(dashDelay),"timeout")
+			yield(get_tree().create_timer(dashDelay), "timeout")
 			dashDuration.stop()
-			global_position = points[1].global_position+ Vector2(0,-30)
+			global_position = points[1].global_position + Vector2(0, -30)
 			ClearTransportPoints(1)
 
 
@@ -241,17 +248,15 @@ func playerDash():
 		Vector2(0, -1).normalized(),
 		Vector2(1, -1).normalized()
 	]
-	for i in range(8):
-		yield(get_tree().create_timer(0.06), "timeout")
-		points.append(spawnEffect(transportPoint,Vector2(0,20) + global_position + diractions[i] * 100))
-
 	dashDuration.start()
+	for i in range(8):
+		yield(get_tree().create_timer(0.04), "timeout")
+		points.append(
+			spawnEffect(transportPoint, Vector2(0, 20) + global_position + diractions[i] * 150)
+		)
 
-	yield(dashDuration,"timeout")
-	ClearTransportPoints(0)
 
-
-func ClearTransportPoints(type : int):
+func ClearTransportPoints(type: int):
 	if type == 0:
 		for i in range(8):
 			yield(get_tree().create_timer(0.1), "timeout")
@@ -261,7 +266,6 @@ func ClearTransportPoints(type : int):
 			points[i].queue_free()
 
 	points.clear()
-
 
 
 func handleMovement(delta):
