@@ -3,20 +3,20 @@ extends KinematicBody2D
 var enemyHealth: int
 var playerPos: Vector2
 var isAttain: bool = false
-var setLookLeft : bool = true
+var setLookLeft: bool = true
 var isLookLeft: bool = false
 var enemyVelocity: Vector2 = Vector2(0, 0)
 var transformer = Transform2D()
-var interrupCD: float = 4 
+var interrupCD: float = 4
 var attenDisten: int = 200
-var bulletNum : int = 6
+var bulletNum: int = 6
 var diraction
 
 export(bool) var doingAction
 export(PackedScene) var playerHitEffect: PackedScene
 export(PackedScene) var blood: PackedScene
 
-enum enemyState { IDLE, GETHIT, ATTACK, RUN, PREPARE, RELOAD,PUTAWAY}
+enum enemyState { IDLE, GETHIT, ATTACK, RUN, PREPARE, RELOAD, PUTAWAY }
 
 onready var animTree = $AnimationTree
 onready var bladeSound = $BladeSound
@@ -33,6 +33,7 @@ signal enemyHealthChanged(damage)
 signal enemyDeath
 
 const bullet = preload("res://Scenes/Bullet.tscn")
+
 
 func _ready():
 	attainSprite.visible = false
@@ -52,23 +53,23 @@ func _process(delta):
 	diraction = diraction.normalized()
 
 	#handle attack
-	if   isAttain && !doingAction:
+	if isAttain && !doingAction:
 		doingAction = true
-		if bulletNum >=2:
+		if bulletNum >= 2:
 			animTree.set("parameters/EnemyState/current", enemyState.PREPARE)
-			yield(get_tree().create_timer(0.45),"timeout")
+			yield(get_tree().create_timer(0.45), "timeout")
 			animTree.set("parameters/EnemyState/current", enemyState.ATTACK)
-			yield(get_tree().create_timer(1.05),"timeout")
+			yield(get_tree().create_timer(1.05), "timeout")
 			animTree.set("parameters/EnemyState/current", enemyState.PUTAWAY)
 		else:
 			animTree.set("parameters/EnemyState/current", enemyState.RELOAD)
 			bulletNum = 6
-			yield(get_tree().create_timer(0.8),"timeout")
+			yield(get_tree().create_timer(0.8), "timeout")
 			animTree.set("parameters/EnemyState/current", enemyState.ATTACK)
 
 	#handle turning
 	if !doingAction:
-		if (playerPos - global_position).length() < attenDisten  && !isAttain:
+		if (playerPos - global_position).length() < attenDisten && !isAttain:
 			isAttain = true
 			attainSprite.visible = true
 			attainSprite.play("Active")
@@ -91,15 +92,14 @@ func _process(delta):
 				isLookLeft = false
 				HandlePlayerTurn()
 
-
 	if !doingAction:
 		if !isAttain:
 			animTree.set("parameters/EnemyState/current", enemyState.IDLE)
 		else:
 			if isLookLeft:
-				var moveto = playerPos + Vector2(100,0)
+				var moveto = playerPos + Vector2(100, 0)
 			else:
-				var moveto = playerPos + Vector2(-100,0)
+				var moveto = playerPos + Vector2(-100, 0)
 			# if (global_position - playerPos).length() < 100:
 			move_and_slide(-diraction * 100)
 			animTree.set("parameters/EnemyState/current", enemyState.RUN)
@@ -111,20 +111,22 @@ func HandleMovement(playerpos) -> Vector2:
 	animTree.set("parameter/EnemyState/current", enemyState.RUN)
 	return diraction
 
+
 func Shoot():
 	bulletNum -= 2
 	var projectile = bullet.instance()
 	var projectile2 = bullet.instance()
 
 	projectile.linear_velocity = Vector2(500 * diraction)
-	projectile.rotate(PI-diraction.angle())
+	projectile.rotate(PI - diraction.angle())
 	projectile2.linear_velocity = Vector2(500 * diraction)
-	projectile2.rotate(PI-diraction.angle())
+	projectile2.rotate(PI - diraction.angle())
 
 	call_deferred("add_child", projectile)
 	projectile.global_position = firePoint.position
 	call_deferred("add_child", projectile2)
 	projectile.global_position = firePoint.position
+
 
 func HandlePlayerTurn():
 	if isLookLeft:
@@ -133,7 +135,6 @@ func HandlePlayerTurn():
 	else:
 		transformer.x.x = 1
 		transformer.x.y = 0
-
 
 	transform.x = transformer.x * 2
 	doingAction = false

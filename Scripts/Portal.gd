@@ -12,7 +12,7 @@ func _on_Enemy_enemyDeath():
 	$colli.disabled = false
 
 
-func _on_Portal_area_entered(area:Area2D):
+func _on_Portal_area_entered(area: Area2D):
 	if area.name == "InteractWithPortal":
 		print("player entered portal")
 

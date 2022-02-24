@@ -7,6 +7,9 @@ onready var kEyD = $D
 onready var kEyQ = $Q
 onready var kEyJ = $J
 onready var kEyI = $I
+onready var kEyR = $R
+onready var kEyK = $K
+onready var kEyL = $L
 
 
 func _process(delta):
@@ -44,3 +47,18 @@ func _process(delta):
 		kEyJ.visible = false
 	else:
 		kEyJ.visible = true
+
+	if Input.is_action_pressed("Roll"):
+		kEyK.visible = false
+	else:
+		kEyK.visible = true
+
+	if Input.is_action_pressed("Pause"):
+		kEyR.visible = false
+	else:
+		kEyR.visible = true
+
+	if Input.is_action_pressed("Parry"):
+		kEyL.visible = false
+	else:
+		kEyL.visible = true

@@ -3,7 +3,7 @@ extends KinematicBody2D
 var enemyHealth: int
 var playerPos: Vector2
 var isAttain: bool = false
-var setLookLeft : bool = true
+var setLookLeft: bool = true
 var isLookLeft: bool = false
 var enemyVelocity: Vector2 = Vector2(0, 0)
 var transformer = Transform2D()
@@ -53,7 +53,7 @@ func _process(delta):
 
 	#handle turning
 	if !doingAction:
-		if (playerPos - global_position).length() < attenDisten  && !isAttain:
+		if (playerPos - global_position).length() < attenDisten && !isAttain:
 			isAttain = true
 			attainSprite.visible = true
 			attainSprite.play("Active")
@@ -109,7 +109,6 @@ func HandlePlayerTurn():
 		isLookLeft = true
 	else:
 		isLookLeft = false
-
 
 	transform.x = transformer.x * 2
 	transform.y = transformer.y * 2

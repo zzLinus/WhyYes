@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=2]
+[gd_scene load_steps=70 format=2]
 
 [ext_resource path="res://Scenes/VolcMap-v2/map_VolcMap-v2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/VolcanoAnimRock4.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Scenes/NPC.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/BGM/xDeviruchi - Exploring The Unknown.wav" type="AudioStream" id=12]
 [ext_resource path="res://Scenes/Enemy2.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scripts/TransportMain.gd" type="Script" id=14]
 
 [sub_resource type="Animation" id=9]
 length = 0.001
@@ -2130,7 +2131,7 @@ scale = Vector2( 2.59065, 1.08342 )
 nextScenePath = "res://Scenes/mainScene2.tscn"
 
 [node name="Enemy" parent="." instance=ExtResource( 10 )]
-position = Vector2( 2226, 1478 )
+position = Vector2( 1313, 1622 )
 
 [node name="AnimatedSprite" parent="Enemy" index="0"]
 frame = 3
@@ -2150,7 +2151,7 @@ margin_bottom = -42.5
 collision_mask = 64
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
-position = Vector2( 781, 1340 )
+position = Vector2( 1937, 1652 )
 
 [node name="AnimatedSprite" parent="Player" index="2"]
 animation = "WSPlayerParry"
@@ -2158,10 +2159,13 @@ animation = "WSPlayerParry"
 [node name="AnimationTree" parent="Player" index="4"]
 parameters/WSTransition/current = 0
 
+[node name="TransportMain" type="Position2D" parent="."]
+script = ExtResource( 14 )
+
 [node name="NPC" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1142, 1633 )
 z_index = 1
-frame = 11
+frame = 1
 flip_h = true
 
 [node name="PlayerShadow" parent="NPC" index="0"]

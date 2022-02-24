@@ -18,6 +18,8 @@ var playerHealth: int
 var comboTrigger: bool
 var spawnPointID: int
 var interrupCD: float = 3
+var points = []
+var dashDelay = 0.3
 
 onready var playerSprite = $AnimatedSprite
 onready var animTree = $AnimationTree
@@ -27,6 +29,9 @@ onready var cameraShake = $Camera2D/Node
 onready var hurtSound = $Hurt
 onready var dashSound = $Dash
 onready var interrupTimer = $InterruTimer
+onready var playerShadow = $PlayerShadow
+onready var transportMain = get_node("../TransportMain")
+onready var dashDuration = $DashDuration
 
 enum SWstate { WITHSWORD, WOSWORD }
 enum NMstate { IDLE, RUN, DEATH, GETHIT, PUTSWORD, DASH, ROLL }
@@ -45,6 +50,8 @@ enum WSstate {
 }
 
 signal healthChanged(damage)
+
+const transportPoint = preload("res://Scenes/TransportPoint.tscn")
 
 
 func _ready():
@@ -126,9 +133,8 @@ func handleWithSwordAnim():
 
 
 func handleNormAnim():
-	if Input.is_action_just_pressed("Dash") && !doingDash:
-		animTree.set("parameters/NMTransition/current", NMstate.DASH)
-		doingAction = true
+	if Input.is_action_just_pressed("Dash") && !doingDash && dashDuration.is_stopped():
+		playerDash()
 	elif Input.is_action_just_pressed("Roll") && !doingAction:
 		animTree.set("parameters/NMTransition/current", NMstate.ROLL)
 		return
@@ -137,6 +143,77 @@ func handleNormAnim():
 			animTree.set("parameters/NMTransition/current", NMstate.RUN)
 		else:
 			animTree.set("parameters/NMTransition/current", NMstate.IDLE)
+
+	if !dashDuration.is_stopped() && Input.is_key_pressed(KEY_CONTROL) && !doingAction:
+		var playerVol : Vector2 
+		playerVol.x = int(Input.is_action_pressed("Right")) - int(Input.is_action_pressed("Left"))
+		playerVol.y = int(Input.is_action_pressed("Down")) - int(Input.is_action_pressed("Up"))
+		#UP 
+		if playerVol == Vector2(0, -1):
+			points[6].PlayFlash()
+			animTree.set("parameters/NMTransition/current", NMstate.DASH)
+			yield(get_tree().create_timer(dashDelay),"timeout")
+			dashDuration.stop()
+			global_position = points[6].global_position+ Vector2(0,-30)
+			ClearTransportPoints(1)
+		#DOWN
+		if playerVol == Vector2(0, 1):
+			points[2].PlayFlash()
+			animTree.set("parameters/NMTransition/current", NMstate.DASH)
+			yield(get_tree().create_timer(dashDelay),"timeout")
+			dashDuration.stop()
+			global_position = points[2].global_position+ Vector2(0,-30)
+			ClearTransportPoints(1)
+		#LEFT
+		if playerVol == Vector2(-1, 0):
+			points[4].PlayFlash()
+			animTree.set("parameters/NMTransition/current", NMstate.DASH)
+			yield(get_tree().create_timer(dashDelay),"timeout")
+			dashDuration.stop()
+			global_position = points[4].global_position+ Vector2(0,-30)
+			ClearTransportPoints(1)
+		#RIGHT
+		if playerVol == Vector2(1, 0):
+			points[0].PlayFlash()
+			animTree.set("parameters/NMTransition/current", NMstate.DASH)
+			yield(get_tree().create_timer(dashDelay),"timeout")
+			dashDuration.stop()
+			global_position = points[0].global_position+ Vector2(0,-30)
+			ClearTransportPoints(1)
+		#UP LEFT
+		if playerVol == Vector2(-1,-1):
+			points[5].PlayFlash()
+			animTree.set("parameters/NMTransition/current", NMstate.DASH)
+			yield(get_tree().create_timer(dashDelay),"timeout")
+			dashDuration.stop()
+			global_position = points[5].global_position + Vector2(0,-30)
+			ClearTransportPoints(1)
+			return
+		#UP RIGHT
+		if playerVol == Vector2(1,-1):
+			points[7].PlayFlash()
+			animTree.set("parameters/NMTransition/current", NMstate.DASH)
+			yield(get_tree().create_timer(dashDelay),"timeout")
+			dashDuration.stop()
+			global_position = points[7].global_position+ Vector2(0,-30)
+			ClearTransportPoints(1)
+			return
+		#DOWN LEFT
+		if playerVol == Vector2(-1,1):
+			points[3].PlayFlash()
+			animTree.set("parameters/NMTransition/current", NMstate.DASH)
+			yield(get_tree().create_timer(dashDelay),"timeout")
+			dashDuration.stop()
+			global_position = points[3].global_position+ Vector2(0,-30)
+			ClearTransportPoints(1)
+		#DOWN RIGHT
+		if playerVol == Vector2(1,1):
+			points[1].PlayFlash()
+			animTree.set("parameters/NMTransition/current", NMstate.DASH)
+			yield(get_tree().create_timer(dashDelay),"timeout")
+			dashDuration.stop()
+			global_position = points[1].global_position+ Vector2(0,-30)
+			ClearTransportPoints(1)
 
 
 func handleAttackAnim():
@@ -151,6 +228,40 @@ func handleAttackAnim():
 	else:
 		if !comboTrigger:
 			comboTrigger = true
+
+
+func playerDash():
+	var diractions = [
+		Vector2(1, 0).normalized(),
+		Vector2(1, 1).normalized(),
+		Vector2(0, 1).normalized(),
+		Vector2(-1, 1).normalized(),
+		Vector2(-1, 0).normalized(),
+		Vector2(-1, -1).normalized(),
+		Vector2(0, -1).normalized(),
+		Vector2(1, -1).normalized()
+	]
+	for i in range(8):
+		yield(get_tree().create_timer(0.06), "timeout")
+		points.append(spawnEffect(transportPoint,Vector2(0,20) + global_position + diractions[i] * 100))
+
+	dashDuration.start()
+
+	yield(dashDuration,"timeout")
+	ClearTransportPoints(0)
+
+
+func ClearTransportPoints(type : int):
+	if type == 0:
+		for i in range(8):
+			yield(get_tree().create_timer(0.1), "timeout")
+			points[i].queue_free()
+	elif type == 1:
+		for i in range(8):
+			points[i].queue_free()
+
+	points.clear()
+
 
 
 func handleMovement(delta):
@@ -322,18 +433,19 @@ func spawnRunSmoke():
 
 func spawnEffect(effect: PackedScene, effectPos: Vector2 = global_position):
 	var currEffect = effect.instance()
-	get_tree().current_scene.add_child(currEffect)
+	if currEffect.name == "transport":
+		var playerNode = get_tree().get_nodes_in_group("Player")
+		transportMain.add_child(currEffect)
+		print("add child to player")
+	else:
+		get_tree().current_scene.add_child(currEffect)
 	if currEffect.name == "EnemyHitEffect":
 		currEffect.get_child(0).play("HitEffect")
 	if currEffect.name == "DarkMagicEffect":
 		currEffect.get_child(0).play("DarkMagic")
 	currEffect.global_position = effectPos
 	return currEffect
-
-
-func playerDash():
-	dashSound.play()
-	global_position += playerVelocity.normalized() * 150
+	# AutoloadScript.playerData.playerSpawnPoint
 
 
 func death():
@@ -355,6 +467,7 @@ func LoadPlayerData():
 	playerHealth = AutoloadScript.playerData.playerHealth
 	playerState = AutoloadScript.playerData.playerState
 	spawnPointID = AutoloadScript.playerData.playerSpawnPoint
+	playerShadow.visible = true
 	emit_signal("healthChanged", 0)
 	print(AutoloadScript.playerData)
 	print("player data loaded")
@@ -383,6 +496,7 @@ func _on_InteractWithPortal_area_entered(area):
 		spawnEffect(darkMagicEffect, global_position)
 		doingAction = true
 		playerSprite.visible = false
+		playerShadow.visible = false
 	elif area.name == "PhyTrapHitBox":
 		var damage = area.trapDamage[area.get_parent().trapType]
 		print("hurt by physical tray")
