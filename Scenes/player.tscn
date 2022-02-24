@@ -1,4 +1,4 @@
-[gd_scene load_steps=284 format=2]
+[gd_scene load_steps=285 format=2]
 
 [ext_resource path="res://Scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Texture/charactor/Player_Idle_04.png" type="Texture" id=2]
@@ -445,7 +445,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.55 ),
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
@@ -457,6 +457,18 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../InteractWithPortal/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -662,17 +674,20 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id=3]
 length = 0.001
+
+[sub_resource type="Animation" id=59]
+resource_name = "SceneTransition"
 tracks/0/type = "value"
-tracks/0/path = NodePath("..:doingAction")
+tracks/0/path = NodePath("../UI/PlayerUI/Shader2:material:shader_param/time")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ true ]
+"values": [ 0.0, 1.597 ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -1707,8 +1722,6 @@ z_as_relative = false
 collision_layer = 4
 collision_mask = 27
 script = ExtResource( 1 )
-doingAction = true
-doingDash = true
 runSmokeEffect = ExtResource( 170 )
 enemyHitEffect = ExtResource( 173 )
 blood = ExtResource( 201 )
@@ -1742,6 +1755,7 @@ anims/PlayerIdle = SubResource( 4 )
 anims/PlayerRoll = SubResource( 53 )
 anims/PlayerRun = SubResource( 7 )
 anims/RESET = SubResource( 3 )
+anims/SceneTransition = SubResource( 59 )
 anims/TSPlayerPutAwaySword = SubResource( 8 )
 anims/TSPlayerTakeSword = SubResource( 9 )
 anims/WSPlayerAttack1 = SubResource( 15 )
@@ -1791,7 +1805,7 @@ one_shot = true
 [node name="HurtBox" type="Area2D" parent="."]
 rotation = 0.00522293
 collision_layer = 64
-collision_mask = 16
+collision_mask = 2064
 script = ExtResource( 167 )
 
 [node name="HurtboxColli" type="CollisionShape2D" parent="HurtBox"]
@@ -1826,6 +1840,18 @@ position = Vector2( 8, -2 )
 polygon = PoolVector2Array( -16, -34, -22, -62, -12, -74, 8, -80, 32, -82, 46, -78, 62, -74, 70, -64, 80, -56, 88, -38, 92, -24, 94, -14, 96, 0, 94, 16, 94, 26, 92, 38, 90, 46, 86, 54, 16, 46, 10, 38, 18, 16, 16, -18 )
 disabled = true
 
+[node name="InteractWithPortal" type="Area2D" parent="."]
+position = Vector2( -1, 4 )
+scale = Vector2( 0.419064, 0.942065 )
+collision_layer = 512
+collision_mask = 1184
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractWithPortal"]
+position = Vector2( 0, 37.8804 )
+rotation = 1.5708
+scale = Vector2( 0.240136, 0.525456 )
+shape = SubResource( 51 )
+
 [node name="BladeSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 144 )
 volume_db = 6.71
@@ -1842,18 +1868,6 @@ stream = ExtResource( 200 )
 [node name="SpinBlade" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 202 )
 
-[node name="InteractWithPortal" type="Area2D" parent="."]
-position = Vector2( -1, 4 )
-scale = Vector2( 0.419064, 0.942065 )
-collision_layer = 512
-collision_mask = 1184
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractWithPortal"]
-position = Vector2( 0, 37.8804 )
-rotation = 1.5708
-scale = Vector2( 0.240136, 0.525456 )
-shape = SubResource( 51 )
-
 [node name="InterruTimer" type="Timer" parent="."]
 one_shot = true
 
@@ -1862,6 +1876,7 @@ wait_time = 2.0
 one_shot = true
 
 [connection signal="healthChanged" from="." to="UI/PlayerUI/TextureProgress" method="_on_Player_healthChanged"]
+[connection signal="playerDead" from="." to="UI/PlayerUI/DeadMenu" method="_on_Player_playerDead"]
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_started" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_started"]

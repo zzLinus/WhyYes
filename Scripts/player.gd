@@ -23,6 +23,7 @@ var dashDelay = 0.3
 
 onready var playerSprite = $AnimatedSprite
 onready var animTree = $AnimationTree
+onready var animPlayer = $AnimationPlayer
 onready var comboTimer = $Timer
 onready var bladeSound = $BladeSound
 onready var cameraShake = $Camera2D/Node
@@ -50,6 +51,7 @@ enum WSstate {
 }
 
 signal healthChanged(damage)
+signal playerDead
 
 const transportPoint = preload("res://Scenes/TransportPoint.tscn")
 
@@ -65,6 +67,7 @@ func _ready():
 	interrupTimer.wait_time = interrupCD
 
 	if AutoloadScript.playerData.playerIsFirstLoad:
+		animPlayer.play_backwards("SceneTransition")
 		print("load first time")
 		AutoloadScript.currentScene = 1
 		playerHealth = 100
@@ -163,6 +166,7 @@ func handleNormAnim():
 			dashDuration.stop()
 			global_position = points[6].global_position + Vector2(0, -30)
 			ClearTransportPoints(1)
+			return
 		#DOWN
 		if playerVol == Vector2(0, 1):
 			points[2].PlayFlash()
@@ -171,6 +175,7 @@ func handleNormAnim():
 			dashDuration.stop()
 			global_position = points[2].global_position + Vector2(0, -30)
 			ClearTransportPoints(1)
+			return
 		#LEFT
 		if playerVol == Vector2(-1, 0):
 			points[4].PlayFlash()
@@ -179,6 +184,7 @@ func handleNormAnim():
 			dashDuration.stop()
 			global_position = points[4].global_position + Vector2(0, -30)
 			ClearTransportPoints(1)
+			return
 		#RIGHT
 		if playerVol == Vector2(1, 0):
 			points[0].PlayFlash()
@@ -187,6 +193,7 @@ func handleNormAnim():
 			dashDuration.stop()
 			global_position = points[0].global_position + Vector2(0, -30)
 			ClearTransportPoints(1)
+			return
 		#UP LEFT
 		if playerVol == Vector2(-1, -1):
 			points[5].PlayFlash()
@@ -213,6 +220,7 @@ func handleNormAnim():
 			dashDuration.stop()
 			global_position = points[3].global_position + Vector2(0, -30)
 			ClearTransportPoints(1)
+			return
 		#DOWN RIGHT
 		if playerVol == Vector2(1, 1):
 			points[1].PlayFlash()
@@ -221,6 +229,9 @@ func handleNormAnim():
 			dashDuration.stop()
 			global_position = points[1].global_position + Vector2(0, -30)
 			ClearTransportPoints(1)
+			return
+
+		ClearTransportPoints(0)
 
 
 func handleAttackAnim():
@@ -252,7 +263,7 @@ func playerDash():
 	for i in range(8):
 		yield(get_tree().create_timer(0.04), "timeout")
 		points.append(
-			spawnEffect(transportPoint, Vector2(0, 20) + global_position + diractions[i] * 150)
+			spawnEffect(transportPoint, Vector2(0, 20) + global_position + diractions[i] * 130)
 		)
 
 
@@ -411,6 +422,10 @@ func _on_HurtBox_area_entered(area: Area2D):
 		damage = area.enemyDamage.ATTACK
 		hurtSound.play()
 		cameraShake.Start()
+	if area.name == "Bullet":
+		damage = area.enemyDamage.ATTACK
+		hurtSound.play()
+		cameraShake.Start()
 	elif area.name == "PhyTrapHitBox":
 		damage = area.trapDamage[area.get_parent().trapType]
 		print("hurt by physical tray")
@@ -455,9 +470,11 @@ func spawnEffect(effect: PackedScene, effectPos: Vector2 = global_position):
 func death():
 	animTree.set("parameters/PlayerState/current", SWstate.WOSWORD)
 	animTree.set("parameters/NMTransition/current", NMstate.DEATH)
+	emit_signal("playerDead")
 
 
 func SavePlayerData():
+	animPlayer.play("SceneTransition")
 	AutoloadScript.playerData.playerHealth = playerHealth
 	AutoloadScript.playerData.playerSpeed = playerSpeed
 	AutoloadScript.playerData.playerState = playerState
@@ -468,6 +485,7 @@ func SavePlayerData():
 
 
 func LoadPlayerData():
+	animPlayer.play_backwards("SceneTransition")
 	playerHealth = AutoloadScript.playerData.playerHealth
 	playerState = AutoloadScript.playerData.playerState
 	spawnPointID = AutoloadScript.playerData.playerSpawnPoint

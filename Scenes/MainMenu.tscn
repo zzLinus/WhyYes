@@ -1,0 +1,119 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/pixeltheme.tres" type="Theme" id=2]
+[ext_resource path="res://Scenes/oldmonitor.gdshader" type="Shader" id=3]
+[ext_resource path="res://Assets/Texture/DarkMagicSpell/Dark VFX 1 (40x32)1.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Font/superstar.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=2]
+size = 51
+font_data = ExtResource( 5 )
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 3 )
+shader_param/overlay = true
+shader_param/scanlines_opacity = 0.0
+shader_param/scanlines_width = 0.0
+shader_param/grille_opacity = 0.0
+shader_param/resolution = Vector2( 800, 600 )
+shader_param/pixelate = false
+shader_param/roll = true
+shader_param/roll_speed = 4.0
+shader_param/roll_size = 7.114
+shader_param/roll_variation = 2.069
+shader_param/distort_intensity = 0.01
+shader_param/noise_opacity = 0.145
+shader_param/noise_speed = 7.0
+shader_param/static_noise_intensity = 0.039
+shader_param/aberration = 0.0
+shader_param/brightness = 1.4
+shader_param/discolor = false
+shader_param/warp_amount = 0.574
+shader_param/clip_warp = false
+shader_param/vignette_intensity = 0.319
+shader_param/vignette_opacity = 0.402
+
+[node name="PauseMenu" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -907, -24 )
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackGround" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0156863, 0.0705882, 0.203922, 0.831373 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -400.0
+margin_top = 100.0
+margin_right = 400.0
+margin_bottom = 207.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_stretch_ratio = 0.0
+custom_fonts/font = SubResource( 2 )
+text = "wellcome!!!!
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -327.0
+margin_top = 251.0
+margin_right = -27.0
+margin_bottom = -96.0
+custom_constants/separation = 30
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="Buttons"]
+margin_right = 300.0
+
+[node name="Start" type="Button" parent="Buttons"]
+margin_top = 30.0
+margin_right = 300.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 300, 50 )
+text = "start"
+
+[node name="Settings" type="Button" parent="Buttons"]
+margin_top = 110.0
+margin_right = 300.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 300, 50 )
+text = "Settings"
+
+[node name="Quit" type="Button" parent="Buttons"]
+margin_top = 190.0
+margin_right = 300.0
+margin_bottom = 240.0
+rect_min_size = Vector2( 300, 50 )
+text = "Quit"
+
+[node name="Shader" type="Sprite" parent="."]
+material = SubResource( 1 )
+position = Vector2( 400, 300 )
+scale = Vector2( 20, 18.75 )
+texture = ExtResource( 4 )
+
+[connection signal="pressed" from="Buttons/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="Buttons/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="Buttons/Quit" to="." method="_on_Button2_pressed"]

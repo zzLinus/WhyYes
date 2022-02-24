@@ -206,9 +206,11 @@ func spawnEffect(effect: PackedScene, effectPos: Vector2 = global_position, atta
 
 func death():
 	animTree.set("parameters/EnemyState/current", enemyState.GETHIT)
-	yield(get_tree().create_timer(0.6), "timeout")
-	emit_signal("enemyDeath")
-	queue_free()
+
+
+func CheckDead():
+	if enemyHealth <= 0:
+		queue_free()
 
 
 func _on_enemyAttaintion_animation_finished():

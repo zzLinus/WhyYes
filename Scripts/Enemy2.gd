@@ -23,7 +23,6 @@ onready var bladeSound = $BladeSound
 onready var cameraShake = get_node("../Player/Camera2D/Node")
 onready var hurtSound = $Hurt
 onready var attainSprite = $enemyAttaintion
-onready var animSprite = $AnimatedSprite
 onready var detectPlayer = $RayCast2D
 onready var interruTimer = $InterruptCD
 onready var firePoint = $FirePoint
@@ -79,6 +78,19 @@ func _process(delta):
 				HandlePlayerTurn()
 
 
+	if !doingAction:
+		if !isAttain:
+			animTree.set("parameters/EnemyState/current", enemyState.IDLE)
+		else:
+			if isLookLeft:
+				var moveto = playerPos + Vector2(100, 0)
+			else:
+				var moveto = playerPos + Vector2(-100, 0)
+			# if (global_position - playerPos).length() < 100:
+			move_and_slide(-diraction * 100)
+			animTree.set("parameters/EnemyState/current", enemyState.RUN)
+
+
 	#handle attack
 	if isAttain && !doingAction:
 		doingAction = true
@@ -95,17 +107,6 @@ func _process(delta):
 			animTree.set("parameters/EnemyState/current", enemyState.ATTACK)
 
 
-	if !doingAction:
-		if !isAttain:
-			animTree.set("parameters/EnemyState/current", enemyState.IDLE)
-		else:
-			if isLookLeft:
-				var moveto = playerPos + Vector2(100, 0)
-			else:
-				var moveto = playerPos + Vector2(-100, 0)
-			# if (global_position - playerPos).length() < 100:
-			move_and_slide(-diraction * 100)
-			animTree.set("parameters/EnemyState/current", enemyState.RUN)
 
 
 func HandleMovement(playerpos) -> Vector2:
@@ -239,9 +240,11 @@ func spawnEffect(effect: PackedScene, effectPos: Vector2 = global_position, atta
 
 func death():
 	animTree.set("parameters/EnemyState/current", enemyState.GETHIT)
-	yield(get_tree().create_timer(0.6), "timeout")
-	emit_signal("enemyDeath")
-	queue_free()
+
+
+func CheckDead():
+	if enemyHealth <= 0:
+		queue_free()
 
 
 func _on_enemyAttaintion_animation_finished():
