@@ -206,6 +206,7 @@ func spawnEffect(effect: PackedScene, effectPos: Vector2 = global_position, atta
 
 func death():
 	animTree.set("parameters/EnemyState/current", enemyState.GETHIT)
+	emit_signal("enemyDeath")
 
 
 func CheckDead():

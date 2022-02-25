@@ -69,6 +69,8 @@ tracks/0/keys = {
 [node name="Sprite" type="Sprite"]
 position = Vector2( 383, 293 )
 scale = Vector2( 2.27077, 2.06033 )
+z_index = 4
+z_as_relative = false
 texture = ExtResource( 1 )
 vframes = 8
 script = ExtResource( 2 )

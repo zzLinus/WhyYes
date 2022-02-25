@@ -36,55 +36,55 @@ z_index = 2
 z_as_relative = false
 
 [node name="AnimatedSprite" parent="TiledMap editor example-/Candles" index="0"]
-frame = 6
-
-[node name="AnimatedSprite2" parent="TiledMap editor example-/Candles" index="1"]
-frame = 0
-
-[node name="AnimatedSprite3" parent="TiledMap editor example-/Candles" index="2"]
-frame = 6
-
-[node name="AnimatedSprite4" parent="TiledMap editor example-/Candles" index="3"]
-frame = 3
-
-[node name="AnimatedSprite5" parent="TiledMap editor example-/Candles" index="4"]
-frame = 14
-
-[node name="AnimatedSprite6" parent="TiledMap editor example-/Candles" index="5"]
-frame = 2
-
-[node name="AnimatedSprite7" parent="TiledMap editor example-/Candles" index="6"]
-frame = 4
-
-[node name="AnimatedSprite8" parent="TiledMap editor example-/Candles" index="7"]
-frame = 2
-
-[node name="AnimatedSprite9" parent="TiledMap editor example-/Candles" index="8"]
 frame = 5
 
-[node name="AnimatedSprite15" parent="TiledMap editor example-/Candles" index="9"]
-frame = 4
+[node name="AnimatedSprite2" parent="TiledMap editor example-/Candles" index="1"]
+frame = 7
 
-[node name="AnimatedSprite16" parent="TiledMap editor example-/Candles" index="10"]
-frame = 4
+[node name="AnimatedSprite3" parent="TiledMap editor example-/Candles" index="2"]
+frame = 5
 
-[node name="AnimatedSprite10" parent="TiledMap editor example-/Candles" index="11"]
-frame = 13
-
-[node name="AnimatedSprite11" parent="TiledMap editor example-/Candles" index="12"]
+[node name="AnimatedSprite4" parent="TiledMap editor example-/Candles" index="3"]
 frame = 2
 
+[node name="AnimatedSprite5" parent="TiledMap editor example-/Candles" index="4"]
+frame = 7
+
+[node name="AnimatedSprite6" parent="TiledMap editor example-/Candles" index="5"]
+frame = 1
+
+[node name="AnimatedSprite7" parent="TiledMap editor example-/Candles" index="6"]
+frame = 15
+
+[node name="AnimatedSprite8" parent="TiledMap editor example-/Candles" index="7"]
+frame = 1
+
+[node name="AnimatedSprite9" parent="TiledMap editor example-/Candles" index="8"]
+frame = 4
+
+[node name="AnimatedSprite15" parent="TiledMap editor example-/Candles" index="9"]
+frame = 15
+
+[node name="AnimatedSprite16" parent="TiledMap editor example-/Candles" index="10"]
+frame = 15
+
+[node name="AnimatedSprite10" parent="TiledMap editor example-/Candles" index="11"]
+frame = 6
+
+[node name="AnimatedSprite11" parent="TiledMap editor example-/Candles" index="12"]
+frame = 1
+
 [node name="AnimatedSprite14" parent="TiledMap editor example-/Candles" index="13"]
-frame = 16
+frame = 9
 
 [node name="AnimatedSprite12" parent="TiledMap editor example-/Candles" index="14"]
-frame = 3
+frame = 14
 
 [node name="AnimatedSprite13" parent="TiledMap editor example-/Candles" index="15"]
-frame = 10
+frame = 9
 
 [node name="AnimatedSprite17" parent="TiledMap editor example-/Candles" index="16"]
-frame = 10
+frame = 9
 
 [node name="Trap" type="Node2D" parent="TiledMap editor example-"]
 position = Vector2( -2, 0 )
@@ -92,29 +92,29 @@ z_index = 1
 z_as_relative = false
 
 [node name="AnimatedSprite" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
-position = Vector2( 910, 700 )
+position = Vector2( 1074, 735 )
 trapType = 1
 
 [node name="AnimatedSprite2" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
-position = Vector2( 910, 636 )
-frame = 3
-trapType = 1
+position = Vector2( 1046, 244 )
+frame = 4
+trapType = 3
 
 [node name="AnimatedSprite3" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
-position = Vector2( 942, 636 )
-trapType = 1
+position = Vector2( 1110, 244 )
+trapType = 3
 
 [node name="AnimatedSprite4" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
-position = Vector2( 942, 700 )
+position = Vector2( 1106, 735 )
 frame = 7
 trapType = 1
 
 [node name="AnimatedSprite5" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
-position = Vector2( 974, 700 )
+position = Vector2( 1138, 735 )
 trapType = 1
 
 [node name="AnimatedSprite6" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
-position = Vector2( 974, 636 )
+position = Vector2( 1170, 735 )
 trapType = 1
 
 [node name="AnimatedSprite7" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
@@ -331,9 +331,14 @@ shape = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 869, 989 )
+doingAction = false
+
+[node name="PlayerUI" parent="Player/UI" index="0"]
+visible = false
 
 [node name="AnimatedSprite" parent="Player" index="2"]
 animation = "WSPlayerParryWithoutHit"
+frame = 9
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )

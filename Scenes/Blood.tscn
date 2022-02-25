@@ -165,6 +165,8 @@ texture = ExtResource( 3 )
 [node name="Blood3" type="Sprite" parent="."]
 visible = false
 position = Vector2( 0.666656, 2 )
+z_index = 4
+z_as_relative = false
 texture = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

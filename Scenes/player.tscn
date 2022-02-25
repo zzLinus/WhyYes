@@ -231,9 +231,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 206 ), ExtResource( 207 ), ExtResource( 205 ), ExtResource( 214 ), ExtResource( 208 ), ExtResource( 215 ), ExtResource( 209 ), ExtResource( 213 ), ExtResource( 210 ), ExtResource( 212 ), ExtResource( 211 ) ],
+"frames": [ ExtResource( 100 ), ExtResource( 103 ), ExtResource( 102 ), ExtResource( 101 ), ExtResource( 99 ), ExtResource( 98 ), ExtResource( 104 ), ExtResource( 97 ), ExtResource( 105 ) ],
 "loop": true,
-"name": "PlayerRoll",
+"name": "PlayerGetHit",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 6 ), ExtResource( 15 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "PlayerRun",
 "speed": 15.0
 }, {
 "frames": [ ExtResource( 223 ), ExtResource( 222 ), ExtResource( 225 ), ExtResource( 226 ), ExtResource( 216 ), ExtResource( 217 ), ExtResource( 218 ), ExtResource( 220 ), ExtResource( 221 ), ExtResource( 219 ), ExtResource( 224 ) ],
@@ -241,9 +246,39 @@ animations = [ {
 "name": "WSPlayerRoll",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 187 ), ExtResource( 174 ), ExtResource( 151 ), ExtResource( 183 ), ExtResource( 181 ), ExtResource( 162 ), ExtResource( 178 ), ExtResource( 175 ), ExtResource( 172 ), ExtResource( 171 ), ExtResource( 185 ), ExtResource( 169 ), ExtResource( 168 ) ],
+"frames": [ ExtResource( 45 ), ExtResource( 46 ), ExtResource( 44 ), ExtResource( 53 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 48 ), ExtResource( 51 ), ExtResource( 55 ), ExtResource( 52 ), ExtResource( 54 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 47 ) ],
 "loop": true,
-"name": "WSPlayerAttack3",
+"name": "WSPlayerSopAttack",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 143 ), ExtResource( 160 ), ExtResource( 159 ), ExtResource( 156 ), ExtResource( 140 ), ExtResource( 152 ), ExtResource( 146 ), ExtResource( 184 ), ExtResource( 179 ), ExtResource( 155 ), ExtResource( 177 ), ExtResource( 145 ) ],
+"loop": true,
+"name": "WSPlayerAttack1",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 65 ), ExtResource( 60 ), ExtResource( 58 ), ExtResource( 63 ), ExtResource( 56 ), ExtResource( 59 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 57 ), ExtResource( 64 ) ],
+"loop": true,
+"name": "WSPlayeParry",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 65 ), ExtResource( 60 ), ExtResource( 58 ), ExtResource( 63 ), ExtResource( 56 ), ExtResource( 59 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 57 ), ExtResource( 64 ) ],
+"loop": true,
+"name": "WSPlayerParry",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 22 ), ExtResource( 25 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 21 ), ExtResource( 24 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "WSPlayerRun",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 68 ), ExtResource( 72 ), ExtResource( 67 ), ExtResource( 66 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 69 ), ExtResource( 73 ) ],
+"loop": true,
+"name": "WSPlayerParryWithoutHit",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 133 ), ExtResource( 134 ), ExtResource( 139 ), ExtResource( 137 ), ExtResource( 135 ), ExtResource( 132 ), ExtResource( 136 ), ExtResource( 138 ) ],
+"loop": true,
+"name": "WSPlayerIdle",
 "speed": 15.0
 }, {
 "frames": [ ExtResource( 35 ), ExtResource( 27 ), ExtResource( 29 ), ExtResource( 40 ), ExtResource( 26 ), ExtResource( 28 ), ExtResource( 41 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 36 ), ExtResource( 39 ), ExtResource( 38 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 37 ) ],
@@ -251,9 +286,34 @@ animations = [ {
 "name": "TSPlayerTakeSword",
 "speed": 15.0
 }, {
+"frames": [ ExtResource( 7 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "PlayerIdle",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 188 ), ExtResource( 157 ), ExtResource( 158 ), ExtResource( 142 ), ExtResource( 148 ), ExtResource( 154 ), ExtResource( 164 ), ExtResource( 163 ), ExtResource( 150 ), ExtResource( 161 ), ExtResource( 176 ), ExtResource( 165 ), ExtResource( 153 ), ExtResource( 149 ) ],
+"loop": false,
+"name": "WSPlayerAttack2",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 186 ), ExtResource( 189 ), ExtResource( 196 ), ExtResource( 180 ), ExtResource( 194 ), ExtResource( 195 ), ExtResource( 190 ), ExtResource( 192 ), ExtResource( 182 ), ExtResource( 193 ), ExtResource( 197 ), ExtResource( 191 ) ],
+"loop": true,
+"name": "PlayerDash",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 187 ), ExtResource( 174 ), ExtResource( 151 ), ExtResource( 183 ), ExtResource( 181 ), ExtResource( 162 ), ExtResource( 178 ), ExtResource( 175 ), ExtResource( 172 ), ExtResource( 171 ), ExtResource( 185 ), ExtResource( 169 ), ExtResource( 168 ) ],
+"loop": true,
+"name": "WSPlayerAttack3",
+"speed": 15.0
+}, {
 "frames": [ ExtResource( 112 ), ExtResource( 110 ), ExtResource( 109 ), ExtResource( 108 ), ExtResource( 111 ), ExtResource( 113 ), ExtResource( 107 ), ExtResource( 114 ), ExtResource( 106 ) ],
 "loop": true,
 "name": "WSPlayerGetHit",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 68 ), ExtResource( 72 ), ExtResource( 67 ), ExtResource( 66 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 69 ), ExtResource( 73 ) ],
+"loop": true,
+"name": "WSPlayerParryWithoutHit 1",
 "speed": 15.0
 }, {
 "frames": [ ExtResource( 128 ), ExtResource( 124 ), ExtResource( 120 ), ExtResource( 126 ), ExtResource( 130 ), ExtResource( 127 ), ExtResource( 116 ), ExtResource( 131 ), ExtResource( 117 ), ExtResource( 123 ), ExtResource( 129 ), ExtResource( 119 ), ExtResource( 122 ), ExtResource( 125 ), ExtResource( 121 ), ExtResource( 115 ), ExtResource( 118 ) ],
@@ -266,69 +326,9 @@ animations = [ {
 "name": "TSPlayerPutAwaySword",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 6 ), ExtResource( 15 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"frames": [ ExtResource( 206 ), ExtResource( 207 ), ExtResource( 205 ), ExtResource( 214 ), ExtResource( 208 ), ExtResource( 215 ), ExtResource( 209 ), ExtResource( 213 ), ExtResource( 210 ), ExtResource( 212 ), ExtResource( 211 ) ],
 "loop": true,
-"name": "PlayerRun",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 188 ), ExtResource( 157 ), ExtResource( 158 ), ExtResource( 142 ), ExtResource( 148 ), ExtResource( 154 ), ExtResource( 164 ), ExtResource( 163 ), ExtResource( 150 ), ExtResource( 161 ), ExtResource( 176 ), ExtResource( 165 ), ExtResource( 153 ), ExtResource( 149 ) ],
-"loop": false,
-"name": "WSPlayerAttack2",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 65 ), ExtResource( 60 ), ExtResource( 58 ), ExtResource( 63 ), ExtResource( 56 ), ExtResource( 59 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 57 ), ExtResource( 64 ) ],
-"loop": true,
-"name": "WSPlayerParry",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 100 ), ExtResource( 103 ), ExtResource( 102 ), ExtResource( 101 ), ExtResource( 99 ), ExtResource( 98 ), ExtResource( 104 ), ExtResource( 97 ), ExtResource( 105 ) ],
-"loop": true,
-"name": "PlayerGetHit",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 133 ), ExtResource( 134 ), ExtResource( 139 ), ExtResource( 137 ), ExtResource( 135 ), ExtResource( 132 ), ExtResource( 136 ), ExtResource( 138 ) ],
-"loop": true,
-"name": "WSPlayerIdle",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 45 ), ExtResource( 46 ), ExtResource( 44 ), ExtResource( 53 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 48 ), ExtResource( 51 ), ExtResource( 55 ), ExtResource( 52 ), ExtResource( 54 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 47 ) ],
-"loop": true,
-"name": "WSPlayerSopAttack",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 22 ), ExtResource( 25 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 21 ), ExtResource( 24 ), ExtResource( 23 ) ],
-"loop": true,
-"name": "WSPlayerRun",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 7 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "PlayerIdle",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 143 ), ExtResource( 160 ), ExtResource( 159 ), ExtResource( 156 ), ExtResource( 140 ), ExtResource( 152 ), ExtResource( 146 ), ExtResource( 184 ), ExtResource( 179 ), ExtResource( 155 ), ExtResource( 177 ), ExtResource( 145 ) ],
-"loop": true,
-"name": "WSPlayerAttack1",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 186 ), ExtResource( 189 ), ExtResource( 196 ), ExtResource( 180 ), ExtResource( 194 ), ExtResource( 195 ), ExtResource( 190 ), ExtResource( 192 ), ExtResource( 182 ), ExtResource( 193 ), ExtResource( 197 ), ExtResource( 191 ) ],
-"loop": true,
-"name": "PlayerDash",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 68 ), ExtResource( 72 ), ExtResource( 67 ), ExtResource( 66 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 69 ), ExtResource( 73 ) ],
-"loop": true,
-"name": "WSPlayerParryWithoutHit",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 65 ), ExtResource( 60 ), ExtResource( 58 ), ExtResource( 63 ), ExtResource( 56 ), ExtResource( 59 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 57 ), ExtResource( 64 ) ],
-"loop": true,
-"name": "WSPlayeParry",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 68 ), ExtResource( 72 ), ExtResource( 67 ), ExtResource( 66 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 69 ), ExtResource( 73 ) ],
-"loop": true,
-"name": "WSPlayerParryWithoutHit 1",
+"name": "PlayerRoll",
 "speed": 15.0
 } ]
 
@@ -1639,7 +1639,7 @@ input_11/name = "WSPlayerParry"
 input_11/auto_advance = false
 
 [sub_resource type="AnimationNodeBlendTree" id=19]
-graph_offset = Vector2( 505.168, -688.71 )
+graph_offset = Vector2( 1155.44, -552.682 )
 nodes/Animation/node = SubResource( 18 )
 nodes/Animation/position = Vector2( 360, 140 )
 "nodes/Animation 10/node" = SubResource( 29 )
@@ -1707,7 +1707,7 @@ nodes/TimeScale/position = Vector2( 220, -500 )
 nodes/WSTransition/node = SubResource( 28 )
 nodes/WSTransition/position = Vector2( 960, -620 )
 nodes/output/position = Vector2( 1880, -60 )
-node_connections = [ "output", 0, "PlayerState", "NMTransition", 0, "Animation", "NMTransition", 1, "Animation 3", "NMTransition", 2, "Animation 4", "NMTransition", 3, "Animation 2", "NMTransition", 4, "Animation 5", "NMTransition", 5, "TimeScale 4", "NMTransition", 6, "TimeScale 5", "PlayerState", 0, "WSTransition", "PlayerState", 1, "NMTransition", "StopAttack", 0, "TimeScale", "StopAttack", 1, "Animation 7", "StopAttack2", 0, "TimeScale 2", "StopAttack2", 1, "Animation 16", "StopAttack3", 0, "TimeScale 3", "StopAttack3", 1, "Animation 17", "TimeScale", 0, "Animation 9", "TimeScale 2", 0, "Animation 15", "TimeScale 3", 0, "Animation 11", "TimeScale 4", 0, "Animation 18", "TimeScale 5", 0, "Animation 20", "TimeScale 6", 0, "Animation 19", "WSTransition", 0, "Animation 14", "WSTransition", 1, "Animation 13", "WSTransition", 2, "Animation 12", "WSTransition", 3, "Animation 10", "WSTransition", 5, "Animation 8", "WSTransition", 6, "StopAttack", "WSTransition", 7, "StopAttack2", "WSTransition", 8, "StopAttack3", "WSTransition", 9, "Animation 6", "WSTransition", 10, "TimeScale 6" ]
+node_connections = [ "output", 0, "PlayerState", "NMTransition", 0, "Animation", "NMTransition", 1, "Animation 3", "NMTransition", 2, "Animation 4", "NMTransition", 3, "Animation 2", "NMTransition", 4, "Animation 5", "NMTransition", 5, "TimeScale 4", "NMTransition", 6, "TimeScale 5", "TimeScale", 0, "Animation 9", "TimeScale 5", 0, "Animation 20", "TimeScale 2", 0, "Animation 15", "PlayerState", 0, "WSTransition", "PlayerState", 1, "NMTransition", "TimeScale 3", 0, "Animation 11", "StopAttack2", 0, "TimeScale 2", "StopAttack2", 1, "Animation 16", "StopAttack3", 0, "TimeScale 3", "StopAttack3", 1, "Animation 17", "WSTransition", 0, "Animation 14", "WSTransition", 1, "Animation 13", "WSTransition", 2, "Animation 12", "WSTransition", 3, "Animation 10", "WSTransition", 5, "Animation 8", "WSTransition", 6, "StopAttack", "WSTransition", 7, "StopAttack2", "WSTransition", 8, "StopAttack3", "WSTransition", 9, "Animation 6", "WSTransition", 10, "TimeScale 6", "StopAttack", 0, "TimeScale", "StopAttack", 1, "Animation 7", "TimeScale 4", 0, "Animation 18", "TimeScale 6", 0, "Animation 19" ]
 
 [sub_resource type="CapsuleShape2D" id=47]
 height = 43.999
@@ -1722,6 +1722,7 @@ z_as_relative = false
 collision_layer = 4
 collision_mask = 27
 script = ExtResource( 1 )
+doingAction = true
 runSmokeEffect = ExtResource( 170 )
 enemyHitEffect = ExtResource( 173 )
 blood = ExtResource( 201 )
@@ -1743,8 +1744,8 @@ shape = SubResource( 41 )
 position = Vector2( 12, -8 )
 scale = Vector2( 1.8015, 1.91911 )
 frames = SubResource( 1 )
-animation = "WSPlayerParryWithoutHit"
-frame = 9
+animation = "WSPlayerIdle"
+frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite")
@@ -1784,7 +1785,7 @@ parameters/TimeScale/scale = 2.0
 "parameters/TimeScale 4/scale" = 2.0
 "parameters/TimeScale 5/scale" = 2.0
 "parameters/TimeScale 6/scale" = 2.0
-parameters/WSTransition/current = 2
+parameters/WSTransition/current = 1
 
 [node name="PlayerShadow" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.682353 )
@@ -1878,8 +1879,6 @@ one_shot = true
 [connection signal="healthChanged" from="." to="UI/PlayerUI/TextureProgress" method="_on_Player_healthChanged"]
 [connection signal="playerDead" from="." to="UI/PlayerUI/DeadMenu" method="_on_Player_playerDead"]
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
-[connection signal="animation_started" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_started"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
 [connection signal="area_entered" from="InteractWithPortal" to="." method="_on_InteractWithPortal_area_entered"]
