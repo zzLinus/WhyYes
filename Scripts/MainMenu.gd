@@ -2,8 +2,7 @@ extends Control
 
 
 func _ready():
-	pass # Replace with function body.
-
+	pass  # Replace with function body.
 
 
 func _on_Start_pressed():
@@ -12,7 +11,7 @@ func _on_Start_pressed():
 
 
 func _on_Settings_pressed():
-	pass # Replace with function body.
+	pass  # Replace with function body.
 
 
 func _on_Button2_pressed():

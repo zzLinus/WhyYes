@@ -2448,7 +2448,7 @@ nextScenePath = "res://Scenes/mainScene2.tscn"
 position = Vector2( 1313, 1622 )
 
 [node name="AnimatedSprite" parent="Enemy" index="0"]
-frame = 5
+frame = 6
 
 [node name="RayCast2D" parent="Enemy" index="11"]
 collision_mask = 64
@@ -2482,11 +2482,12 @@ script = ExtResource( 14 )
 position = Vector2( 27, -73 )
 z_index = 5
 z_as_relative = false
+frame = 6
 
 [node name="NPC" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1142, 1633 )
 z_index = 1
-frame = 15
+frame = 4
 flip_h = true
 
 [node name="PlayerShadow" parent="NPC" index="0"]
@@ -2536,10 +2537,18 @@ collision_layer = 256
 collision_mask = 512
 diraction = 3
 
-[node name="Node2D" parent="." instance=ExtResource( 17 )]
+[node name="DiractionSign4" parent="." instance=ExtResource( 16 )]
+position = Vector2( 1576, 1820 )
+scale = Vector2( 4.00007, -6.00251 )
+z_index = 5
+z_as_relative = false
+collision_layer = 256
+collision_mask = 512
+
+[node name="HailDoor" parent="." instance=ExtResource( 17 )]
 position = Vector2( 2398, 695 )
 
-[node name="haildoor" parent="Node2D" index="0"]
+[node name="haildoor" parent="HailDoor" index="0"]
 position = Vector2( 82, -4 )
 
 [connection signal="area_entered" from="ChangeZ/Ztransform" to="Player" method="_on_Ztransform_area_entered"]
@@ -2639,6 +2648,8 @@ position = Vector2( 82, -4 )
 [connection signal="diraction" from="DiractionSign2" to="TransportMain/Logo" method="_on_DiractionSign_diraction"]
 [connection signal="deactive" from="DiractionSign3" to="TransportMain/Logo" method="_on_DiractionSign_deactive"]
 [connection signal="diraction" from="DiractionSign3" to="TransportMain/Logo" method="_on_DiractionSign_diraction"]
+[connection signal="deactive" from="DiractionSign4" to="TransportMain/Logo" method="_on_DiractionSign_deactive"]
+[connection signal="diraction" from="DiractionSign4" to="TransportMain/Logo" method="_on_DiractionSign_diraction"]
 
 [editable path="map_VolcMap-v2"]
 [editable path="AnimMap/Group4/VolcanoSmokeRock6"]
@@ -2686,4 +2697,4 @@ position = Vector2( 82, -4 )
 [editable path="Player/UI"]
 [editable path="Player/UI/PlayerUI"]
 [editable path="NPC"]
-[editable path="Node2D"]
+[editable path="HailDoor"]

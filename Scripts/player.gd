@@ -105,10 +105,9 @@ func _process(delta):
 
 	if !doingTrans && !doingAction && !doingDash:
 		isRunning = handleMovement(delta)
-	
+
 	if dashDuration.is_stopped() && points.size():
 		ClearTransportPoints(0)
-
 
 
 func handlePlayerAnim():

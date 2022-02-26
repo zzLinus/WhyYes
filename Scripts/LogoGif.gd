@@ -1,12 +1,14 @@
 extends AnimatedSprite
 
-enum Dirac {RIGHT, LEFT, DOWN, UP}
+enum Dirac { RIGHT, LEFT, DOWN, UP }
+
 
 func _ready():
 	visible = false
 
 
 func _on_DiractionSign_diraction(dirac):
+	print("give sign")
 	visible = true
 	if dirac == Dirac.RIGHT:
 		print("=>>>>>" + str(dirac))
@@ -17,6 +19,7 @@ func _on_DiractionSign_diraction(dirac):
 		play("ActiveUp")
 	elif dirac == Dirac.DOWN:
 		play("ActiveDown")
+
 
 
 func _on_DiractionSign_deactive():

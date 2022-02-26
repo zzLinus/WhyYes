@@ -8,4 +8,3 @@ func _ready():
 		$CollisionShape2D.disabled = false
 	else:
 		$CollisionPolygon2D.disabled = true
-

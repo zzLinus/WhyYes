@@ -8,7 +8,7 @@ var isLookLeft: bool = false
 var enemyVelocity: Vector2 = Vector2(0, 0)
 var transformer = Transform2D()
 var interrupCD: float = 4
-var attenDisten: int = 200
+var attenDisten: int = 300
 var bulletNum: int = 6
 var diraction
 
@@ -51,7 +51,6 @@ func _process(delta):
 	diraction = HandleMovement(playerPos)
 	diraction = diraction.normalized()
 
-
 	#handle turning
 	if !doingAction:
 		if (playerPos - global_position).length() < attenDisten && !isAttain:
@@ -77,7 +76,6 @@ func _process(delta):
 				isLookLeft = false
 				HandlePlayerTurn()
 
-
 	if !doingAction:
 		if !isAttain:
 			animTree.set("parameters/EnemyState/current", enemyState.IDLE)
@@ -89,7 +87,6 @@ func _process(delta):
 			# if (global_position - playerPos).length() < 100:
 			move_and_slide(-diraction * 100)
 			animTree.set("parameters/EnemyState/current", enemyState.RUN)
-
 
 	#handle attack
 	if isAttain && !doingAction:
@@ -105,8 +102,6 @@ func _process(delta):
 			bulletNum = 6
 			yield(get_tree().create_timer(0.8), "timeout")
 			animTree.set("parameters/EnemyState/current", enemyState.ATTACK)
-
-
 
 
 func HandleMovement(playerpos) -> Vector2:

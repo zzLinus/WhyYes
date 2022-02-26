@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/Dungeonlayer1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Scripts/SpawnPoint.gd" type="Script" id=6]
 [ext_resource path="res://Assets/BGM/xDeviruchi - The Icy Cave .wav" type="AudioStream" id=7]
 [ext_resource path="res://Scripts/TransportMain.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/DiractionSign.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/LogoGif.tscn" type="PackedScene" id=10]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -35,56 +37,35 @@ tile_data = PoolIntArray( 5, 2101, 0, 6, 2102, 0, 7, 2103, 0, 8, 2104, 0, 33, 21
 z_index = 2
 z_as_relative = false
 
-[node name="AnimatedSprite" parent="TiledMap editor example-/Candles" index="0"]
-frame = 5
-
-[node name="AnimatedSprite2" parent="TiledMap editor example-/Candles" index="1"]
-frame = 7
-
-[node name="AnimatedSprite3" parent="TiledMap editor example-/Candles" index="2"]
-frame = 5
-
 [node name="AnimatedSprite4" parent="TiledMap editor example-/Candles" index="3"]
-frame = 2
+frame = 0
 
 [node name="AnimatedSprite5" parent="TiledMap editor example-/Candles" index="4"]
-frame = 7
-
-[node name="AnimatedSprite6" parent="TiledMap editor example-/Candles" index="5"]
-frame = 1
+frame = 11
 
 [node name="AnimatedSprite7" parent="TiledMap editor example-/Candles" index="6"]
-frame = 15
-
-[node name="AnimatedSprite8" parent="TiledMap editor example-/Candles" index="7"]
 frame = 1
-
-[node name="AnimatedSprite9" parent="TiledMap editor example-/Candles" index="8"]
-frame = 4
 
 [node name="AnimatedSprite15" parent="TiledMap editor example-/Candles" index="9"]
-frame = 15
-
-[node name="AnimatedSprite16" parent="TiledMap editor example-/Candles" index="10"]
-frame = 15
-
-[node name="AnimatedSprite10" parent="TiledMap editor example-/Candles" index="11"]
-frame = 6
-
-[node name="AnimatedSprite11" parent="TiledMap editor example-/Candles" index="12"]
 frame = 1
 
+[node name="AnimatedSprite16" parent="TiledMap editor example-/Candles" index="10"]
+frame = 1
+
+[node name="AnimatedSprite10" parent="TiledMap editor example-/Candles" index="11"]
+frame = 10
+
 [node name="AnimatedSprite14" parent="TiledMap editor example-/Candles" index="13"]
-frame = 9
+frame = 13
 
 [node name="AnimatedSprite12" parent="TiledMap editor example-/Candles" index="14"]
-frame = 14
+frame = 0
 
 [node name="AnimatedSprite13" parent="TiledMap editor example-/Candles" index="15"]
-frame = 9
+frame = 7
 
 [node name="AnimatedSprite17" parent="TiledMap editor example-/Candles" index="16"]
-frame = 9
+frame = 7
 
 [node name="Trap" type="Node2D" parent="TiledMap editor example-"]
 position = Vector2( -2, 0 )
@@ -185,32 +166,26 @@ trapType = 4
 
 [node name="AnimatedSprite20" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
 position = Vector2( 316, 458 )
-animation = "trap5"
 trapType = 5
 
 [node name="AnimatedSprite21" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
 position = Vector2( 281, 458 )
-animation = "trap5"
 trapType = 5
 
 [node name="AnimatedSprite22" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
 position = Vector2( 281, 495 )
-animation = "trap5"
 trapType = 5
 
 [node name="AnimatedSprite23" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
 position = Vector2( 316, 495 )
-animation = "trap5"
 trapType = 5
 
 [node name="AnimatedSprite24" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
 position = Vector2( 246, 458 )
-animation = "trap5"
 trapType = 5
 
 [node name="AnimatedSprite25" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
 position = Vector2( 246, 495 )
-animation = "trap5"
 trapType = 5
 
 [node name="AnimatedSprite26" parent="TiledMap editor example-/Trap" instance=ExtResource( 4 )]
@@ -333,12 +308,8 @@ shape = SubResource( 1 )
 position = Vector2( 869, 989 )
 doingAction = false
 
-[node name="PlayerUI" parent="Player/UI" index="0"]
-visible = false
-
 [node name="AnimatedSprite" parent="Player" index="2"]
-animation = "WSPlayerParryWithoutHit"
-frame = 9
+frame = 4
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
@@ -363,6 +334,30 @@ nextScenePath = "res://Scenes/mainScene3.tscn"
 [node name="TransportMain" type="Position2D" parent="."]
 script = ExtResource( 8 )
 
+[node name="Logo" parent="TransportMain" instance=ExtResource( 10 )]
+position = Vector2( 27, -73 )
+z_index = 5
+z_as_relative = false
+frame = 2
+
+[node name="DiractionSign" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1088, 657 )
+scale = Vector2( 8.91499, -12.0542 )
+z_index = 5
+z_as_relative = false
+collision_layer = 256
+collision_mask = 512
+diraction = 1
+
+[node name="DiractionSign2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 229, 659 )
+scale = Vector2( 9.6425, -11.4974 )
+z_index = 5
+z_as_relative = false
+collision_layer = 256
+collision_mask = 512
+diraction = 2
+
 [connection signal="body_entered" from="TiledMap editor example-/ChangeZ/Ztransform" to="Player" method="_on_Ztransform_body_entered"]
 [connection signal="body_exited" from="TiledMap editor example-/ChangeZ/Ztransform" to="Player" method="_on_Ztransform_body_exited"]
 [connection signal="body_entered" from="TiledMap editor example-/ChangeZ/Ztransform2" to="Player" method="_on_Ztransform_body_entered"]
@@ -376,6 +371,10 @@ script = ExtResource( 8 )
 [connection signal="area_entered" from="Portal1-1" to="Portal1-1" method="_on_Portal_area_entered"]
 [connection signal="area_entered" from="Portal1-2" to="Portal1-2" method="_on_Portal_area_entered"]
 [connection signal="area_entered" from="Portal1-3" to="Portal1-3" method="_on_Portal_area_entered"]
+[connection signal="deactive" from="DiractionSign" to="TransportMain/Logo" method="_on_DiractionSign_deactive"]
+[connection signal="diraction" from="DiractionSign" to="TransportMain/Logo" method="_on_DiractionSign_diraction"]
+[connection signal="deactive" from="DiractionSign2" to="TransportMain/Logo" method="_on_DiractionSign_deactive"]
+[connection signal="diraction" from="DiractionSign2" to="TransportMain/Logo" method="_on_DiractionSign_diraction"]
 
 [editable path="TiledMap editor example-"]
 [editable path="TiledMap editor example-/Candles/AnimatedSprite"]
