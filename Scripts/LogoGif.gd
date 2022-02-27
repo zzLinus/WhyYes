@@ -21,6 +21,5 @@ func _on_DiractionSign_diraction(dirac):
 		play("ActiveDown")
 
 
-
 func _on_DiractionSign_deactive():
 	visible = false

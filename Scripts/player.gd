@@ -139,7 +139,7 @@ func handleWithSwordAnim():
 
 
 func handleNormAnim():
-	if Input.is_action_just_pressed("Dash") && !doingDash && dashDuration.is_stopped():
+	if Input.is_action_just_pressed("Dash") && !doingDash && dashDuration.is_stopped() && !doingAction:
 		playerDash()
 	# elif Input.is_action_just_released("Dash"):
 	# 	dashDuration.stop()
@@ -467,6 +467,9 @@ func spawnEffect(effect: PackedScene, effectPos: Vector2 = global_position):
 
 
 func death():
+	var musicPlayers = get_tree().get_nodes_in_group("BGM")
+	for player in musicPlayers:
+		player.stop()
 	animTree.set("parameters/PlayerState/current", SWstate.WOSWORD)
 	animTree.set("parameters/NMTransition/current", NMstate.DEATH)
 	emit_signal("playerDead")

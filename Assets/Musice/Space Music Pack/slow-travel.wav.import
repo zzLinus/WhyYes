@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/slow-travel.wav-eda5f6feb8e1456a5c8cbf8245718257.sample"
+
+[deps]
+
+source_file="res://Assets/Musice/Space Music Pack/slow-travel.wav"
+dest_files=[ "res://.import/slow-travel.wav-eda5f6feb8e1456a5c8cbf8245718257.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

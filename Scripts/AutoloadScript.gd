@@ -1,5 +1,6 @@
 extends Node
 
+
 var currentScene: int
 
 var playerData = {

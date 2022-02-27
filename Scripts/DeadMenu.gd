@@ -1,6 +1,9 @@
 extends Control
 
 
+onready var audioPlayer = $BGM
+
+
 func _ready():
 	visible = false
 
@@ -8,6 +11,7 @@ func _ready():
 func _on_Player_playerDead():
 	yield(get_tree().create_timer(1.2), "timeout")
 	print("=====>>>> player dead")
+	audioPlayer.play()
 	visible = true
 
 
