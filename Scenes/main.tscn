@@ -2797,7 +2797,7 @@ nextScenePath = "res://Scenes/mainScene2.tscn"
 position = Vector2( 1313, 1622 )
 
 [node name="AnimatedSprite" parent="Enemy" index="0"]
-frame = 1
+frame = 5
 
 [node name="RayCast2D" parent="Enemy" index="11"]
 collision_mask = 64
@@ -2831,12 +2831,11 @@ script = ExtResource( 14 )
 position = Vector2( 27, -73 )
 z_index = 5
 z_as_relative = false
-frame = 6
 
 [node name="NPC" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1142, 1633 )
 z_index = 1
-frame = 8
+frame = 5
 flip_h = true
 
 [node name="PlayerShadow" parent="NPC" index="0"]

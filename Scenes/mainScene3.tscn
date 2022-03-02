@@ -52170,6 +52170,54 @@ animations = [ {
 "speed": 15.0
 } ]
 
+[sub_resource type="AtlasTexture" id=113]
+atlas = ExtResource( 20 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=114]
+atlas = ExtResource( 20 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=115]
+atlas = ExtResource( 20 )
+region = Rect2( 128, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=116]
+atlas = ExtResource( 20 )
+region = Rect2( 192, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=117]
+atlas = ExtResource( 20 )
+region = Rect2( 256, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=118]
+atlas = ExtResource( 20 )
+region = Rect2( 320, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=119]
+atlas = ExtResource( 20 )
+region = Rect2( 384, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=120]
+atlas = ExtResource( 20 )
+region = Rect2( 448, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=121]
+atlas = ExtResource( 20 )
+region = Rect2( 512, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=122]
+atlas = ExtResource( 20 )
+region = Rect2( 576, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=123]
+atlas = ExtResource( 20 )
+region = Rect2( 640, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=124]
+atlas = ExtResource( 20 )
+region = Rect2( 704, 0, 64, 64 )
+
 [sub_resource type="AtlasTexture" id=95]
 atlas = ExtResource( 16 )
 region = Rect2( 0, 0, 64, 64 )
@@ -52242,53 +52290,37 @@ region = Rect2( 1024, 0, 64, 64 )
 atlas = ExtResource( 16 )
 region = Rect2( 1088, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=113]
-atlas = ExtResource( 20 )
+[sub_resource type="AtlasTexture" id=125]
+atlas = ExtResource( 17 )
 region = Rect2( 0, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=114]
-atlas = ExtResource( 20 )
+[sub_resource type="AtlasTexture" id=126]
+atlas = ExtResource( 17 )
 region = Rect2( 64, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=115]
-atlas = ExtResource( 20 )
+[sub_resource type="AtlasTexture" id=127]
+atlas = ExtResource( 17 )
 region = Rect2( 128, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=116]
-atlas = ExtResource( 20 )
+[sub_resource type="AtlasTexture" id=128]
+atlas = ExtResource( 17 )
 region = Rect2( 192, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=117]
-atlas = ExtResource( 20 )
+[sub_resource type="AtlasTexture" id=129]
+atlas = ExtResource( 17 )
 region = Rect2( 256, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=118]
-atlas = ExtResource( 20 )
+[sub_resource type="AtlasTexture" id=130]
+atlas = ExtResource( 17 )
 region = Rect2( 320, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=119]
-atlas = ExtResource( 20 )
+[sub_resource type="AtlasTexture" id=131]
+atlas = ExtResource( 17 )
 region = Rect2( 384, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=120]
-atlas = ExtResource( 20 )
+[sub_resource type="AtlasTexture" id=132]
+atlas = ExtResource( 17 )
 region = Rect2( 448, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=121]
-atlas = ExtResource( 20 )
-region = Rect2( 512, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=122]
-atlas = ExtResource( 20 )
-region = Rect2( 576, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=123]
-atlas = ExtResource( 20 )
-region = Rect2( 640, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=124]
-atlas = ExtResource( 20 )
-region = Rect2( 704, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=40]
 atlas = ExtResource( 12 )
@@ -52338,58 +52370,26 @@ region = Rect2( 640, 0, 64, 64 )
 atlas = ExtResource( 12 )
 region = Rect2( 704, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=125]
-atlas = ExtResource( 17 )
-region = Rect2( 0, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=126]
-atlas = ExtResource( 17 )
-region = Rect2( 64, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=127]
-atlas = ExtResource( 17 )
-region = Rect2( 128, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=128]
-atlas = ExtResource( 17 )
-region = Rect2( 192, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=129]
-atlas = ExtResource( 17 )
-region = Rect2( 256, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=130]
-atlas = ExtResource( 17 )
-region = Rect2( 320, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=131]
-atlas = ExtResource( 17 )
-region = Rect2( 384, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=132]
-atlas = ExtResource( 17 )
-region = Rect2( 448, 0, 64, 64 )
-
 [sub_resource type="SpriteFrames" id=133]
 animations = [ {
-"frames": [ SubResource( 95 ), SubResource( 96 ), SubResource( 97 ), SubResource( 98 ), SubResource( 99 ), SubResource( 100 ), SubResource( 101 ), SubResource( 102 ), SubResource( 103 ), SubResource( 104 ), SubResource( 105 ), SubResource( 106 ), SubResource( 107 ), SubResource( 108 ), SubResource( 109 ), SubResource( 110 ), SubResource( 111 ), SubResource( 112 ) ],
-"loop": true,
-"name": "Smoking",
-"speed": 15.0
-}, {
 "frames": [ SubResource( 113 ), SubResource( 114 ), SubResource( 115 ), SubResource( 116 ), SubResource( 117 ), SubResource( 118 ), SubResource( 119 ), SubResource( 120 ), SubResource( 121 ), SubResource( 122 ), SubResource( 123 ), SubResource( 124 ) ],
 "loop": true,
 "name": "Burning1",
 "speed": 15.0
 }, {
-"frames": [ SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ) ],
+"frames": [ SubResource( 95 ), SubResource( 96 ), SubResource( 97 ), SubResource( 98 ), SubResource( 99 ), SubResource( 100 ), SubResource( 101 ), SubResource( 102 ), SubResource( 103 ), SubResource( 104 ), SubResource( 105 ), SubResource( 106 ), SubResource( 107 ), SubResource( 108 ), SubResource( 109 ), SubResource( 110 ), SubResource( 111 ), SubResource( 112 ) ],
 "loop": true,
-"name": "OnlyFire",
+"name": "Smoking",
 "speed": 15.0
 }, {
 "frames": [ SubResource( 125 ), SubResource( 126 ), SubResource( 127 ), SubResource( 128 ), SubResource( 129 ), SubResource( 130 ), SubResource( 131 ), SubResource( 132 ) ],
 "loop": true,
 "name": "Burning2",
+"speed": 15.0
+}, {
+"frames": [ SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ) ],
+"loop": true,
+"name": "OnlyFire",
 "speed": 15.0
 } ]
 
@@ -68065,7 +68065,7 @@ z_as_relative = false
 position = Vector2( 2752, 1961 )
 scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 13 )
-frame = 3
+frame = 5
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite" index="0"]
 energy = 0.16
@@ -68074,7 +68074,7 @@ energy = 0.16
 position = Vector2( 3072, 1961 )
 scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 13 )
-frame = 3
+frame = 5
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite2" index="0"]
 energy = 0.16
@@ -68084,7 +68084,7 @@ position = Vector2( 3055, 1962 )
 scale = Vector2( 0.45, 0.45 )
 frames = SubResource( 13 )
 animation = "Burning"
-frame = 5
+frame = 7
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite3" index="0"]
 energy = 0.16
@@ -68094,7 +68094,7 @@ position = Vector2( 3089, 1962 )
 scale = Vector2( 0.45, 0.45 )
 frames = SubResource( 13 )
 animation = "Smoking"
-frame = 0
+frame = 14
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite4" index="0"]
 energy = 0.0
@@ -68104,7 +68104,7 @@ position = Vector2( 3084, 1965 )
 scale = Vector2( 0.45, 0.45 )
 frames = SubResource( 13 )
 animation = "Burning"
-frame = 9
+frame = 11
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite5" index="0"]
 energy = 0.16
@@ -68114,7 +68114,7 @@ position = Vector2( 4748, 1837 )
 scale = Vector2( 0.45, 0.45 )
 frames = SubResource( 13 )
 animation = "Burning"
-frame = 9
+frame = 11
 flip_h = true
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite29" index="0"]
@@ -68124,7 +68124,7 @@ energy = 0.16
 position = Vector2( 4849, 1834 )
 scale = Vector2( 0.45, 0.45 )
 frames = SubResource( 13 )
-frame = 6
+frame = 0
 flip_h = true
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite32" index="0"]
@@ -68134,7 +68134,7 @@ energy = 0.16
 position = Vector2( 4833, 1830 )
 scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 13 )
-frame = 6
+frame = 0
 flip_h = true
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite34" index="0"]
@@ -68145,7 +68145,7 @@ position = Vector2( 4815, 1834 )
 scale = Vector2( 0.45, 0.45 )
 frames = SubResource( 13 )
 animation = "Burning"
-frame = 9
+frame = 11
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite33" index="0"]
 energy = 0.16
@@ -68155,7 +68155,7 @@ position = Vector2( 4820, 1837 )
 scale = Vector2( 0.45, 0.45 )
 frames = SubResource( 13 )
 animation = "Smoking"
-frame = 0
+frame = 14
 flip_h = true
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite36" index="0"]
@@ -68166,7 +68166,7 @@ position = Vector2( 4753, 1834 )
 scale = Vector2( 0.45, 0.45 )
 frames = SubResource( 13 )
 animation = "Smoking"
-frame = 0
+frame = 14
 flip_h = true
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite37" index="0"]
@@ -68177,7 +68177,7 @@ position = Vector2( 4724, 1837 )
 scale = Vector2( 0.45, 0.45 )
 frames = SubResource( 13 )
 animation = "Smoking"
-frame = 0
+frame = 14
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite38" index="0"]
 energy = 0.0
@@ -68187,7 +68187,7 @@ position = Vector2( 4844, 1837 )
 scale = Vector2( 0.45, 0.45 )
 frames = SubResource( 13 )
 animation = "Smoking"
-frame = 0
+frame = 14
 flip_h = true
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite39" index="0"]
@@ -68198,7 +68198,7 @@ position = Vector2( 4815, 1834 )
 scale = Vector2( 0.45, 0.45 )
 frames = SubResource( 13 )
 animation = "Burning"
-frame = 9
+frame = 11
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite35" index="0"]
 energy = 0.16
@@ -68208,7 +68208,7 @@ position = Vector2( 4736, 1831 )
 scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 13 )
 animation = "Smoking"
-frame = 0
+frame = 14
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite30" index="0"]
 energy = 0.0
@@ -68218,7 +68218,7 @@ position = Vector2( 4719, 1833 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 13 )
 animation = "Burning"
-frame = 9
+frame = 11
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite31" index="0"]
 energy = 0.4
@@ -68227,6 +68227,7 @@ energy = 0.4
 position = Vector2( 3060, 1965 )
 scale = Vector2( 0.45, 0.45 )
 frames = SubResource( 13 )
+frame = 3
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite6" index="0"]
 energy = 0.16
@@ -68235,6 +68236,7 @@ energy = 0.16
 position = Vector2( 3037, 1867 )
 scale = Vector2( -0.580328, 0.599893 )
 frames = SubResource( 13 )
+frame = 3
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite50" index="0"]
 energy = 0.16
@@ -68244,7 +68246,7 @@ position = Vector2( 2735, 1962 )
 scale = Vector2( 0.45, 0.45 )
 frames = SubResource( 13 )
 animation = "Burning"
-frame = 5
+frame = 7
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite7" index="0"]
 energy = 0.16
@@ -68253,7 +68255,7 @@ energy = 0.16
 position = Vector2( 2764, 1965 )
 scale = Vector2( 0.45, 0.45 )
 frames = SubResource( 13 )
-frame = 5
+frame = 7
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite9" index="0"]
 energy = 0.16
@@ -68263,7 +68265,7 @@ position = Vector2( 2740, 1965 )
 scale = Vector2( 0.45, 0.45 )
 frames = SubResource( 13 )
 animation = "Smoking"
-frame = 0
+frame = 14
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite8" index="0"]
 energy = 0.0
@@ -68273,7 +68275,7 @@ position = Vector2( 2769, 1962 )
 scale = Vector2( 0.45, 0.45 )
 frames = SubResource( 13 )
 animation = "Smoking"
-frame = 0
+frame = 14
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite10" index="0"]
 energy = 0.0
@@ -68281,7 +68283,7 @@ energy = 0.0
 [node name="AnimatedSprite12" parent="Dungeonlayer2/Candles" instance=ExtResource( 14 )]
 position = Vector2( 2889, 1814 )
 frames = SubResource( 13 )
-frame = 3
+frame = 5
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite12" index="0"]
 energy = 0.14
@@ -68289,7 +68291,7 @@ energy = 0.14
 [node name="AnimatedSprite13" parent="Dungeonlayer2/Candles" instance=ExtResource( 14 )]
 position = Vector2( 2932, 1797 )
 frames = SubResource( 13 )
-frame = 3
+frame = 5
 flip_h = true
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite13" index="0"]
@@ -68300,7 +68302,7 @@ position = Vector2( 2932, 1817 )
 scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 13 )
 animation = "Smoking"
-frame = 9
+frame = 5
 flip_h = true
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite14" index="0"]
@@ -68311,7 +68313,7 @@ position = Vector2( 2879, 1815 )
 scale = Vector2( 0.60497, 0.771606 )
 frames = SubResource( 13 )
 animation = "Smoking"
-frame = 9
+frame = 5
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite15" index="0"]
 energy = 0.0
@@ -68321,7 +68323,7 @@ position = Vector2( 2949, 1814 )
 scale = Vector2( 0.957727, 1.18917 )
 frames = SubResource( 13 )
 animation = "Smoking"
-frame = 9
+frame = 5
 flip_h = true
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite16" index="0"]
@@ -68331,7 +68333,7 @@ energy = 0.0
 position = Vector2( 3046, 1862 )
 scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 13 )
-frame = 3
+frame = 5
 flip_h = true
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite17" index="0"]
@@ -68343,7 +68345,7 @@ position = Vector2( 3022, 1874 )
 scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 13 )
 animation = "Smoking"
-frame = 4
+frame = 0
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite18" index="0"]
 position = Vector2( -1.04443, 2.52271 )
@@ -68354,7 +68356,7 @@ position = Vector2( 3030, 1869 )
 scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 13 )
 animation = "Smoking"
-frame = 4
+frame = 0
 flip_h = true
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite19" index="0"]
@@ -68366,7 +68368,7 @@ position = Vector2( 2771, 1877 )
 scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 13 )
 animation = "Smoking"
-frame = 4
+frame = 0
 flip_h = true
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite20" index="0"]
@@ -68377,7 +68379,7 @@ energy = 0.0
 position = Vector2( 2788, 1872 )
 scale = Vector2( 0.9, 0.9 )
 frames = SubResource( 13 )
-frame = 2
+frame = 4
 flip_h = true
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite21" index="0"]
@@ -68388,6 +68390,7 @@ energy = 0.28
 position = Vector2( 1920, 1921 )
 scale = Vector2( 0.427906, 0.723044 )
 frames = SubResource( 13 )
+frame = 3
 flip_h = true
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite40" index="0"]
@@ -68398,6 +68401,7 @@ energy = 0.28
 position = Vector2( 1760, 1923 )
 scale = Vector2( 0.516925, 0.552477 )
 frames = SubResource( 13 )
+frame = 3
 flip_h = true
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite41" index="0"]
@@ -68408,6 +68412,7 @@ energy = 0.28
 position = Vector2( 1743, 1929 )
 scale = Vector2( 0.516925, 0.552477 )
 frames = SubResource( 13 )
+frame = 3
 flip_h = true
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite42" index="0"]
@@ -68418,7 +68423,7 @@ energy = 0.28
 position = Vector2( 1772, 1932 )
 scale = Vector2( 0.516925, 0.552477 )
 frames = SubResource( 13 )
-frame = 0
+frame = 2
 flip_h = true
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite43" index="0"]
@@ -68430,7 +68435,7 @@ position = Vector2( 1777, 1929 )
 scale = Vector2( 0.516925, 0.552477 )
 frames = SubResource( 13 )
 animation = "Burning"
-frame = 9
+frame = 11
 flip_h = true
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite44" index="0"]
@@ -68442,7 +68447,7 @@ position = Vector2( 1748, 1932 )
 scale = Vector2( 0.516925, 0.552477 )
 frames = SubResource( 13 )
 animation = "Smoking"
-frame = 2
+frame = 16
 flip_h = true
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite45" index="0"]
@@ -68453,7 +68458,6 @@ energy = 0.28
 position = Vector2( 1903, 1929 )
 scale = Vector2( 0.516925, 0.552477 )
 frames = SubResource( 13 )
-frame = 7
 flip_h = true
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite46" index="0"]
@@ -68464,7 +68468,7 @@ energy = 0.28
 position = Vector2( 1908, 1932 )
 scale = Vector2( 0.516925, 0.552477 )
 frames = SubResource( 13 )
-frame = 6
+frame = 0
 flip_h = true
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite47" index="0"]
@@ -68475,7 +68479,7 @@ energy = 0.28
 position = Vector2( 1932, 1932 )
 scale = Vector2( 0.516925, 0.552477 )
 frames = SubResource( 13 )
-frame = 5
+frame = 7
 flip_h = true
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite48" index="0"]
@@ -68487,6 +68491,7 @@ position = Vector2( 1937, 1929 )
 scale = Vector2( 0.516925, 0.552477 )
 frames = SubResource( 13 )
 animation = "Smoking"
+frame = 14
 flip_h = true
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite49" index="0"]
@@ -68498,7 +68503,7 @@ position = Vector2( 2924, 1817 )
 scale = Vector2( 0.9, 0.9 )
 frames = SubResource( 13 )
 animation = "Burning"
-frame = 9
+frame = 11
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite22" index="0"]
 position = Vector2( 0, 3.3335 )
@@ -68508,7 +68513,7 @@ energy = 0.28
 position = Vector2( 2881, 1928 )
 frames = SubResource( 13 )
 animation = "Smoking"
-frame = 0
+frame = 14
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite11" index="0"]
 position = Vector2( -1, 3 )
@@ -68518,7 +68523,7 @@ energy = 0.0
 [node name="AnimatedSprite23" parent="Dungeonlayer2/Candles" instance=ExtResource( 11 )]
 position = Vector2( 3199, 239 )
 frames = SubResource( 133 )
-frame = 3
+frame = 5
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite23" index="0"]
 energy = 0.56
@@ -68526,7 +68531,7 @@ energy = 0.56
 [node name="AnimatedSprite24" parent="Dungeonlayer2/Candles" instance=ExtResource( 11 )]
 position = Vector2( 4622, 1748 )
 frames = SubResource( 133 )
-frame = 2
+frame = 4
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite24" index="0"]
 energy = 0.56
@@ -68534,7 +68539,7 @@ energy = 0.56
 [node name="AnimatedSprite25" parent="Dungeonlayer2/Candles" instance=ExtResource( 11 )]
 position = Vector2( 4158, 1875 )
 frames = SubResource( 133 )
-frame = 1
+frame = 3
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite25" index="0"]
 energy = 0.56
@@ -68543,7 +68548,7 @@ energy = 0.56
 position = Vector2( 2948, 1490 )
 frames = SubResource( 133 )
 animation = "Burning2"
-frame = 2
+frame = 4
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite26" index="0"]
 energy = 0.56
@@ -68552,7 +68557,7 @@ energy = 0.56
 position = Vector2( 2875, 1489 )
 frames = SubResource( 133 )
 animation = "Burning2"
-frame = 1
+frame = 3
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite27" index="0"]
 energy = 0.56
@@ -68561,7 +68566,7 @@ energy = 0.56
 position = Vector2( 1486, 181 )
 frames = SubResource( 133 )
 animation = "Burning2"
-frame = 1
+frame = 3
 
 [node name="Light2D" parent="Dungeonlayer2/Candles/AnimatedSprite28" index="0"]
 energy = 0.56
@@ -68569,41 +68574,41 @@ energy = 0.56
 [node name="AnimatedSprite51" parent="Dungeonlayer2/Candles" instance=ExtResource( 11 )]
 position = Vector2( 2286, 1464 )
 animation = "Burning2"
-frame = 6
+frame = 0
 
 [node name="AnimatedSprite53" parent="Dungeonlayer2/Candles" instance=ExtResource( 11 )]
 position = Vector2( 3295, 1144 )
 animation = "Burning2"
-frame = 6
+frame = 0
 
 [node name="AnimatedSprite54" parent="Dungeonlayer2/Candles" instance=ExtResource( 11 )]
 position = Vector2( 3389, 1144 )
 animation = "Burning2"
-frame = 5
+frame = 7
 
 [node name="AnimatedSprite55" parent="Dungeonlayer2/Candles" instance=ExtResource( 11 )]
 position = Vector2( 3971, 1117 )
 animation = "Burning2"
-frame = 5
+frame = 7
 
 [node name="AnimatedSprite56" parent="Dungeonlayer2/Candles" instance=ExtResource( 11 )]
 position = Vector2( 3615, 1858 )
 animation = "Burning2"
-frame = 5
+frame = 7
 
 [node name="AnimatedSprite57" parent="Dungeonlayer2/Candles" instance=ExtResource( 11 )]
 position = Vector2( 3711, 1858 )
 animation = "Burning2"
-frame = 4
+frame = 6
 
 [node name="AnimatedSprite58" parent="Dungeonlayer2/Candles" instance=ExtResource( 11 )]
 position = Vector2( 2653, 226 )
 animation = "Burning2"
-frame = 4
+frame = 6
 
 [node name="AnimatedSprite52" parent="Dungeonlayer2/Candles" instance=ExtResource( 11 )]
 position = Vector2( 1823, 1423 )
-frame = 5
+frame = 7
 
 [node name="Collision" type="Node2D" parent="."]
 visible = false
@@ -69030,7 +69035,7 @@ position = Vector2( 4111, 1840 )
 z_index = 3
 z_as_relative = false
 animation = "IceHole"
-frame = 3
+frame = 8
 magicTrapType = 2
 
 [node name="AnimatedSprite3" parent="MagicTrap" instance=ExtResource( 26 )]
@@ -69038,7 +69043,7 @@ position = Vector2( 3757, 1884 )
 z_index = 3
 z_as_relative = false
 animation = "IceHole1"
-frame = 0
+frame = 7
 magicTrapType = 3
 
 [node name="AnimatedSprite4" parent="MagicTrap" instance=ExtResource( 26 )]
@@ -69046,14 +69051,14 @@ position = Vector2( 3856, 1213 )
 z_index = 3
 z_as_relative = false
 animation = "FireFace"
-frame = 1
+frame = 6
 magicType = 4
 
 [node name="AnimatedSprite5" parent="MagicTrap" instance=ExtResource( 26 )]
 position = Vector2( 4220, 1212 )
 z_index = 3
 z_as_relative = false
-frame = 7
+frame = 6
 magicType = 1
 
 [node name="AnimatedSprite6" parent="MagicTrap" instance=ExtResource( 26 )]
@@ -69061,7 +69066,7 @@ position = Vector2( 3117, 312 )
 z_index = 3
 z_as_relative = false
 animation = "FireHole"
-frame = 4
+frame = 0
 magicType = 0
 
 [node name="AnimatedSprite10" parent="MagicTrap" instance=ExtResource( 26 )]
@@ -69069,7 +69074,7 @@ position = Vector2( 2875, 312 )
 z_index = 3
 z_as_relative = false
 animation = "FireHole"
-frame = 3
+frame = 8
 magicType = 0
 
 [node name="AnimatedSprite7" parent="MagicTrap" instance=ExtResource( 26 )]
@@ -69077,7 +69082,7 @@ position = Vector2( 3217, 275 )
 z_index = 3
 z_as_relative = false
 animation = "FireHole"
-frame = 4
+frame = 0
 magicType = 0
 
 [node name="AnimatedSprite8" parent="MagicTrap" instance=ExtResource( 26 )]
@@ -69085,7 +69090,7 @@ position = Vector2( 3315, 275 )
 z_index = 3
 z_as_relative = false
 animation = "IceHole"
-frame = 5
+frame = 1
 magicTrapType = 2
 
 [node name="AnimatedSprite2" parent="MagicTrap" instance=ExtResource( 26 )]
@@ -69093,7 +69098,7 @@ position = Vector2( 4178, 1852 )
 z_index = 3
 z_as_relative = false
 animation = "FireFace"
-frame = 1
+frame = 6
 magicType = 1
 magicTrapType = 4
 
@@ -69102,7 +69107,7 @@ position = Vector2( 2120, 1561 )
 z_index = 3
 z_as_relative = false
 animation = "IceHole1"
-frame = 10
+frame = 6
 magicTrapType = 3
 
 [node name="PhyTrap2D" type="Node2D" parent="."]
@@ -69505,7 +69510,7 @@ z_index = 3
 z_as_relative = false
 
 [node name="AnimatedSprite" parent="Enemy/Enemy" index="0"]
-frame = 5
+frame = 2
 
 [node name="AnimationPlayer" parent="Enemy/Enemy" index="1"]
 anims/EnemyAttack = SubResource( 354 )
@@ -69524,7 +69529,7 @@ z_index = 3
 z_as_relative = false
 
 [node name="AnimatedSprite" parent="Enemy/Enemy6" index="0"]
-frame = 5
+frame = 2
 
 [node name="AnimationPlayer" parent="Enemy/Enemy6" index="1"]
 anims/EnemyAttack = SubResource( 384 )
@@ -69543,7 +69548,7 @@ z_index = 3
 z_as_relative = false
 
 [node name="AnimatedSprite" parent="Enemy/Enemy2" index="0"]
-frame = 5
+frame = 2
 
 [node name="AnimationPlayer" parent="Enemy/Enemy2" index="1"]
 anims/EnemyAttack = SubResource( 360 )
@@ -69562,7 +69567,7 @@ z_index = 3
 z_as_relative = false
 
 [node name="AnimatedSprite" parent="Enemy/Enemy3" index="0"]
-frame = 5
+frame = 2
 
 [node name="AnimationPlayer" parent="Enemy/Enemy3" index="1"]
 anims/EnemyAttack = SubResource( 366 )
@@ -69581,7 +69586,7 @@ z_index = 3
 z_as_relative = false
 
 [node name="AnimatedSprite" parent="Enemy/Enemy4" index="0"]
-frame = 5
+frame = 2
 
 [node name="AnimationPlayer" parent="Enemy/Enemy4" index="1"]
 anims/EnemyAttack = SubResource( 372 )
@@ -69600,7 +69605,7 @@ z_index = 3
 z_as_relative = false
 
 [node name="AnimatedSprite" parent="Enemy/Enemy5" index="0"]
-frame = 5
+frame = 2
 
 [node name="AnimationPlayer" parent="Enemy/Enemy5" index="1"]
 anims/EnemyAttack = SubResource( 378 )
@@ -69617,7 +69622,7 @@ collision_mask = 64
 position = Vector2( 1806, 1602 )
 
 [node name="AnimatedSprite" parent="Player" index="2"]
-frame = 7
+frame = 2
 
 [node name="SpawnPoint2" type="Area2D" parent="." groups=["Portals"]]
 position = Vector2( 5070, 2095 )
@@ -69666,7 +69671,7 @@ script = ExtResource( 23 )
 position = Vector2( 27, -73 )
 z_index = 5
 z_as_relative = false
-frame = 5
+frame = 9
 
 [node name="DiractionSign" parent="." instance=ExtResource( 24 )]
 position = Vector2( 4506, 2102 )

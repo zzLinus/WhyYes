@@ -1707,7 +1707,7 @@ nodes/TimeScale/position = Vector2( 220, -500 )
 nodes/WSTransition/node = SubResource( 28 )
 nodes/WSTransition/position = Vector2( 960, -620 )
 nodes/output/position = Vector2( 1880, -60 )
-node_connections = [ "output", 0, "PlayerState", "NMTransition", 0, "Animation", "NMTransition", 1, "Animation 3", "NMTransition", 2, "Animation 4", "NMTransition", 3, "Animation 2", "NMTransition", 4, "Animation 5", "NMTransition", 5, "TimeScale 4", "NMTransition", 6, "TimeScale 5", "TimeScale", 0, "Animation 9", "TimeScale 5", 0, "Animation 20", "TimeScale 2", 0, "Animation 15", "PlayerState", 0, "WSTransition", "PlayerState", 1, "NMTransition", "TimeScale 3", 0, "Animation 11", "StopAttack2", 0, "TimeScale 2", "StopAttack2", 1, "Animation 16", "StopAttack3", 0, "TimeScale 3", "StopAttack3", 1, "Animation 17", "WSTransition", 0, "Animation 14", "WSTransition", 1, "Animation 13", "WSTransition", 2, "Animation 12", "WSTransition", 3, "Animation 10", "WSTransition", 5, "Animation 8", "WSTransition", 6, "StopAttack", "WSTransition", 7, "StopAttack2", "WSTransition", 8, "StopAttack3", "WSTransition", 9, "Animation 6", "WSTransition", 10, "TimeScale 6", "StopAttack", 0, "TimeScale", "StopAttack", 1, "Animation 7", "TimeScale 4", 0, "Animation 18", "TimeScale 6", 0, "Animation 19" ]
+node_connections = [ "output", 0, "PlayerState", "NMTransition", 0, "Animation", "NMTransition", 1, "Animation 3", "NMTransition", 2, "Animation 4", "NMTransition", 3, "Animation 2", "NMTransition", 4, "Animation 5", "NMTransition", 5, "TimeScale 4", "NMTransition", 6, "TimeScale 5", "PlayerState", 0, "WSTransition", "PlayerState", 1, "NMTransition", "StopAttack", 0, "TimeScale", "StopAttack", 1, "Animation 7", "StopAttack2", 0, "TimeScale 2", "StopAttack2", 1, "Animation 16", "StopAttack3", 0, "TimeScale 3", "StopAttack3", 1, "Animation 17", "TimeScale", 0, "Animation 9", "TimeScale 2", 0, "Animation 15", "TimeScale 3", 0, "Animation 11", "TimeScale 4", 0, "Animation 18", "TimeScale 5", 0, "Animation 20", "TimeScale 6", 0, "Animation 19", "WSTransition", 0, "Animation 14", "WSTransition", 1, "Animation 13", "WSTransition", 2, "Animation 12", "WSTransition", 3, "Animation 10", "WSTransition", 5, "Animation 8", "WSTransition", 6, "StopAttack", "WSTransition", 7, "StopAttack2", "WSTransition", 8, "StopAttack3", "WSTransition", 9, "Animation 6", "WSTransition", 10, "TimeScale 6" ]
 
 [sub_resource type="CapsuleShape2D" id=47]
 height = 43.999
@@ -1745,7 +1745,7 @@ position = Vector2( 12, -8 )
 scale = Vector2( 1.8015, 1.91911 )
 frames = SubResource( 1 )
 animation = "WSPlayerIdle"
-frame = 3
+frame = 6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite")
@@ -1812,6 +1812,7 @@ script = ExtResource( 167 )
 [node name="HurtboxColli" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2( 0.0731201, 13.9998 )
 shape = SubResource( 47 )
+disabled = true
 
 [node name="HitBoxForAttack1" type="Area2D" parent="."]
 collision_layer = 16
