@@ -2789,7 +2789,7 @@ position = Vector2( 97, 6 )
 polygon = PoolVector2Array( -92, -57, -80, -78, -66, -58, -68, -36, -92, -37 )
 
 [node name="Portal" parent="." instance=ExtResource( 8 )]
-position = Vector2( 2481, 727 )
+position = Vector2( 2481, 736 )
 scale = Vector2( 2.59065, 1.08342 )
 nextScenePath = "res://Scenes/mainScene2.tscn"
 
@@ -2797,7 +2797,7 @@ nextScenePath = "res://Scenes/mainScene2.tscn"
 position = Vector2( 1313, 1622 )
 
 [node name="AnimatedSprite" parent="Enemy" index="0"]
-frame = 5
+frame = 2
 
 [node name="RayCast2D" parent="Enemy" index="11"]
 collision_mask = 64
@@ -2814,14 +2814,16 @@ collision_mask = 64
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1060, 1625 )
-doingAction = false
 
 [node name="AnimatedSprite" parent="Player" index="2"]
-animation = "WSPlayerParry"
+animation = "PlayerDash"
 frame = 9
 
 [node name="AnimationTree" parent="Player" index="4"]
 parameters/WSTransition/current = 0
+
+[node name="HurtboxColli" parent="Player/HurtBox" index="0"]
+disabled = false
 
 [node name="TransportMain" type="Position2D" parent="."]
 position = Vector2( 1062, 1579 )
@@ -2831,6 +2833,7 @@ script = ExtResource( 14 )
 position = Vector2( 27, -73 )
 z_index = 5
 z_as_relative = false
+frame = 9
 
 [node name="NPC" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1142, 1633 )

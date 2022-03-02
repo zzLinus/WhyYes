@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/Texture/finalMap/TX Tileset Wall.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/finalMap.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Scripts/TransportMain.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/LogoGif.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/portal.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Portal.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/SpawnPoint.gd" type="Script" id=9]
 
 [sub_resource type="TileSet" id=1]
 0/name = "TX Tileset Wall.png 0"
@@ -94,6 +96,8 @@
 5/shapes = [  ]
 5/z_index = 0
 
+[sub_resource type="CapsuleShape2D" id=2]
+
 [node name="Node2D" type="Node2D"]
 
 [node name="FinalMap" parent="." instance=ExtResource( 2 )]
@@ -118,9 +122,24 @@ script = ExtResource( 5 )
 position = Vector2( 27, -73 )
 z_index = 5
 z_as_relative = false
-frame = 2
+frame = 8
 
 [node name="Node2D" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1189, 1419 )
+
+[node name="SpawnPoint5" type="Area2D" parent="." groups=["Portals"]]
+position = Vector2( 1407, 2652 )
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnPoint5"]
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[node name="Portal-final" parent="." instance=ExtResource( 8 )]
+position = Vector2( 609, 1510 )
+scale = Vector2( 2.59065, 1.08342 )
+nextScenePath = "res://Scenes/Catfe.tscn"
+
+[connection signal="area_entered" from="Portal-final" to="Portal-final" method="_on_Portal_area_entered"]
 
 [editable path="FinalMap"]

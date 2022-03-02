@@ -38,6 +38,12 @@ func GetSpawnPoint() -> Vector2:
 		targetNodeName = "SpawnPoint3"
 	if playerData.playerSpawnPoint == 4:
 		targetNodeName = "SpawnPoint4"
+	if playerData.playerSpawnPoint == 5:
+		targetNodeName = "SpawnPoint5"
+	if playerData.playerSpawnPoint == 6:
+		targetNodeName = "SpawnPoint6"
+	if playerData.playerSpawnPoint == 7:
+		targetNodeName = "SpawnPoint7"
 
 	print("go to spawn points" + targetNodeName)
 

@@ -503,6 +503,9 @@ func _on_InteractWithPortal_area_entered(area):
 		|| area.name == "Portal1-1"
 		|| area.name == "Portal1-2"
 		|| area.name == "Portal1-3"
+		|| area.name == "Portal2-1"
+		|| area.name == "Portal2-2"
+		|| area.name == "Portal-final"
 	):
 		if playerState == SWstate.WITHSWORD:
 			animTree.set("parameters/WSTransition/current", WSstate.IDLE)
@@ -516,6 +519,12 @@ func _on_InteractWithPortal_area_entered(area):
 			spawnPointID = 3
 		if area.name == "Portal1-3":
 			spawnPointID = 4
+		if area.name == "Portal2-1":
+			spawnPointID = 5
+		if area.name == "Portal2-2":
+			spawnPointID = 7
+		if area.name == "Portal-final":
+			spawnPointID = 6
 		SavePlayerData()
 		spawnEffect(darkMagicEffect, global_position)
 		doingAction = true
