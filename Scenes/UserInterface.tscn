@@ -20,7 +20,7 @@ shader_param/roll_speed = 4.0
 shader_param/roll_size = 7.114
 shader_param/roll_variation = 2.069
 shader_param/distort_intensity = 0.01
-shader_param/noise_opacity = 0.145
+shader_param/noise_opacity = 0.019
 shader_param/noise_speed = 7.0
 shader_param/static_noise_intensity = 0.039
 shader_param/aberration = 0.0
@@ -85,7 +85,7 @@ position = Vector2( 144, 520 )
 
 [node name="DeadMenu" parent="." instance=ExtResource( 6 )]
 
-[node name="Shader" type="Sprite" parent="."]
+[node name="Shader" type="Sprite" parent="." groups=["Shader"]]
 material = SubResource( 2 )
 position = Vector2( 400, 300 )
 scale = Vector2( 20, 18.75 )

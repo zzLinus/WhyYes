@@ -86,6 +86,13 @@ func _ready():
 	animTree.set("parameters/NMTransition/current", NMstate.IDLE)
 	animTree.set("parameters/WSTransition/current", WSstate.IDLE)
 
+	var shader = get_tree().get_nodes_in_group("Shader")
+	if AutoloadScript.currentScene == 5:
+		shader[0].get_material().set_shader_param("brightness",1)
+	else:
+		shader[0].get_material().set_shader_param("brightness",1.4)
+	print("change brightness")
+
 
 func _process(delta):
 	AutoloadScript.playerData.playerPos = $HurtBox.global_position
@@ -139,7 +146,12 @@ func handleWithSwordAnim():
 
 
 func handleNormAnim():
-	if Input.is_action_just_pressed("Dash") && !doingDash && dashDuration.is_stopped() && !doingAction:
+	if (
+		Input.is_action_just_pressed("Dash")
+		&& !doingDash
+		&& dashDuration.is_stopped()
+		&& !doingAction
+	):
 		playerDash()
 	# elif Input.is_action_just_released("Dash"):
 	# 	dashDuration.stop()

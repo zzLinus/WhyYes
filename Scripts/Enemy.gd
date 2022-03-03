@@ -148,6 +148,8 @@ func _on_HurtBox_area_entered(area):
 		attackType = 3
 		cameraShake.Start(0.3, 20, 15)
 		spawnEffect(blood, global_position + Vector2(-10, 10), 6)
+	else:
+		return
 
 	if damage != 0 && isPlayerHit:
 		spawnEffect(playerHitEffect, global_position + Vector2(-10, 10), attackType)

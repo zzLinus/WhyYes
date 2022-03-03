@@ -114,6 +114,9 @@ tile_data = PoolIntArray( 2162713, 2, 0, 2228249, 3, 0, 2424857, 3, 0, 2555941, 
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 
+[node name="AnimatedSprite" parent="Player" index="2"]
+frame = 4
+
 [node name="TransportMain" type="Position2D" parent="."]
 position = Vector2( 1062, 1579 )
 script = ExtResource( 5 )
@@ -122,7 +125,7 @@ script = ExtResource( 5 )
 position = Vector2( 27, -73 )
 z_index = 5
 z_as_relative = false
-frame = 8
+frame = 6
 
 [node name="Node2D" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1189, 1419 )
@@ -135,11 +138,42 @@ script = ExtResource( 9 )
 rotation = 1.5708
 shape = SubResource( 2 )
 
+[node name="SpawnPoint7" type="Area2D" parent="." groups=["Portals"]]
+position = Vector2( 1022, 1506 )
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnPoint7"]
+rotation = 1.5708
+shape = SubResource( 2 )
+
 [node name="Portal-final" parent="." instance=ExtResource( 8 )]
 position = Vector2( 609, 1510 )
 scale = Vector2( 2.59065, 1.08342 )
 nextScenePath = "res://Scenes/Catfe.tscn"
 
+[node name="Collision" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Collision"]
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collision/StaticBody2D"]
+polygon = PoolVector2Array( 985, 1954, 1287, 1953, 1287, 2438, 984, 2439 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Collision"]
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collision/StaticBody2D2"]
+polygon = PoolVector2Array( 954, 1474, 997, 1474, 997, 1519, 1051, 1519, 1050, 1475, 1317, 1474, 1320, 1732, 954, 1734 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Collision"]
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collision/StaticBody2D3"]
+polygon = PoolVector2Array( 839, 1600, 839, 1765, 289, 1767, 288, 1858, 870, 1857, 872, 2495, 1287, 2498, 1287, 2657, 1381, 2657, 1381, 2692, 1438, 2692, 1436, 2658, 1531, 2657, 1533, 2373, 1472, 2370, 1471, 2307, 1415, 2302, 1415, 2374, 1401, 2374, 1402, 1954, 1792, 1953, 1792, 1863, 1403, 1861, 1403, 1698, 1792, 1697, 1791, 1603, 1404, 1602, 1404, 1122, 1315, 1123, 1316, 1312, 1246, 1315, 1244, 1253, 1136, 1249, 1134, 1316, 926, 1314, 923, 1118, 830, 1118, 828, 1438, 839, 1440, 838, 1507, 351, 1504, 352, 1601, 838, 1600, 814, 1689, 66, 1693, 493, 831, 1355, 870, 2150, 1511, 2173, 2425, 1796, 2928, 552, 3083, 92, 1942, 259, 1694, 814, 1689 )
+
 [connection signal="area_entered" from="Portal-final" to="Portal-final" method="_on_Portal_area_entered"]
 
 [editable path="FinalMap"]
+[editable path="Player"]
+[editable path="Player/UI"]
+[editable path="Player/UI/PlayerUI"]

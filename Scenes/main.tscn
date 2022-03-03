@@ -2797,7 +2797,7 @@ nextScenePath = "res://Scenes/mainScene2.tscn"
 position = Vector2( 1313, 1622 )
 
 [node name="AnimatedSprite" parent="Enemy" index="0"]
-frame = 2
+frame = 6
 
 [node name="RayCast2D" parent="Enemy" index="11"]
 collision_mask = 64
@@ -2816,7 +2816,7 @@ collision_mask = 64
 position = Vector2( 1060, 1625 )
 
 [node name="AnimatedSprite" parent="Player" index="2"]
-animation = "PlayerDash"
+animation = "WSPlayerParry"
 frame = 9
 
 [node name="AnimationTree" parent="Player" index="4"]
@@ -2833,12 +2833,12 @@ script = ExtResource( 14 )
 position = Vector2( 27, -73 )
 z_index = 5
 z_as_relative = false
-frame = 9
+frame = 5
 
 [node name="NPC" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1142, 1633 )
 z_index = 1
-frame = 5
+frame = 11
 flip_h = true
 
 [node name="PlayerShadow" parent="NPC" index="0"]
