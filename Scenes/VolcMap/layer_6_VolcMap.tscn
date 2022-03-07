@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=2]
-
-[ext_resource path="tileset_VolcMap.tres" type="TileSet" id=1]
-
-[node name="6_TreeLayer2" type="TileMap"]
-tile_set = ExtResource( 1 )
-cell_size = Vector2( 32, 32 )
-format = 1
-tile_data = PoolIntArray( 2621490, 267, 0, 2687026, 268, 0, 2621491, 271, 0, 2687027, 272, 0 )

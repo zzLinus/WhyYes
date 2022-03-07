@@ -34,15 +34,21 @@ func _on_Button3_pressed():
 		if get_tree().change_scene("res://Scenes/main.tscn") != OK:
 			print("unable to change scene")
 		self.isPause = false
+
 	elif AutoloadScript.currentScene == 2:
 		AutoloadScript.currentScene -= 1
-		# players[0].SavePlayerData()
 		if get_tree().change_scene("res://Scenes/mainScene2.tscn") != OK:
 			print("unable to change scene")
 		self.isPause = false
+
 	elif AutoloadScript.currentScene == 3:
 		AutoloadScript.currentScene -= 1
-		# players[0].SavePlayerData()
 		if get_tree().change_scene("res://Scenes/mainScene3.tscn") != OK:
+			print("unable to change scene")
+		self.isPause = false
+
+	elif AutoloadScript.currentScene == 4:
+		AutoloadScript.currentScene -= 1
+		if get_tree().change_scene("res://Scenes/mainScene4.tscn") != OK:
 			print("unable to change scene")
 		self.isPause = false

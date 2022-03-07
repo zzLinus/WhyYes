@@ -6,7 +6,7 @@ func _ready():
 
 
 func _on_Start_pressed():
-	if get_tree().change_scene("res://Scenes/main.tscn") != OK:
+	if get_tree().change_scene("res://Scenes/mainScene2.tscn") != OK:
 		print("unable to change scene")
 
 

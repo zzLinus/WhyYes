@@ -69,10 +69,10 @@ func _ready():
 	if AutoloadScript.playerData.playerIsFirstLoad:
 		animPlayer.play_backwards("SceneTransition")
 		print("load first time")
-		AutoloadScript.currentScene = 1
+		AutoloadScript.currentScene = 2
 		playerHealth = 100
 		playerState = SWstate.WOSWORD
-		global_position = Vector2(1080, 1626)
+		global_position = Vector2(869, 989)
 		emit_signal("healthChanged", 0)
 		AutoloadScript.playerData.playerIsFirstLoad = false
 	else:
@@ -88,15 +88,16 @@ func _ready():
 
 	var shader = get_tree().get_nodes_in_group("Shader")
 	if AutoloadScript.currentScene == 5:
-		shader[0].get_material().set_shader_param("brightness",1)
+		shader[0].get_material().set_shader_param("brightness", 1)
 	else:
-		shader[0].get_material().set_shader_param("brightness",1.4)
+		shader[0].get_material().set_shader_param("brightness", 1.4)
 	print("change brightness")
 
 
 func _process(delta):
 	AutoloadScript.playerData.playerPos = $HurtBox.global_position
 	#switch animation group
+	print(AutoloadScript.currentScene)
 	if !doingAction && !doingDash:
 		handlePlayerState()
 
