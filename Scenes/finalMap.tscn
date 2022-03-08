@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Texture/finalMap/untitled.tmx" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Texture/finalMap/TX Tileset Wall.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Texture/finalMap/TX Struct.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Texture/finalMap/TX Plant.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Texture/finalMap/TX Props.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Texture/finalMap/TX Shadow.png" type="Texture" id=6]
 
 [sub_resource type="TileSet" id=1]
 0/name = "TX Struct.png 0"
@@ -51,13 +54,11 @@
 [node name="FinalMap" instance=ExtResource( 1 )]
 
 [node name="ColorRect" type="ColorRect" parent="." index="0"]
-margin_left = -627.0
-margin_right = 2884.0
-margin_bottom = 3456.0
+margin_left = -481.0
+margin_top = -19.0
+margin_right = 3030.0
+margin_bottom = 3437.0
 color = Color( 0.0235294, 0, 0.12549, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="wall" parent="." index="3"]
 cell_custom_transform = Transform2D( 32, 0, 0, 32, 0, 0 )
@@ -71,14 +72,256 @@ cell_custom_transform = Transform2D( 32, 0, 0, 32, 0, 0 )
 format = 1
 tile_data = PoolIntArray( -2424793, 0, 0, -2424791, 2, 0 )
 
+[node name="Declor3" parent="." index="5"]
+z_index = 3
+z_as_relative = false
+
 [node name="Shadow" parent="." index="6"]
 position = Vector2( 0, -31 )
 
 [node name="Declor1" parent="." index="7"]
 position = Vector2( 0, -31 )
+z_index = 3
+z_as_relative = false
+
+[node name="331" type="Sprite" parent="Declor1" index="1"]
+position = Vector2( 872, 2358 )
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( 0, -32 )
+region_enabled = true
+region_rect = Rect2( 160, 288, 32, 32 )
+region_filter_clip = true
+
+[node name="338" type="Sprite" parent="Declor1" index="2"]
+position = Vector2( 889, 1291 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -32 )
+region_enabled = true
+region_rect = Rect2( 64, 384, 32, 32 )
+region_filter_clip = true
+
+[node name="339" type="Sprite" parent="Declor1" index="3"]
+position = Vector2( 1318, 1326 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -32 )
+region_enabled = true
+region_rect = Rect2( 64, 384, 32, 32 )
+region_filter_clip = true
+
+[node name="316" type="Sprite" parent="Declor1" index="4"]
+position = Vector2( 1710, 1667 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -32 )
+region_enabled = true
+region_rect = Rect2( 64, 384, 32, 32 )
+region_filter_clip = true
+
+[node name="318" type="Sprite" parent="Declor1" index="5"]
+position = Vector2( 1766, 1679 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -32 )
+region_enabled = true
+region_rect = Rect2( 96, 384, 32, 32 )
+region_filter_clip = true
+
+[node name="315" type="Sprite" parent="Declor1" index="6"]
+position = Vector2( 1741, 1687 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -32 )
+region_enabled = true
+region_rect = Rect2( 32, 416, 32, 32 )
+region_filter_clip = true
+
+[node name="317" type="Sprite" parent="Declor1" index="7"]
+position = Vector2( 1706, 1717 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -32 )
+region_enabled = true
+region_rect = Rect2( 0, 448, 32, 32 )
+region_filter_clip = true
+
+[node name="305" type="Sprite" parent="Declor1" index="8"]
+position = Vector2( 347, 1826 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -32 )
+region_enabled = true
+region_rect = Rect2( 32, 384, 32, 32 )
+region_filter_clip = true
+
+[node name="307" type="Sprite" parent="Declor1" index="9"]
+position = Vector2( 297, 1826 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -32 )
+region_enabled = true
+region_rect = Rect2( 0, 416, 32, 32 )
+region_filter_clip = true
+
+[node name="308" type="Sprite" parent="Declor1" index="10"]
+position = Vector2( 332, 1852 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -32 )
+region_enabled = true
+region_rect = Rect2( 0, 416, 32, 32 )
+region_filter_clip = true
+
+[node name="306" type="Sprite" parent="Declor1" index="11"]
+position = Vector2( 278, 1869 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -32 )
+region_enabled = true
+region_rect = Rect2( 96, 448, 32, 32 )
+region_filter_clip = true
+
+[node name="309" type="Sprite" parent="Declor1" index="12"]
+position = Vector2( 302, 1871 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -32 )
+region_enabled = true
+region_rect = Rect2( 32, 416, 32, 32 )
+region_filter_clip = true
+
+[node name="303" type="Sprite" parent="Declor1" index="13"]
+position = Vector2( 343, 1886 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -32 )
+region_enabled = true
+region_rect = Rect2( 96, 384, 32, 32 )
+region_filter_clip = true
+
+[node name="311" type="Sprite" parent="Declor1" index="14"]
+position = Vector2( 1705, 1929 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -32 )
+region_enabled = true
+region_rect = Rect2( 96, 384, 32, 32 )
+region_filter_clip = true
+
+[node name="313" type="Sprite" parent="Declor1" index="15"]
+position = Vector2( 1751, 1930 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -32 )
+region_enabled = true
+region_rect = Rect2( 64, 384, 32, 32 )
+region_filter_clip = true
+
+[node name="314" type="Sprite" parent="Declor1" index="16"]
+position = Vector2( 1730, 1950 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -32 )
+region_enabled = true
+region_rect = Rect2( 32, 416, 32, 32 )
+region_filter_clip = true
+
+[node name="312" type="Sprite" parent="Declor1" index="17"]
+position = Vector2( 1699, 1962 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -32 )
+region_enabled = true
+region_rect = Rect2( 32, 448, 32, 32 )
+region_filter_clip = true
+
+[node name="310" type="Sprite" parent="Declor1" index="18"]
+position = Vector2( 1756, 1971 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -32 )
+region_enabled = true
+region_rect = Rect2( 32, 416, 32, 32 )
+region_filter_clip = true
+
+[node name="328" type="Sprite" parent="Declor1" index="19"]
+position = Vector2( 958, 2083 )
+texture = ExtResource( 6 )
+centered = false
+offset = Vector2( 0, -32 )
+region_enabled = true
+region_rect = Rect2( 160, 288, 32, 32 )
+region_filter_clip = true
+
+[node name="327" type="Sprite" parent="Declor1" index="20"]
+position = Vector2( 959, 2084 )
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( 0, -32 )
+region_enabled = true
+region_rect = Rect2( 160, 288, 32, 32 )
+region_filter_clip = true
+
+[node name="334" type="Sprite" parent="Declor1" index="21"]
+position = Vector2( 1284, 2261 )
+texture = ExtResource( 6 )
+centered = false
+offset = Vector2( 0, -32 )
+region_enabled = true
+region_rect = Rect2( 160, 288, 32, 32 )
+region_filter_clip = true
+
+[node name="333" type="Sprite" parent="Declor1" index="22"]
+position = Vector2( 1285, 2262 )
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( 0, -32 )
+region_enabled = true
+region_rect = Rect2( 160, 288, 32, 32 )
+region_filter_clip = true
+
+[node name="332" type="Sprite" parent="Declor1" index="23"]
+position = Vector2( 871, 2357 )
+texture = ExtResource( 6 )
+centered = false
+offset = Vector2( 0, -32 )
+region_enabled = true
+region_rect = Rect2( 160, 288, 32, 32 )
+region_filter_clip = true
+
+[node name="337" type="Sprite" parent="Declor1" index="196"]
+position = Vector2( 837, 1444 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -32 )
+region_enabled = true
+region_rect = Rect2( 64, 384, 32, 32 )
+region_filter_clip = true
 
 [node name="Declor2" parent="." index="8"]
 position = Vector2( 0, -31 )
+z_index = 3
+z_as_relative = false
+
+[node name="MagicWord" parent="." index="9"]
+z_index = 3
+z_as_relative = false
+
+[node name="Declor4" parent="." index="10"]
+z_index = 3
+z_as_relative = false
+
+[node name="Declor5" parent="." index="11"]
+z_index = 3
+z_as_relative = false
+
+[node name="Tree" parent="." index="12"]
+z_index = 3
+z_as_relative = false
 
 [node name="Declor6" parent="." index="13"]
 position = Vector2( 0, -31 )
+z_index = 3
+z_as_relative = false

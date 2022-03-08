@@ -12,19 +12,19 @@ shader = ExtResource( 4 )
 shader_param/overlay = true
 shader_param/scanlines_opacity = 0.0
 shader_param/scanlines_width = 0.0
-shader_param/grille_opacity = 0.0
+shader_param/grille_opacity = 0.004
 shader_param/resolution = Vector2( 800, 600 )
 shader_param/pixelate = false
 shader_param/roll = true
-shader_param/roll_speed = 4.0
-shader_param/roll_size = 7.114
+shader_param/roll_speed = 3.0
+shader_param/roll_size = 4.63
 shader_param/roll_variation = 2.069
-shader_param/distort_intensity = 0.01
-shader_param/noise_opacity = 0.019
-shader_param/noise_speed = 7.0
-shader_param/static_noise_intensity = 0.039
+shader_param/distort_intensity = 0.011
+shader_param/noise_opacity = 0.172
+shader_param/noise_speed = 5.55
+shader_param/static_noise_intensity = 0.03
 shader_param/aberration = 0.0
-shader_param/brightness = 1.4
+shader_param/brightness = 1.278
 shader_param/discolor = false
 shader_param/warp_amount = 0.574
 shader_param/clip_warp = false
@@ -67,9 +67,6 @@ shader_param/time = 0.0
 [node name="PlayerUI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TextureProgress" parent="." instance=ExtResource( 1 )]
 margin_left = 40.0

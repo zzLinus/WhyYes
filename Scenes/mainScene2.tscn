@@ -48,56 +48,35 @@ tile_data = PoolIntArray( 5, 2101, 0, 6, 2102, 0, 7, 2103, 0, 8, 2104, 0, 33, 21
 z_index = 2
 z_as_relative = false
 
-[node name="AnimatedSprite" parent="TiledMap editor example-/Candles" index="0"]
-frame = 6
-
-[node name="AnimatedSprite2" parent="TiledMap editor example-/Candles" index="1"]
-frame = 0
-
-[node name="AnimatedSprite3" parent="TiledMap editor example-/Candles" index="2"]
-frame = 6
-
 [node name="AnimatedSprite4" parent="TiledMap editor example-/Candles" index="3"]
-frame = 3
+frame = 4
 
 [node name="AnimatedSprite5" parent="TiledMap editor example-/Candles" index="4"]
-frame = 8
-
-[node name="AnimatedSprite6" parent="TiledMap editor example-/Candles" index="5"]
-frame = 2
+frame = 15
 
 [node name="AnimatedSprite7" parent="TiledMap editor example-/Candles" index="6"]
-frame = 16
-
-[node name="AnimatedSprite8" parent="TiledMap editor example-/Candles" index="7"]
-frame = 2
-
-[node name="AnimatedSprite9" parent="TiledMap editor example-/Candles" index="8"]
 frame = 5
 
 [node name="AnimatedSprite15" parent="TiledMap editor example-/Candles" index="9"]
-frame = 16
+frame = 5
 
 [node name="AnimatedSprite16" parent="TiledMap editor example-/Candles" index="10"]
-frame = 16
+frame = 5
 
 [node name="AnimatedSprite10" parent="TiledMap editor example-/Candles" index="11"]
-frame = 7
-
-[node name="AnimatedSprite11" parent="TiledMap editor example-/Candles" index="12"]
-frame = 2
+frame = 14
 
 [node name="AnimatedSprite14" parent="TiledMap editor example-/Candles" index="13"]
-frame = 10
+frame = 17
 
 [node name="AnimatedSprite12" parent="TiledMap editor example-/Candles" index="14"]
-frame = 15
+frame = 4
 
 [node name="AnimatedSprite13" parent="TiledMap editor example-/Candles" index="15"]
-frame = 10
+frame = 11
 
 [node name="AnimatedSprite17" parent="TiledMap editor example-/Candles" index="16"]
-frame = 10
+frame = 11
 
 [node name="Trap" type="Node2D" parent="TiledMap editor example-"]
 position = Vector2( -2, 0 )
@@ -369,7 +348,7 @@ script = ExtResource( 8 )
 position = Vector2( 27, -73 )
 z_index = 5
 z_as_relative = false
-frame = 9
+frame = 0
 
 [node name="DiractionSign" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1088, 657 )

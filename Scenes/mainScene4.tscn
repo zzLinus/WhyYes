@@ -103,7 +103,14 @@
 [node name="FinalMap" parent="." instance=ExtResource( 2 )]
 
 [node name="ColorRect" parent="FinalMap" index="0"]
+margin_left = -338.0
+margin_top = -61.0
+margin_right = 3173.0
+margin_bottom = 3395.0
 color = Color( 0.0156863, 0, 0.0745098, 1 )
+
+[node name="190" parent="FinalMap/Declor1" index="113"]
+position = Vector2( 1034, 1896 )
 
 [node name="TileMap2" type="TileMap" parent="FinalMap"]
 tile_set = SubResource( 1 )
@@ -115,7 +122,7 @@ tile_data = PoolIntArray( 2162713, 2, 0, 2228249, 3, 0, 2424857, 3, 0, 2555941, 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 
 [node name="AnimatedSprite" parent="Player" index="2"]
-frame = 1
+frame = 3
 
 [node name="TransportMain" type="Position2D" parent="."]
 position = Vector2( 1062, 1579 )
@@ -125,7 +132,7 @@ script = ExtResource( 5 )
 position = Vector2( 27, -73 )
 z_index = 5
 z_as_relative = false
-frame = 6
+frame = 5
 
 [node name="Node2D" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1189, 1419 )
@@ -163,15 +170,433 @@ polygon = PoolVector2Array( 985, 1954, 1287, 1953, 1287, 2438, 984, 2439 )
 collision_mask = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collision/StaticBody2D2"]
-polygon = PoolVector2Array( 954, 1474, 997, 1474, 997, 1519, 1051, 1519, 1050, 1475, 1317, 1474, 1320, 1732, 954, 1734 )
+polygon = PoolVector2Array( 954, 1474, 997, 1474, 997, 1519, 1051, 1519, 1051, 1473, 1319, 1472, 1319, 1736, 1118, 1735, 1118, 1757, 1060, 1756, 1060.13, 1733.42, 954, 1734 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Collision"]
 collision_mask = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collision/StaticBody2D3"]
-polygon = PoolVector2Array( 839, 1600, 839, 1765, 289, 1767, 288, 1858, 870, 1857, 872, 2495, 1287, 2498, 1287, 2657, 1381, 2657, 1381, 2692, 1438, 2692, 1436, 2658, 1531, 2657, 1533, 2373, 1472, 2370, 1471, 2307, 1415, 2302, 1415, 2374, 1401, 2374, 1402, 1954, 1792, 1953, 1792, 1863, 1403, 1861, 1403, 1698, 1792, 1697, 1791, 1603, 1404, 1602, 1404, 1122, 1315, 1123, 1316, 1312, 1246, 1315, 1244, 1253, 1136, 1249, 1134, 1316, 926, 1314, 923, 1118, 830, 1118, 828, 1438, 839, 1440, 838, 1507, 351, 1504, 352, 1601, 838, 1600, 814, 1689, 66, 1693, 493, 831, 1355, 870, 2150, 1511, 2173, 2425, 1796, 2928, 552, 3083, 92, 1942, 259, 1694, 814, 1689 )
+polygon = PoolVector2Array( 839, 1600, 839, 1765, 289, 1767, 288, 1858, 870, 1857, 871, 2248, 894, 2255, 893, 2296, 871, 2297, 872, 2495, 1287, 2498, 1287, 2657, 1381, 2657, 1381, 2692, 1438, 2692, 1436, 2658, 1531, 2657, 1533, 2373, 1472, 2370, 1471, 2307, 1415, 2302, 1415, 2374, 1401, 2374, 1401, 2178, 1380, 2174, 1380, 2126, 1402, 2122, 1402, 1954, 1792, 1953, 1792, 1863, 1403, 1861, 1398, 1872, 1381, 1879, 1356, 1873, 1348, 1846, 1359, 1831, 1372, 1834, 1392, 1836, 1401, 1838, 1403, 1698, 1792, 1697, 1791, 1603, 1404, 1602, 1404, 1122, 1315, 1123, 1316, 1312, 1246, 1315, 1244, 1253, 1136, 1249, 1134, 1316, 926, 1314, 923, 1118, 830, 1118, 828, 1438, 839, 1440, 838, 1507, 667.044, 1505.72, 666, 1531, 646, 1530, 645.594, 1505.56, 571, 1505, 570, 1530, 550, 1530, 550, 1505, 351, 1504, 352, 1601, 838, 1600, 814, 1689, 66, 1693, 493, 831, 1355, 870, 2150, 1511, 2173, 2425, 1796, 2928, 552, 3083, 92, 1942, 259, 1694, 814, 1689 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Collision"]
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collision/StaticBody2D4"]
+polygon = PoolVector2Array( 834, 1398, 864, 1398, 866, 1345, 834, 1345 )
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Collision"]
+position = Vector2( 66, -148 )
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collision/StaticBody2D5"]
+polygon = PoolVector2Array( 834, 1398, 864, 1398, 866, 1345, 834, 1345 )
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="Collision"]
+position = Vector2( 475, -117 )
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collision/StaticBody2D6"]
+polygon = PoolVector2Array( 834, 1398, 864, 1398, 866, 1345, 834, 1345 )
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="Collision"]
+position = Vector2( 22, 461 )
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collision/StaticBody2D7"]
+polygon = PoolVector2Array( 838, 1387, 850, 1385, 853, 1372, 848, 1360, 834, 1363, 828, 1381 )
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="Collision"]
+position = Vector2( -124, 400 )
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collision/StaticBody2D8"]
+polygon = PoolVector2Array( 838, 1387, 850, 1385, 853, 1372, 848, 1360, 834, 1363, 828, 1381 )
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="Collision"]
+position = Vector2( 111, 826 )
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collision/StaticBody2D9"]
+polygon = PoolVector2Array( 838, 1387, 850, 1385, 853, 1372, 848, 1360, 834, 1363, 828, 1381 )
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="Collision"]
+position = Vector2( 493, 1129 )
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collision/StaticBody2D10"]
+polygon = PoolVector2Array( 838, 1387, 854, 1383, 853, 1372, 847, 1365, 834, 1363, 828, 1381 )
+
+[node name="StaticBody2D11" type="StaticBody2D" parent="Collision"]
+position = Vector2( 643, 1107 )
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collision/StaticBody2D11"]
+polygon = PoolVector2Array( 838, 1387, 854, 1383, 853, 1372, 847, 1365, 834, 1363, 828, 1381 )
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="Collision"]
+position = Vector2( 485, 1262 )
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collision/StaticBody2D12"]
+polygon = PoolVector2Array( 838, 1387, 854, 1383, 853, 1372, 847, 1365, 834, 1363, 828, 1381 )
+
+[node name="StaticBody2D13" type="StaticBody2D" parent="Collision"]
+position = Vector2( 643, 1262 )
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collision/StaticBody2D13"]
+polygon = PoolVector2Array( 838, 1387, 854, 1383, 853, 1372, 847, 1365, 834, 1363, 828, 1381 )
+
+[node name="StaticBody2D14" type="StaticBody2D" parent="Collision"]
+position = Vector2( 619, 1202 )
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collision/StaticBody2D14"]
+polygon = PoolVector2Array( 838, 1387, 854, 1383, 853, 1372, 847, 1365, 834, 1363, 828, 1381 )
+
+[node name="StaticBody2D15" type="StaticBody2D" parent="Collision"]
+position = Vector2( 67, 1104 )
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collision/StaticBody2D15"]
+polygon = PoolVector2Array( 838, 1387, 854, 1383, 853, 1372, 847, 1365, 834, 1363, 828, 1381 )
+
+[node name="StaticBody2D16" type="StaticBody2D" parent="Collision"]
+position = Vector2( 291, 501 )
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collision/StaticBody2D16"]
+polygon = PoolVector2Array( 838, 1387, 854, 1383, 853, 1372, 847, 1365, 834, 1363, 828, 1381 )
+
+[node name="StaticBody2D17" type="StaticBody2D" parent="Collision"]
+position = Vector2( 229, 84 )
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collision/StaticBody2D17"]
+polygon = PoolVector2Array( 838, 1387, 854, 1383, 853, 1372, 847, 1365, 834, 1363, 828, 1381 )
+
+[node name="StaticBody2D18" type="StaticBody2D" parent="Collision"]
+position = Vector2( 313, 410 )
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collision/StaticBody2D18"]
+polygon = PoolVector2Array( 900, 1344, 898, 1377, 845, 1376, 841, 1340 )
+
+[node name="ChangeZ" type="Node2D" parent="."]
+
+[node name="Ztransform" type="Area2D" parent="ChangeZ"]
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeZ/Ztransform"]
+polygon = PoolVector2Array( 1122, 1861, 1117, 1865, 1118, 1878, 1122, 1885, 1148, 1884, 1155, 1878, 1155, 1866, 1150, 1860, 1147, 1819, 1139, 1813, 1128, 1816 )
+
+[node name="Ztransform2" type="Area2D" parent="ChangeZ"]
+position = Vector2( -706, -354 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeZ/Ztransform2"]
+polygon = PoolVector2Array( 1122, 1861, 1117, 1865, 1118, 1878, 1122, 1885, 1148, 1884, 1155, 1878, 1155, 1866, 1150, 1860, 1147, 1819, 1139, 1813, 1128, 1816 )
+
+[node name="Ztransform3" type="Area2D" parent="ChangeZ"]
+position = Vector2( -224, 606 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeZ/Ztransform3"]
+polygon = PoolVector2Array( 1122, 1861, 1117, 1865, 1118, 1878, 1122, 1885, 1148, 1884, 1155, 1878, 1155, 1866, 1150, 1860, 1147, 1819, 1139, 1813, 1128, 1816 )
+
+[node name="Ztransform4" type="Area2D" parent="ChangeZ"]
+position = Vector2( 351, 609 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeZ/Ztransform4"]
+polygon = PoolVector2Array( 1122, 1861, 1117, 1865, 1118, 1878, 1122, 1885, 1148, 1884, 1155, 1878, 1155, 1866, 1150, 1860, 1147, 1819, 1139, 1813, 1128, 1816 )
+
+[node name="Ztransform5" type="Area2D" parent="ChangeZ"]
+position = Vector2( 322, 674 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeZ/Ztransform5"]
+polygon = PoolVector2Array( 1122, 1883, 1147, 1883, 1147, 1834, 1122, 1833 )
+
+[node name="Ztransform6" type="Area2D" parent="ChangeZ"]
+position = Vector2( 192, 764 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeZ/Ztransform6"]
+polygon = PoolVector2Array( 1121, 1885, 1150, 1885, 1149, 1811, 1123, 1811 )
+
+[node name="Ztransform7" type="Area2D" parent="ChangeZ"]
+position = Vector2( 351, 765 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeZ/Ztransform7"]
+position = Vector2( 0, -1 )
+polygon = PoolVector2Array( 1121, 1885, 1150, 1885, 1150, 1830, 1127, 1831 )
+
+[node name="Ztransform8" type="Area2D" parent="ChangeZ"]
+position = Vector2( -100, -34 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeZ/Ztransform8"]
+position = Vector2( 0, -1 )
+polygon = PoolVector2Array( 1128, 1886, 1150, 1885, 1153, 1824, 1128, 1824 )
+
+[node name="Ztransform9" type="Area2D" parent="ChangeZ"]
+position = Vector2( -132, -69 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeZ/Ztransform9"]
+position = Vector2( 0, -1 )
+polygon = PoolVector2Array( 1127, 1884, 1152, 1885, 1151, 1852, 1139, 1846, 1128, 1854 )
+
+[node name="Ztransform10" type="Area2D" parent="ChangeZ"]
+position = Vector2( -195, -128 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeZ/Ztransform10"]
+position = Vector2( 0, -1 )
+polygon = PoolVector2Array( 1127, 1884, 1152, 1885, 1151, 1852, 1139, 1846, 1128, 1854 )
+
+[node name="Ztransform11" type="Area2D" parent="ChangeZ"]
+position = Vector2( 185, -100 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeZ/Ztransform11"]
+position = Vector2( 0, -1 )
+polygon = PoolVector2Array( 1127, 1884, 1152, 1885, 1151, 1852, 1139, 1846, 1128, 1854 )
+
+[node name="Ztransform12" type="Area2D" parent="ChangeZ"]
+position = Vector2( 157, -128 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeZ/Ztransform12"]
+position = Vector2( 0, -1 )
+polygon = PoolVector2Array( 1127, 1884, 1152, 1885, 1151, 1852, 1139, 1846, 1128, 1854 )
+
+[node name="Ztransform13" type="Area2D" parent="ChangeZ"]
+position = Vector2( 92, -35 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeZ/Ztransform13"]
+position = Vector2( 2, 5 )
+polygon = PoolVector2Array( 1127, 1884, 1149, 1883, 1148, 1833, 1127, 1832 )
+
+[node name="Ztransform14" type="Area2D" parent="ChangeZ"]
+position = Vector2( 125, -550 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeZ/Ztransform14"]
+position = Vector2( 2, 5 )
+polygon = PoolVector2Array( 1127, 1884, 1149, 1883, 1148, 1833, 1127, 1832 )
+
+[node name="Ztransform15" type="Area2D" parent="ChangeZ"]
+position = Vector2( -68, -418 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeZ/Ztransform15"]
+position = Vector2( 2, 5 )
+polygon = PoolVector2Array( 1126, 1880, 1150, 1881, 1150, 1848, 1125, 1847 )
+
+[node name="Ztransform16" type="Area2D" parent="ChangeZ"]
+position = Vector2( -482, -97 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeZ/Ztransform16"]
+position = Vector2( 2, 5 )
+polygon = PoolVector2Array( 1129, 1878, 1144, 1879, 1154, 1835, 1119, 1834 )
+
+[node name="Ztransform17" type="Area2D" parent="ChangeZ"]
+position = Vector2( -706, -290 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeZ/Ztransform17"]
+position = Vector2( 2, 5 )
+polygon = PoolVector2Array( 1129, 1878, 1144, 1879, 1150, 1842, 1125, 1837 )
+
+[node name="Ztransform18" type="Area2D" parent="ChangeZ"]
+position = Vector2( 379, 536 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeZ/Ztransform18"]
+position = Vector2( 2, 5 )
+polygon = PoolVector2Array( 1135, 1880, 1144, 1879, 1143, 1856, 1170, 1846, 1176, 1805, 1134, 1764, 1099, 1816, 1106, 1842, 1118, 1852, 1135, 1856 )
+
+[node name="Ztransform19" type="Area2D" parent="ChangeZ"]
+position = Vector2( 155, 729 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeZ/Ztransform19"]
+position = Vector2( 2, 5 )
+polygon = PoolVector2Array( 1135, 1880, 1144, 1879, 1143, 1856, 1170, 1846, 1176, 1805, 1134, 1764, 1099, 1816, 1106, 1842, 1118, 1852, 1135, 1856 )
+
+[node name="Ztransform20" type="Area2D" parent="ChangeZ"]
+position = Vector2( -285, -274 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeZ/Ztransform20"]
+position = Vector2( 2, 5 )
+polygon = PoolVector2Array( 1128, 1855, 1136, 1871, 1141, 1871, 1149, 1855, 1150, 1842, 1127, 1841, 1123, 1849 )
+
+[node name="Ztransform21" type="Area2D" parent="ChangeZ"]
+position = Vector2( 28, -545 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeZ/Ztransform21"]
+position = Vector2( 2, 5 )
+polygon = PoolVector2Array( 1128, 1855, 1136, 1871, 1141, 1871, 1149, 1855, 1150, 1842, 1127, 1841, 1123, 1849 )
+
+[node name="Ztransform22" type="Area2D" parent="ChangeZ"]
+position = Vector2( 188, -388 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeZ/Ztransform22"]
+position = Vector2( 2, 5 )
+polygon = PoolVector2Array( 1128, 1855, 1136, 1871, 1141, 1871, 1149, 1855, 1150, 1842, 1127, 1841, 1123, 1849 )
+
+[node name="Ztransform23" type="Area2D" parent="ChangeZ"]
+position = Vector2( 166, 62 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeZ/Ztransform23"]
+position = Vector2( 2, 5 )
+polygon = PoolVector2Array( 1128, 1855, 1136, 1871, 1141, 1871, 1149, 1855, 1150, 1842, 1127, 1841, 1123, 1849 )
+
+[node name="Ztransform24" type="Area2D" parent="ChangeZ"]
+position = Vector2( -259, 98 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeZ/Ztransform24"]
+position = Vector2( 2, 5 )
+polygon = PoolVector2Array( 1124, 1861, 1136, 1871, 1141, 1871, 1149, 1855, 1150, 1842, 1127, 1841, 1123, 1849 )
+
+[node name="Ztransform25" type="Area2D" parent="ChangeZ"]
+position = Vector2( -164, 178 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeZ/Ztransform25"]
+position = Vector2( 2, 5 )
+polygon = PoolVector2Array( 1124, 1861, 1136, 1871, 1141, 1871, 1149, 1855, 1150, 1842, 1127, 1841, 1123, 1849 )
+
+[node name="Ztransform26" type="Area2D" parent="ChangeZ"]
+position = Vector2( -277, -386 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeZ/Ztransform26"]
+position = Vector2( 2, 5 )
+polygon = PoolVector2Array( 1124, 1861, 1136, 1871, 1156, 1870, 1161, 1858, 1150, 1842, 1127, 1841, 1123, 1849 )
+
+[node name="Ztransform27" type="Area2D" parent="ChangeZ"]
+position = Vector2( -166, -398 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeZ/Ztransform27"]
+position = Vector2( 2, 5 )
+polygon = PoolVector2Array( 1124, 1861, 1136, 1871, 1156, 1870, 1161, 1858, 1150, 1842, 1127, 1841, 1123, 1849 )
+
+[node name="Ztransform28" type="Area2D" parent="ChangeZ"]
+position = Vector2( 262, -176 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeZ/Ztransform28"]
+position = Vector2( 2, 5 )
+polygon = PoolVector2Array( 1124, 1861, 1136, 1871, 1156, 1870, 1161, 1858, 1150, 1842, 1127, 1841, 1123, 1849 )
+
+[node name="Ztransform29" type="Area2D" parent="ChangeZ"]
+position = Vector2( 126, -54 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeZ/Ztransform29"]
+position = Vector2( 2, 5 )
+polygon = PoolVector2Array( 1124, 1861, 1136, 1871, 1166, 1862, 1167, 1849, 1150, 1842, 1133, 1835 )
 
 [connection signal="area_entered" from="Portal-final" to="Portal-final" method="_on_Portal_area_entered"]
+[connection signal="body_entered" from="ChangeZ/Ztransform" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="ChangeZ/Ztransform" to="Player" method="_on_Ztransform_body_exited"]
+[connection signal="body_entered" from="ChangeZ/Ztransform2" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="ChangeZ/Ztransform2" to="Player" method="_on_Ztransform_body_exited"]
+[connection signal="body_entered" from="ChangeZ/Ztransform3" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="ChangeZ/Ztransform3" to="Player" method="_on_Ztransform_body_exited"]
+[connection signal="body_entered" from="ChangeZ/Ztransform4" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="ChangeZ/Ztransform4" to="Player" method="_on_Ztransform_body_exited"]
+[connection signal="body_entered" from="ChangeZ/Ztransform5" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="ChangeZ/Ztransform5" to="Player" method="_on_Ztransform_body_exited"]
+[connection signal="body_entered" from="ChangeZ/Ztransform6" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="ChangeZ/Ztransform6" to="Player" method="_on_Ztransform_body_exited"]
+[connection signal="body_entered" from="ChangeZ/Ztransform7" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="ChangeZ/Ztransform7" to="Player" method="_on_Ztransform_body_exited"]
+[connection signal="body_entered" from="ChangeZ/Ztransform8" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="ChangeZ/Ztransform8" to="Player" method="_on_Ztransform_body_exited"]
+[connection signal="body_entered" from="ChangeZ/Ztransform9" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="ChangeZ/Ztransform9" to="Player" method="_on_Ztransform_body_exited"]
+[connection signal="body_entered" from="ChangeZ/Ztransform10" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="ChangeZ/Ztransform10" to="Player" method="_on_Ztransform_body_exited"]
+[connection signal="body_entered" from="ChangeZ/Ztransform11" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="ChangeZ/Ztransform11" to="Player" method="_on_Ztransform_body_exited"]
+[connection signal="body_entered" from="ChangeZ/Ztransform12" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="ChangeZ/Ztransform12" to="Player" method="_on_Ztransform_body_exited"]
+[connection signal="body_entered" from="ChangeZ/Ztransform13" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="ChangeZ/Ztransform13" to="Player" method="_on_Ztransform_body_exited"]
+[connection signal="body_entered" from="ChangeZ/Ztransform14" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="ChangeZ/Ztransform14" to="Player" method="_on_Ztransform_body_exited"]
+[connection signal="body_entered" from="ChangeZ/Ztransform15" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="ChangeZ/Ztransform15" to="Player" method="_on_Ztransform_body_exited"]
+[connection signal="body_entered" from="ChangeZ/Ztransform16" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="ChangeZ/Ztransform16" to="Player" method="_on_Ztransform_body_exited"]
+[connection signal="body_entered" from="ChangeZ/Ztransform17" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="ChangeZ/Ztransform17" to="Player" method="_on_Ztransform_body_exited"]
+[connection signal="body_entered" from="ChangeZ/Ztransform18" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="ChangeZ/Ztransform18" to="Player" method="_on_Ztransform_body_exited"]
+[connection signal="body_entered" from="ChangeZ/Ztransform19" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="ChangeZ/Ztransform19" to="Player" method="_on_Ztransform_body_exited"]
+[connection signal="body_entered" from="ChangeZ/Ztransform20" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="ChangeZ/Ztransform20" to="Player" method="_on_Ztransform_body_exited"]
+[connection signal="body_entered" from="ChangeZ/Ztransform21" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="ChangeZ/Ztransform21" to="Player" method="_on_Ztransform_body_exited"]
+[connection signal="body_entered" from="ChangeZ/Ztransform22" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="ChangeZ/Ztransform22" to="Player" method="_on_Ztransform_body_exited"]
+[connection signal="body_entered" from="ChangeZ/Ztransform23" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="ChangeZ/Ztransform23" to="Player" method="_on_Ztransform_body_exited"]
+[connection signal="body_entered" from="ChangeZ/Ztransform24" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="ChangeZ/Ztransform24" to="Player" method="_on_Ztransform_body_exited"]
+[connection signal="body_entered" from="ChangeZ/Ztransform25" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="ChangeZ/Ztransform25" to="Player" method="_on_Ztransform_body_exited"]
+[connection signal="body_entered" from="ChangeZ/Ztransform26" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="ChangeZ/Ztransform26" to="Player" method="_on_Ztransform_body_exited"]
+[connection signal="body_entered" from="ChangeZ/Ztransform27" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="ChangeZ/Ztransform27" to="Player" method="_on_Ztransform_body_exited"]
+[connection signal="body_entered" from="ChangeZ/Ztransform28" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="ChangeZ/Ztransform28" to="Player" method="_on_Ztransform_body_exited"]
+[connection signal="body_entered" from="ChangeZ/Ztransform29" to="Player" method="_on_Ztransform_body_entered"]
+[connection signal="body_exited" from="ChangeZ/Ztransform29" to="Player" method="_on_Ztransform_body_exited"]
 
 [editable path="FinalMap"]
 [editable path="Player"]

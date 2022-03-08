@@ -97,7 +97,6 @@ func _ready():
 func _process(delta):
 	AutoloadScript.playerData.playerPos = $HurtBox.global_position
 	#switch animation group
-	print(AutoloadScript.currentScene)
 	if !doingAction && !doingDash:
 		handlePlayerState()
 
