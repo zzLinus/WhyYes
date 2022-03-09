@@ -7,7 +7,7 @@
 [ext_resource path="res://Assets/Texture/DungeonMap/spike trap1.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Texture/DungeonMap/spike trap4.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/PhyTrapHitBox.gd" type="Script" id=7]
-[ext_resource path="res://Trap1.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/Trap1.gd" type="Script" id=8]
 
 [sub_resource type="AtlasTexture" id=29]
 atlas = ExtResource( 3 )

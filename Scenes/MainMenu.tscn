@@ -42,9 +42,6 @@ anchor_bottom = 1.0
 rect_pivot_offset = Vector2( -907, -24 )
 theme = ExtResource( 2 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="BackGround" type="ColorRect" parent="."]
 anchor_right = 1.0
