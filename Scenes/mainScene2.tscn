@@ -21,9 +21,6 @@ margin_top = -444.0
 margin_right = 2249.0
 margin_bottom = 1827.0
 color = Color( 0.027451, 0, 0.164706, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TiledMap editor example-" parent="." instance=ExtResource( 1 )]
 z_index = 2
@@ -48,14 +45,32 @@ tile_data = PoolIntArray( 5, 2101, 0, 6, 2102, 0, 7, 2103, 0, 8, 2104, 0, 33, 21
 z_index = 2
 z_as_relative = false
 
+[node name="AnimatedSprite" parent="TiledMap editor example-/Candles" index="0"]
+frame = 7
+
+[node name="AnimatedSprite2" parent="TiledMap editor example-/Candles" index="1"]
+frame = 1
+
+[node name="AnimatedSprite3" parent="TiledMap editor example-/Candles" index="2"]
+frame = 7
+
 [node name="AnimatedSprite4" parent="TiledMap editor example-/Candles" index="3"]
 frame = 0
 
 [node name="AnimatedSprite5" parent="TiledMap editor example-/Candles" index="4"]
 frame = 11
 
+[node name="AnimatedSprite6" parent="TiledMap editor example-/Candles" index="5"]
+frame = 3
+
 [node name="AnimatedSprite7" parent="TiledMap editor example-/Candles" index="6"]
 frame = 1
+
+[node name="AnimatedSprite8" parent="TiledMap editor example-/Candles" index="7"]
+frame = 3
+
+[node name="AnimatedSprite9" parent="TiledMap editor example-/Candles" index="8"]
+frame = 6
 
 [node name="AnimatedSprite15" parent="TiledMap editor example-/Candles" index="9"]
 frame = 1
@@ -65,6 +80,9 @@ frame = 1
 
 [node name="AnimatedSprite10" parent="TiledMap editor example-/Candles" index="11"]
 frame = 10
+
+[node name="AnimatedSprite11" parent="TiledMap editor example-/Candles" index="12"]
+frame = 3
 
 [node name="AnimatedSprite14" parent="TiledMap editor example-/Candles" index="13"]
 frame = 13
@@ -348,7 +366,7 @@ script = ExtResource( 8 )
 position = Vector2( 27, -73 )
 z_index = 5
 z_as_relative = false
-frame = 4
+frame = 8
 
 [node name="DiractionSign" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1088, 657 )

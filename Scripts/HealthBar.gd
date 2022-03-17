@@ -11,7 +11,7 @@ func _ready():
 	initScale = rect_scale
 	if get_parent().name == "Player":
 		rect_scale = Vector2(4, 4)
-	if get_parent().name == "Enemy":
+	if get_parent().get_groups()[0] == "Enemy":
 		max_value = AutoloadScript.enemyData.enemyMaxHealth
 		value = max_value
 		print("enemyMaxHealth" + str(max_value))

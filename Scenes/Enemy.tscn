@@ -569,7 +569,7 @@ animations = [ {
 "speed": 20.0
 } ]
 
-[node name="Enemy" type="KinematicBody2D"]
+[node name="Enemy" type="KinematicBody2D" groups=["Enemy"]]
 position = Vector2( 407, 286 )
 scale = Vector2( 2, 2 )
 script = ExtResource( 11 )
@@ -581,7 +581,6 @@ blood = ExtResource( 46 )
 position = Vector2( -93, -9 )
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 3
 offset = Vector2( 99, 0 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

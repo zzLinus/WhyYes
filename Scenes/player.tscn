@@ -1,4 +1,4 @@
-[gd_scene load_steps=285 format=2]
+[gd_scene load_steps=286 format=2]
 
 [ext_resource path="res://Scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Texture/charactor/Player_Idle_04.png" type="Texture" id=2]
@@ -1545,6 +1545,8 @@ animation = "PlayerRoll"
 
 [sub_resource type="AnimationNodeAnimation" id=58]
 
+[sub_resource type="AnimationNodeAnimation" id=60]
+
 [sub_resource type="AnimationNodeAnimation" id=22]
 animation = "PlayerRun"
 
@@ -1639,7 +1641,7 @@ input_11/name = "WSPlayerParry"
 input_11/auto_advance = false
 
 [sub_resource type="AnimationNodeBlendTree" id=19]
-graph_offset = Vector2( 1155.44, -552.682 )
+graph_offset = Vector2( -114.738, -230.088 )
 nodes/Animation/node = SubResource( 18 )
 nodes/Animation/position = Vector2( 360, 140 )
 "nodes/Animation 10/node" = SubResource( 29 )
@@ -1668,6 +1670,8 @@ nodes/Animation/position = Vector2( 360, 140 )
 "nodes/Animation 20/position" = Vector2( 1060, 360 )
 "nodes/Animation 21/node" = SubResource( 58 )
 "nodes/Animation 21/position" = Vector2( 860, -200 )
+"nodes/Animation 22/node" = SubResource( 60 )
+"nodes/Animation 22/position" = Vector2( 544.233, -170.465 )
 "nodes/Animation 3/node" = SubResource( 22 )
 "nodes/Animation 3/position" = Vector2( 360, 260 )
 "nodes/Animation 4/node" = SubResource( 23 )
@@ -1722,6 +1726,7 @@ z_as_relative = false
 collision_layer = 4
 collision_mask = 27
 script = ExtResource( 1 )
+doingAction = true
 runSmokeEffect = ExtResource( 170 )
 enemyHitEffect = ExtResource( 173 )
 blood = ExtResource( 201 )
@@ -1743,7 +1748,8 @@ shape = SubResource( 41 )
 position = Vector2( 12, -8 )
 scale = Vector2( 1.8015, 1.91911 )
 frames = SubResource( 1 )
-animation = "WSPlayerIdle"
+animation = "WSPlayerAttack3"
+frame = 12
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite")
@@ -1771,7 +1777,6 @@ anims/WSPlayerStopAttack = SubResource( 14 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 19 )
 anim_player = NodePath("../AnimationPlayer")
-active = true
 parameters/NMTransition/current = 0
 parameters/PlayerState/current = 0
 parameters/StopAttack/active = false
@@ -1827,7 +1832,6 @@ script = ExtResource( 147 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBoxForAttack2"]
 polygon = PoolVector2Array( 22, -10, 74, -10, 88, 16, 72, 38, 18, 38, 12, 26, 12, 2 )
-disabled = true
 
 [node name="HitBoxForAttack3" type="Area2D" parent="."]
 collision_layer = 16
